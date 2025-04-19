@@ -2,8 +2,16 @@
 #+begin_export html
 <div class="org-header">
   <div class="topbar-menu-container">
+    <!--
     <span class="topbar-menu"><a class="current" href="http://localhost:8080/">Home</a></span>
-    <span class="topbar-menu"><a href="http://localhost:8080/content1.html">Content</a></span>
+    <span class="topbar-menu"><a href="http://localhost:8080/emacsphere.html">Emacsphere</a></span>
+    <span class="topbar-menu"><a href="http://localhost:8080/blog.html">Blog</a></span>
+    <span class="topbar-menu"><a href="http://localhost:8080/other_projects.html">Other-Projects</a></span>
+    -->
+    <span class="topbar-menu"><a class="current" href="https://joaoesmoreira.github.io/joaomoreira.com/">Home</a></span>
+    <span class="topbar-menu"><a href="https://joaoesmoreira.github.io/joaomoreira.com/">Emacsphere</a></span>
+    <span class="topbar-menu"><a href="https://joaoesmoreira.github.io/joaomoreira.com/">Blog</a></span>
+    <span class="topbar-menu"><a href="https://joaoesmoreira.github.io/joaomoreira.com/">Other-Projects</a></span>
   </div>
 </div>
 #+end_export

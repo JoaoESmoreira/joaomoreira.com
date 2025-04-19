@@ -1,0 +1,10 @@
+#+TITLE: JoaoESmoreira
+#+AUTHOR: Joao ES Moreira
+#+SETUPFILE: ~/Documents/OrgFiles/themes/responsive-dark-light.setup
+#+INCLUDE: "./header.org"
+
+* Other projects
+About this content.
+
+* Footer
+#+INCLUDE: "./footer.org"

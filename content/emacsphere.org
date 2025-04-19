@@ -1,0 +1,57 @@
+#+TITLE: JoaoESmoreira
+#+AUTHOR: Joao ES Moreira
+#+SETUPFILE: ~/Documents/OrgFiles/themes/responsive-dark-light.setup
+#+INCLUDE: "./header.org"
+
+* Emacsphere
+For a while now, I’ve been using Emacs only as my IDE for both
+academic and personal projects. This project, Emacsphere, is an
+effort to transform Emacs into a powerful and efficient environment —
+one that maximizes productivity and simplifies the workflow.
+
+The goal is to configure Emacs in a way that takes full advantage of
+its extensive capabilities. I aim to turn Emacs into a versatile
+platform where it’s possible to manage desktop files, handle with
+git-based projects, organize tasks and notes with org-mode, and stay
+up to date by reading news and feeds directly within Emacs.
+
+Emacsphere should be more than just a text editor — it's an evolving
+ecosystem tailored for focus, control, and creativity.
+
+You can find the source code of this project at [[https://github.com/JoaoESmoreira/emacsphere][Emacsphere]].
+
+** Installation
+*** Requirements
+- Emacs 29 or higher
+
+*** Steps
+1. *Install Emacs:*
+
+   - On Ubuntu/Debian: =sudo apt install emacs=
+   - On macOS: =brew install emacs=
+   - On Windows: Download the Emacs version for Windows from [[https://www.gnu.org/software/emacs/download.html#nonfree][emacsforwindows]].
+
+2. *Clone the Configuration Repository:*
+
+   Clone this repository to the Emacs configuration directory:
+
+#+begin_src shell
+git clone https://github.com/JoaoESmoreira/emacsphere.git ~/.emacs.d
+#+end_src
+
+3. *Install Dependencies:*
+
+   - Open Emacs and it will start to install the dependencies.
+
+4. *Configure Plugins and Extensions:*
+
+   - Customize the packages as needed to suit your workflow.
+
+5. *Restart Emacs:*
+
+   After installing all the packages, restart Emacs to ensure all
+   configurations and extensions are active.
+
+
+* Footer
+#+INCLUDE: "./footer.org"
