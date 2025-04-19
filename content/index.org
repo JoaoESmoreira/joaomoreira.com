@@ -1,0 +1,17 @@
+#+TITLE: JoaoESmoreira
+#+AUTHOR: Joao ES Moreira
+#+SETUPFILE: ~/Documents/OrgFiles/themes/responsive-dark-light.setup
+#+INCLUDE: "./header.org"
+
+* About
+Joaoesmoreia.com is a site created by Joao ES Moreira...
+
+* Contacts
+- *Personal email*: jesmoreira2010@gmail.com
+- *institutional email*: joaomoreira@student.dei.uc.pt
+
+- *GitHub*: github.com/JoaoESmoreira
+- *Linkdin*: https://www.linkedin.com/in/jo%C3%A3o-moreira-1a4573235/
+
+* Footer
+#+INCLUDE: "./footer.org"

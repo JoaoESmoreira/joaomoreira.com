@@ -1,0 +1,25 @@
+#+TITLE: joaoesmoreira.com Setup
+#+AUTHOR: Joao ES Moreira
+#+DESCRIPTION: Setup of personal webpage joaoesmoreira.com
+#+OPTIONS: toc:2
+
+
+* Table of Contents :toc:
+- [[#joaoesmoreiracom][joaoesmoreira.com]]
+  - [[#build][Build]]
+  - [[#licence][Licence]]
+
+* joaoesmoreira.com
+This project aims to setup my personal webpage available at [[][]].
+
+** Build
+All the website content is written in *Org Mode* and organized under
+the =content/= directory.  This format allows for clean, structured
+writing while leveraging the full power of the Emacs ecosystem.
+
+The [[file:build-site.el][build-site]] script is responsible for converting these =.org= files
+into HTML and exporting them into the =public/= directory, which
+serves as the final output of the site.
+
+** Licence
+This project is licensed under the [[file:LICENSE][MIT License]].

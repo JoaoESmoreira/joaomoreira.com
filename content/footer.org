@@ -1,0 +1,13 @@
+#+DESCRIPTION: Header
+#+SETUPFILE: ~/Documents/OrgFiles/themes/responsive-dark-light.setup
+
+Copyright © 2025 Joao ES Moreira
+
+The contents of this website are licensed under the [[https://creativecommons.org/licenses/by-nd/4.0/][Creative Commons
+Attribution-NoDerivatives 4.0 International License]] (CC-BY-ND 4.0).
+
+ The source code of this website is licensed under the MIT license,
+ and available in [[https://github.com/JoaoESmoreira/joaomoreira.com/][GitHub]] repositor.  User-submitted contributions to
+ the site are welcome, as long as the contributor agrees to license
+ their submission with the CC-BY-ND 4.0 license.
+
