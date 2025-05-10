@@ -4,7 +4,17 @@
 #+INCLUDE: "./header.org"
 
 * Blog
-About this content.
+Here, you'll find an informal collection of notes and explorations on
+topics I'm currently learning about. From Linux configurations and
+Emacs customizations to various software projects, this space serves
+as a personal log of discoveries and experiments—not intended for
+academic publication, but rather as a place to document my journey and
+share practical insights. Feel free to explore and learn alongside me!
+
+| Posts       |
+|-------------|
+| [[file:./hello_world.org][Hello World]] |
+
 
 * Footer
 #+INCLUDE: "./footer.org"

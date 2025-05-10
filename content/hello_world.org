@@ -1,0 +1,125 @@
+
+#+TITLE: JoaoESmoreira
+#+AUTHOR: Joao ES Moreira
+#+SETUPFILE: ~/Documents/OrgFiles/themes/responsive-dark-light.setup
+#+INCLUDE: "./header.org"
+
+* Hello World
+
+Hello there!
+
+In this blog I intend to show you how I generated this website using
+*Org Mode*. You can find the complete source code for the website on
+my GitHub repository [[https://github.com/JoaoESmoreira/joaomoreira.com/]]
+
+** Project Setup
+First things first, create the following structure in your project
+folder: =M-x mkdir RET content= contains all the Org files you want to
+export to HTML, and =M-x mkdir RET docs= to store the generated
+HTML files.
+
+Place your Org files inside *content/*. In this configuration the org
+files are inputed from *content/* and they will be exported to *docs/*
+after publishing.
+
+** Configuring Emacs for Export
+Create a file named *build-site.el* in the root of your project and
+add the following Emacs Lisp code:
+
+#+begin_src emacs-lisp
+(require 'ox-publish)
+
+;; Define the publishing project
+(setq org-publish-project-alist
+      (list
+       (list "my-org-site"
+             :recursive t
+             :base-directory "./content"    ;; Source folder of org files 
+	     :base-extension "org"
+             :publishing-directory "./docs" ;; Output folder for all published files
+             :publishing-function 'org-html-publish-to-html ;; Publish the files as HTML
+             :with-author nil           ;; Don't include author name
+             :with-creator t            ;; Include Emacs and Org versions in footer
+             :with-toc t                ;; Include a table of contents
+             :section-numbers nil       ;; Don't include section numbers
+             :time-stamp-file nil)))    ;; Don't include time stamp in file
+
+(setq org-html-validation-link nil)
+(setq org-html-validation-link nil            ;; Don't show validation link
+      org-html-head-include-scripts nil       ;; Use our own scripts
+      org-html-head-include-default-style nil ;; Use our own styles
+      org-html-head "<link rel=\"stylesheet\" href=\"https://cdn.simplecss.org/simple.min.css\" />")
+
+;; Generate the site output
+(org-publish-all t)
+
+(message "Build complete")
+#+end_src
+
+This script configures Org Mode to process all org files in *content/*
+recursively, export them as HTML to *docs/* and, apply a simple CSS
+for better readability.
+
+** Automating publish process with Shell Script
+To simplify the build process, create a shell script named build.sh:
+
+#+begin_src shell
+#!/bin/sh
+emacs -Q --script build-site.el
+#+end_src
+
+Do not forget to give execution permission to this file: =M-x chomod
+RET file_path RET u+x=.
+
+** Preview the generated website
+
+In order to preview the result of your web site, let's install the
+[[https://github.com/skeeto/emacs-web-server][simple-httpd]] Emacs package. This package is a lightweight, pure-Elisp
+web server that allows you to serve static and dynamic web content
+directly from within Emacs.
+
+It is possible to install it from [[https://melpa.org/#/getting-started][MELPA]] using =M-x package-install= or
+adding the following code snippet into your Emacs configuration:
+#+begin_src emacs-lisp
+(use-package simple-httpd
+  :ensure t)
+#+end_src
+
+Sinse you are working in your Emacs configuration, take some advantage
+and install the following package to ensure better syntax
+highlighting.
+#+begin_src emacs-lisp
+(use-package htmlize
+    :ensure t
+    :defer t
+    :config
+        (setq org-html-htmlize-output-type 'inline-css))
+#+end_src
+
+** Write your first page
+
+Create a file named *index.org* inside content/ with the following
+content:
+ 
+#+begin_src org
+#+TITLE: JoaoESmoreira
+#+AUTHOR: Joao ES Moreira
+#+SETUPFILE: ~/path/for/your/themes/responsive-dark-light.setup
+#+INCLUDE: "./header.org"
+
+ * Hello World
+Welcome to my first website built with Org Mode!
+#+end_src
+
+Now it is possible to export all your org files to html with
+=./build.sh=. Init your local web server with =M-x
+httpd-serve-directory RET path/to/docs= and open the link
+[[http://localhost:8080/]] in your web browser.
+
+* Conclusion
+You now have a fully working static website built with Org Mode and
+Emacs. Expand it by adding more org files in *content/* and rerunning
+*build.sh* to publish them.
+
+* Footer
+#+INCLUDE: "./footer.org"
