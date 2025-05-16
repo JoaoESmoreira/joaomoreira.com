@@ -1,0 +1,53 @@
+
+
+➜  sudo pacman -S isync msmtp 
+➜  yay -S mu
+
+create a app password for gmail
+  https://myaccount.google.com/apppasswords
+
+encript it
+➜  mkdir -p .password-store/
+➜  gpg -c .password-store/gmail
+➜  gpg -c .password-store/dei
+
+
+➜  mbsync -a
+
+➜  mu init --maildir=~/Mail --my-address=jesmoreira2010@gmail.com --my-address=joaomoreira@student.dei.uc.pt
+mu has been created with the following properties:
++-------------------+------------------------------------+
+| property          | value                              |
++-------------------+------------------------------------+
+| maildir           | /home/joaomoreira/Mail             |
++-------------------+------------------------------------+
+| database-path     | /home/joaomoreira/.cache/mu/xapian |
++-------------------+------------------------------------+
+| schema-version    | 500                                |
++-------------------+------------------------------------+
+| max-message-size  | 100000000                          |
++-------------------+------------------------------------+
+| batch-size        | 50000                              |
++-------------------+------------------------------------+
+| created           | Sun May  4 15:35:45 2025           |
++-------------------+------------------------------------+
+| personal-address  | jesmoreira2010@gmail.com           |
++-------------------+------------------------------------+
+| personal-address  | joaomoreira@student.dei.uc.pt      |
++-------------------+------------------------------------+
+| messages in store | 0                                  |
++-------------------+------------------------------------+
+| support-ngrams    | no                                 |
++-------------------+------------------------------------+
+| last-change       | never                              |
++-------------------+------------------------------------+
+| last-index        | never                              |
++-------------------+------------------------------------+
+Database is empty. You can use 'mu index' to fill it.
+➜  mu index                                                                                                 
+indexing maildir /home/joaomoreira/Mail -> store /home/joaomoreira/.cache/mu/xapian
+| indexing messages; checked: 16817; updated/new: 16817; cleaned-up: 0
+
+
+chmod 600 ~/.msmtprc
+

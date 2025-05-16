@@ -11,9 +11,9 @@ as a personal log of discoveries and experiments—not intended for
 academic publication, but rather as a place to document my journey and
 share practical insights. Feel free to explore and learn alongside me!
 
-| Posts       |
-|-------------|
-| [[file:./hello_world.org][Hello World]] |
+| Posts       | Date             |
+|-------------+------------------|
+| [[file:./hello_world.org][Hello World]] | <2025-05-10 Fri> |
 
 
 * Footer

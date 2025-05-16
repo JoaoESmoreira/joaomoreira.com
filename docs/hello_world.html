@@ -60,9 +60,9 @@ font-size: 0.95em;
     <span class="topbar-menu"><a href="other_projects.html">Other-Projects</a></span>
   </div>
 </div>
-<div id="outline-container-org5a6cdec" class="outline-2">
-<h2 id="org5a6cdec">Hello World</h2>
-<div class="outline-text-2" id="text-org5a6cdec">
+<div id="outline-container-orgd0bc056" class="outline-2">
+<h2 id="orgd0bc056">Hello World</h2>
+<div class="outline-text-2" id="text-orgd0bc056">
 <p>
 Hello there!
 </p>
@@ -73,13 +73,13 @@ In this blog I intend to show you how I generated this website using
 my GitHub repository <a href="https://github.com/JoaoESmoreira/joaomoreira.com/">https://github.com/JoaoESmoreira/joaomoreira.com/</a>
 </p>
 </div>
-<div id="outline-container-orgc1b0e61" class="outline-3">
-<h3 id="orgc1b0e61">Project Setup</h3>
-<div class="outline-text-3" id="text-orgc1b0e61">
+<div id="outline-container-orge470e02" class="outline-3">
+<h3 id="orge470e02">Project Setup</h3>
+<div class="outline-text-3" id="text-orge470e02">
 <p>
 First things first, create the following structure in your project
-folder: <code>M-x mkdir RET content</code> contains all the Org files you want to
-export to HTML, and <code>M-x mkdir RET docs</code> to store the generated
+folder: <code>&lt;M-x&gt; mkdir &lt;RET&gt; content</code> contains all the Org files you want to
+export to HTML, and <code>&lt;M-x&gt; mkdir &lt;RET&gt; docs</code> to store the generated
 HTML files.
 </p>
 
@@ -90,9 +90,9 @@ after publishing.
 </p>
 </div>
 </div>
-<div id="outline-container-orgcd3bdcd" class="outline-3">
-<h3 id="orgcd3bdcd">Configuring Emacs for Export</h3>
-<div class="outline-text-3" id="text-orgcd3bdcd">
+<div id="outline-container-orgd302803" class="outline-3">
+<h3 id="orgd302803">Configuring Emacs for Export</h3>
+<div class="outline-text-3" id="text-orgd302803">
 <p>
 Create a file named <b>build-site.el</b> in the root of your project and
 add the following Emacs Lisp code:
@@ -106,20 +106,21 @@ add the following Emacs Lisp code:
       (list
        (list "my-org-site"
              :recursive t
-             :base-directory "./content"    ;; Source folder of org files 
              :base-extension "org"
-             :publishing-directory "./docs" ;; Output folder for all published files
+             :base-directory "./content"                    ;; Source folder of org files 
+             :publishing-directory "./docs"                 ;; Output folder for all published files
+             :with-author nil                               ;; Don't include author name
+             :with-creator t                                ;; Include Emacs and Org versions in footer
+             :with-toc t                                    ;; Include a table of contents
+             :section-numbers nil                           ;; Don't include section numbers
+             :time-stamp-file nil                           ;; Don't include time stamp in file
              :publishing-function 'org-html-publish-to-html ;; Publish the files as HTML
-             :with-author nil           ;; Don't include author name
-             :with-creator t            ;; Include Emacs and Org versions in footer
-             :with-toc t                ;; Include a table of contents
-             :section-numbers nil       ;; Don't include section numbers
-             :time-stamp-file nil)))    ;; Don't include time stamp in file
+)))
 
 (setq org-html-validation-link nil)
-(setq org-html-validation-link nil            ;; Don't show validation link
-      org-html-head-include-scripts nil       ;; Use our own scripts
-      org-html-head-include-default-style nil ;; Use our own styles
+(setq org-html-validation-link nil               ;; Don't show validation link
+      org-html-head-include-scripts nil          ;; Use our own scripts
+      org-html-head-include-default-style nil    ;; Use our own styles
       org-html-head "&lt;link rel=\"stylesheet\" href=\"https://cdn.simplecss.org/simple.min.css\" /&gt;")
 
 ;; Generate the site output
@@ -136,9 +137,9 @@ for better readability.
 </p>
 </div>
 </div>
-<div id="outline-container-org4972546" class="outline-3">
-<h3 id="org4972546">Automating publish process with Shell Script</h3>
-<div class="outline-text-3" id="text-org4972546">
+<div id="outline-container-org22cfa29" class="outline-3">
+<h3 id="org22cfa29">Automating publish process with Shell Script</h3>
+<div class="outline-text-3" id="text-org22cfa29">
 <p>
 To simplify the build process, create a shell script named build.sh:
 </p>
@@ -150,14 +151,14 @@ emacs -Q --script build-site.el
 </div>
 
 <p>
-Do not forget to give execution permission to this file: <code>M-x chomod
-RET file_path RET u+x</code>.
+Do not forget to give execution permission to this file: <code>&lt;M-x&gt; chomod
+&lt;RET&gt; file_path &lt;RET&gt; u+x</code>.
 </p>
 </div>
 </div>
-<div id="outline-container-org6ea35df" class="outline-3">
-<h3 id="org6ea35df">Preview the generated website</h3>
-<div class="outline-text-3" id="text-org6ea35df">
+<div id="outline-container-orgb00b94e" class="outline-3">
+<h3 id="orgb00b94e">Preview the generated website</h3>
+<div class="outline-text-3" id="text-orgb00b94e">
 <p>
 In order to preview the result of your web site, let's install the
 <a href="https://github.com/skeeto/emacs-web-server">simple-httpd</a> Emacs package. This package is a lightweight, pure-Elisp
@@ -166,7 +167,7 @@ directly from within Emacs.
 </p>
 
 <p>
-It is possible to install it from <a href="https://melpa.org/#/getting-started">MELPA</a> using <code>M-x package-install</code> or
+It is possible to install it from <a href="https://melpa.org/#/getting-started">MELPA</a> using <code>&lt;M-x&gt; package-install</code> or
 adding the following code snippet into your Emacs configuration:
 </p>
 <div class="org-src-container">
@@ -190,9 +191,9 @@ highlighting.
 </div>
 </div>
 </div>
-<div id="outline-container-orgec928bd" class="outline-3">
-<h3 id="orgec928bd">Write your first page</h3>
-<div class="outline-text-3" id="text-orgec928bd">
+<div id="outline-container-org61e0d00" class="outline-3">
+<h3 id="org61e0d00">Write your first page</h3>
+<div class="outline-text-3" id="text-org61e0d00">
 <p>
 Create a file named <b>index.org</b> inside content/ with the following
 content:
@@ -211,16 +212,37 @@ Welcome to my first website built with Org Mode!
 
 <p>
 Now it is possible to export all your org files to html with
-<code>./build.sh</code>. Init your local web server with <code>M-x
-httpd-serve-directory RET path/to/docs</code> and open the link
+<code>./build.sh</code>. Init your local web server with <code>&lt;M-x&gt;
+httpd-serve-directory &lt;RET&gt; path/to/docs</code> and open the link
 <a href="http://localhost:8080/">http://localhost:8080/</a> in your web browser.
 </p>
 </div>
 </div>
 </div>
-<div id="outline-container-orgae1994e" class="outline-2">
-<h2 id="orgae1994e">Conclusion</h2>
-<div class="outline-text-2" id="text-orgae1994e">
+<div id="outline-container-orgf3c24fa" class="outline-2">
+<h2 id="orgf3c24fa">Understanding Keyboard Shortcuts in Emacs</h2>
+<div class="outline-text-2" id="text-orgf3c24fa">
+<p>
+Emacs uses specific key notations that sometimes differ depending on
+the operating system. Here is a breakdown of the two main ones used
+here.
+</p>
+
+<ul class="org-ul">
+<li><b>M-x (Meta-x) Key:</b> On Windows/Linux, the Meta key is typically mapped
+to the <code>Alt key</code>, and on macOS the Meta key is mapped to the <code>Option
+  (⌥)key</code>. Meta key allows you to execute commands. In this blog it
+was used: the <code>mkdir</code>, <code>chomod</code> and, <code>httpd-serve-directory</code>
+commands.</li>
+
+<li><b>RET (Return) Key:</b> On all operating systems corresponds to the <code>Enter
+  key</code>.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org702312a" class="outline-2">
+<h2 id="org702312a">Conclusion</h2>
+<div class="outline-text-2" id="text-org702312a">
 <p>
 You now have a fully working static website built with Org Mode and
 Emacs. Expand it by adding more org files in <b>content/</b> and rerunning
@@ -228,9 +250,9 @@ Emacs. Expand it by adding more org files in <b>content/</b> and rerunning
 </p>
 </div>
 </div>
-<div id="outline-container-org3e172cb" class="outline-2">
-<h2 id="org3e172cb">Footer</h2>
-<div class="outline-text-2" id="text-org3e172cb">
+<div id="outline-container-orgc7bc780" class="outline-2">
+<h2 id="orgc7bc780">Footer</h2>
+<div class="outline-text-2" id="text-orgc7bc780">
 <p>
 Copyright © 2025 Joao ES Moreira
 </p>

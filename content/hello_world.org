@@ -14,8 +14,8 @@ my GitHub repository [[https://github.com/JoaoESmoreira/joaomoreira.com/]]
 
 ** Project Setup
 First things first, create the following structure in your project
-folder: =M-x mkdir RET content= contains all the Org files you want to
-export to HTML, and =M-x mkdir RET docs= to store the generated
+folder: =<M-x> mkdir <RET> content= contains all the Org files you want to
+export to HTML, and =<M-x> mkdir <RET> docs= to store the generated
 HTML files.
 
 Place your Org files inside *content/*. In this configuration the org
@@ -34,20 +34,21 @@ add the following Emacs Lisp code:
       (list
        (list "my-org-site"
              :recursive t
-             :base-directory "./content"    ;; Source folder of org files 
 	     :base-extension "org"
-             :publishing-directory "./docs" ;; Output folder for all published files
+             :base-directory "./content"                    ;; Source folder of org files 
+             :publishing-directory "./docs"                 ;; Output folder for all published files
+             :with-author nil                               ;; Don't include author name
+             :with-creator t                                ;; Include Emacs and Org versions in footer
+             :with-toc t                                    ;; Include a table of contents
+             :section-numbers nil                           ;; Don't include section numbers
+             :time-stamp-file nil                           ;; Don't include time stamp in file
              :publishing-function 'org-html-publish-to-html ;; Publish the files as HTML
-             :with-author nil           ;; Don't include author name
-             :with-creator t            ;; Include Emacs and Org versions in footer
-             :with-toc t                ;; Include a table of contents
-             :section-numbers nil       ;; Don't include section numbers
-             :time-stamp-file nil)))    ;; Don't include time stamp in file
+)))
 
 (setq org-html-validation-link nil)
-(setq org-html-validation-link nil            ;; Don't show validation link
-      org-html-head-include-scripts nil       ;; Use our own scripts
-      org-html-head-include-default-style nil ;; Use our own styles
+(setq org-html-validation-link nil               ;; Don't show validation link
+      org-html-head-include-scripts nil          ;; Use our own scripts
+      org-html-head-include-default-style nil    ;; Use our own styles
       org-html-head "<link rel=\"stylesheet\" href=\"https://cdn.simplecss.org/simple.min.css\" />")
 
 ;; Generate the site output
@@ -68,8 +69,8 @@ To simplify the build process, create a shell script named build.sh:
 emacs -Q --script build-site.el
 #+end_src
 
-Do not forget to give execution permission to this file: =M-x chomod
-RET file_path RET u+x=.
+Do not forget to give execution permission to this file: =<M-x> chomod
+<RET> file_path <RET> u+x=.
 
 ** Preview the generated website
 
@@ -78,7 +79,7 @@ In order to preview the result of your web site, let's install the
 web server that allows you to serve static and dynamic web content
 directly from within Emacs.
 
-It is possible to install it from [[https://melpa.org/#/getting-started][MELPA]] using =M-x package-install= or
+It is possible to install it from [[https://melpa.org/#/getting-started][MELPA]] using =<M-x> package-install= or
 adding the following code snippet into your Emacs configuration:
 #+begin_src emacs-lisp
 (use-package simple-httpd
@@ -112,9 +113,23 @@ Welcome to my first website built with Org Mode!
 #+end_src
 
 Now it is possible to export all your org files to html with
-=./build.sh=. Init your local web server with =M-x
-httpd-serve-directory RET path/to/docs= and open the link
+=./build.sh=. Init your local web server with =<M-x>
+httpd-serve-directory <RET> path/to/docs= and open the link
 [[http://localhost:8080/]] in your web browser.
+
+* Understanding Keyboard Shortcuts in Emacs
+Emacs uses specific key notations that sometimes differ depending on
+the operating system. Here is a breakdown of the two main ones used
+here.
+
+- *M-x (Meta-x) Key:* On Windows/Linux, the Meta key is typically mapped
+  to the =Alt key=, and on macOS the Meta key is mapped to the =Option
+  (⌥)key=. Meta key allows you to execute commands. In this blog it
+  was used: the =mkdir=, =chomod= and, =httpd-serve-directory=
+  commands.
+
+- *RET (Return) Key:* On all operating systems corresponds to the =Enter
+  key=.
 
 * Conclusion
 You now have a fully working static website built with Org Mode and
