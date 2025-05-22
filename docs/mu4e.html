@@ -5,170 +5,601 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>&lrm;</title>
+<title>JoaoESmoreira</title>
+<meta name="description" content="Header" />
 <meta name="generator" content="Org Mode" />
-<link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.min.css">
+<style>body { max-width: 800px; margin: auto; }</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/github-dark.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+<style>
+pre.src {
+background-color: #e6e6e6;
+color: #1e1e1e;
+padding: 1em;
+border-radius: 6px;
+overflow-x: auto;
+font-size: 0.95em;
+}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.min.css">
+<style>body { max-width: 800px; margin: auto; }</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/github-dark.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+<style>
+pre.src {
+background-color: #e6e6e6;
+color: #1e1e1e;
+padding: 1em;
+border-radius: 6px;
+overflow-x: auto;
+font-size: 0.95em;
+}
+</style>
 </head>
 <body>
 <div id="content" class="content">
+<h1 class="title">JoaoESmoreira</h1>
+<div class="org-header">
+  <div class="topbar-menu-container">
+    <!--
+    <span class="topbar-menu"><a class="current" href="http://localhost:8080/">Home</a></span>
+    <span class="topbar-menu"><a href="http://localhost:8080/emacsphere.html">Emacsphere</a></span>
+    <span class="topbar-menu"><a href="http://localhost:8080/blog.html">Blog</a></span>
+    <span class="topbar-menu"><a href="http://localhost:8080/other_projects.html">Other-Projects</a></span>
+  </div>
+    -->
+  <div class="topbar-menu-container">
+    <span class="topbar-menu"><a href="index.html">Home</a></span>
+    <span class="topbar-menu"><a href="emacsphere.html">Emacsphere</a></span>
+    <span class="topbar-menu"><a href="blog.html">Blog</a></span>
+    <span class="topbar-menu"><a href="other_projects.html">Other-Projects</a></span>
+  </div>
+</div>
+<div id="outline-container-org54515c7" class="outline-2">
+<h2 id="org54515c7">Mu4e</h2>
+<div class="outline-text-2" id="text-org54515c7">
 <p>
-➜  sudo pacman -S isync msmtp 
-➜  yay -S mu
+Hello there!
 </p>
 
 <p>
-create a app password for gmail
-  <a href="https://myaccount.google.com/apppasswords">https://myaccount.google.com/apppasswords</a>
+In this blog I will show you how I configured my email accounts on
+Emacs and a simple use case, using <b>mu4e</b>. Of course, you can find the
+complete source code of my emacs configuration on my GitHub repository
+<a href="https://github.com/JoaoESmoreira/emacsphere/">https://github.com/JoaoESmoreira/emacsphere/</a> . There is also a
+dedicated tab for the project at <a href="./emacsphere.html">Emacsphere</a>.
+</p>
+</div>
+<div id="outline-container-orgaa5112a" class="outline-3">
+<h3 id="orgaa5112a">Requirements</h3>
+<div class="outline-text-3" id="text-orgaa5112a">
+<p>
+Let's start by installing all required packages. In my case, I am
+installing it on <b>Arch Linux</b> by the way.
 </p>
 
+<div class="org-src-container">
+<pre class="src src-shell">sudo pacman -S isync msmtp 
+yay -S mu
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org397dd6a" class="outline-3">
+<h3 id="org397dd6a">Configuring Mbsync</h3>
+<div class="outline-text-3" id="text-org397dd6a">
+</div>
+<div id="outline-container-org26c0304" class="outline-4">
+<h4 id="org26c0304">Encripting Passwords</h4>
+<div class="outline-text-4" id="text-org26c0304">
 <p>
-encript it
-➜  mkdir -p .password-store/
-➜  gpg -c .password-store/gmail
-➜  gpg -c .password-store/dei
+First thing first, let’s securely store and encrypt your passwords.
 </p>
 
+<div class="org-src-container">
+<pre class="src src-bash">mkdir -p .password-store/
+cd .passwrod-store
+
+touch "your-password" &gt; gmail
+touch "your-password" &gt; dei
+
+gpg -c .password-store/gmail
+gpg -c .password-store/dei
+
+rm gmail dei
+</pre>
+</div>
 
 <p>
-➜  mbsync -a
+If you’re using Gmail, you must create an App Password.  You can do
+this by visiting: <a href="https://myaccount.google.com/apppasswords">https://myaccount.google.com/apppasswords</a>
+</p>
+</div>
+</div>
+<div id="outline-container-org9684681" class="outline-4">
+<h4 id="org9684681">Setting up mbsyncrc</h4>
+<div class="outline-text-4" id="text-org9684681">
+<p>
+Create the configuration file at <code>~/.mbsyncrc</code> and past the following
+content. Make sure you replace email addresses with your actual ones.
 </p>
 
+<div class="org-src-container">
+<pre class="src src-shell"># #############
+# # gmail
+# #############
+IMAPAccount gmail
+Host imap.gmail.com
+User your-email-address@gmail.com
+PassCmd "gpg --no-tty --for-your-eyes-only -dq ~/.password-store/gmail.gpg"
+TLSType IMAPS
+
+IMAPStore gmail-remote
+Account gmail
+
+MaildirStore gmail-local
+Path ~/Mail/gmail/
+Inbox ~/Mail/gmail/INBOX
+
+Channel gmail
+Far :gmail-remote:
+Near :gmail-local:
+Patterns *
+Create Both
+Expunge Both
+SyncState *
+
+#############
+# DEI
+#############
+IMAPAccount dei
+Host student.dei.uc.pt
+User your-email-address
+PassCmd "gpg --no-tty --for-your-eyes-only -dq ~/.password-store/dei.gpg"
+TLSType IMAPS
+Port 993
+
+IMAPStore dei-remote
+Account dei
+
+MaildirStore dei-local
+Path ~/Mail/dei/
+Inbox ~/Mail/dei/INBOX
+Subfolders Verbatim
+
+Channel dei
+Far :dei-remote:
+Near :dei-local:
+Patterns INBOX mail/Drafts mail/Junk mail/sent-mail mail/Trash
+Create Both
+Expunge Both
+SyncState *
+</pre>
+</div>
+
 <p>
-➜  mu init &#x2013;maildir=~/Mail &#x2013;my-address=jesmoreira2010@gmail.com &#x2013;my-address=joaomoreira@student.dei.uc.pt
-mu has been created with the following properties:
+Before syncing your emails, make sure to create the local mail
+directories:
 </p>
-<!-- This HTML table template is generated by emacs 30.1 -->
-<table border="1">
-  <tr>
-    <td align="left" valign="top">
-      &nbsp;property&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    </td>
-    <td align="left" valign="top">
-      &nbsp;value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    </td>
-  </tr>
-  <tr>
-    <td align="left" valign="top">
-      &nbsp;maildir&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    </td>
-    <td align="left" valign="top">
-      &nbsp;/home/joaomoreira/Mail&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    </td>
-  </tr>
-  <tr>
-    <td align="left" valign="top">
-      &nbsp;database-path&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    </td>
-    <td align="left" valign="top">
-      &nbsp;/home/joaomoreira/.cache/mu/xapian&nbsp;
-    </td>
-  </tr>
-  <tr>
-    <td align="left" valign="top">
-      &nbsp;schema-version&nbsp;&nbsp;&nbsp;&nbsp;
-    </td>
-    <td align="left" valign="top">
-      &nbsp;500&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    </td>
-  </tr>
-  <tr>
-    <td align="left" valign="top">
-      &nbsp;max-message-size&nbsp;&nbsp;
-    </td>
-    <td align="left" valign="top">
-      &nbsp;100000000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    </td>
-  </tr>
-  <tr>
-    <td align="left" valign="top">
-      &nbsp;batch-size&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    </td>
-    <td align="left" valign="top">
-      &nbsp;50000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    </td>
-  </tr>
-  <tr>
-    <td align="left" valign="top">
-      &nbsp;created&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    </td>
-    <td align="left" valign="top">
-      &nbsp;Sun&nbsp;May&nbsp;&nbsp;4&nbsp;15:35:45&nbsp;2025&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    </td>
-  </tr>
-  <tr>
-    <td align="left" valign="top">
-      &nbsp;personal-address&nbsp;&nbsp;
-    </td>
-    <td align="left" valign="top">
-      &nbsp;jesmoreira2010@gmail.com&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    </td>
-  </tr>
-  <tr>
-    <td align="left" valign="top">
-      &nbsp;personal-address&nbsp;&nbsp;
-    </td>
-    <td align="left" valign="top">
-      &nbsp;joaomoreira@student.dei.uc.pt&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    </td>
-  </tr>
-  <tr>
-    <td align="left" valign="top">
-      &nbsp;messages&nbsp;in&nbsp;store&nbsp;
-    </td>
-    <td align="left" valign="top">
-      &nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    </td>
-  </tr>
-  <tr>
-    <td align="left" valign="top">
-      &nbsp;support-ngrams&nbsp;&nbsp;&nbsp;&nbsp;
-    </td>
-    <td align="left" valign="top">
-      &nbsp;no&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    </td>
-  </tr>
-  <tr>
-    <td align="left" valign="top">
-      &nbsp;last-change&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    </td>
-    <td align="left" valign="top">
-      &nbsp;never&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    </td>
-  </tr>
-  <tr>
-    <td align="left" valign="top">
-      &nbsp;last-index&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    </td>
-    <td align="left" valign="top">
-      &nbsp;never&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    </td>
-  </tr>
-</table>
+
+<div class="org-src-container">
+<pre class="src src-shell">mkdir -p ~/Mail/gmail
+mkdir -p ~/Mail/dei
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc610268" class="outline-3">
+<h3 id="orgc610268">Setting up MU and Indexing</h3>
+<div class="outline-text-3" id="text-orgc610268">
 <p>
-Database is empty. You can use 'mu index' to fill it.
-➜  mu index                                                                                                 
-indexing maildir <i>home/joaomoreira/Mail -&gt; store /home/joaomoreira</i>.cache/mu/xapian
+Now, sync your emails and index them using <b>mu</b>.
 </p>
+
+<div class="org-src-container">
+<pre class="src src-shell">mbsync -a
+mu init --maildir=~/Mail --my-address=your_address@gmail.com --my-address=your_address@student.dei.uc.pt
+mu index                                                                                                 
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org6ca04af" class="outline-3">
+<h3 id="org6ca04af">Configuring mu4e in Emacs</h3>
+<div class="outline-text-3" id="text-org6ca04af">
+<p>
+Paste the following configuration in your Emacs config file:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(use-package mu4e
+  :ensure nil
+  :load-path "/usr/share/emacs/site-lisp/mu4e/"
+  :config
+  (setq mu4e-change-filenames-when-moving t
+        mu4e-update-interval (* 3 60)
+        mu4e-get-mail-command "mbsync -a"
+        mu4e-maildir "~/Mail"
+        message-send-mail-function 'smtpmail-send-it
+        auth-sources '("~/.authinfo.gpg"))
+
+  ;; sort emails by date
+  (setq mu4e-headers-sort-field :date)
+  (setq mu4e-headers-sort-direction 'descending)
+
+  ;; Shortcuts
+  (setq mu4e-maildir-shortcuts
+        '(("/gmail/INBOX"             . ?g)
+          ("/gmail/Sent"              . ?G)
+          ("/gmail/Trash"             . ?x)
+          ("/gmail/Drafts"            . ?d)
+          ("/dei/INBOX"               . ?i)
+          ("/dei/mail/sent-mail"      . ?s)
+          ("/dei/mail/Trash"          . ?t)
+          ("/dei/mail/Drafts"         . ?D)))
+
+  ;; Context for multiple accounts
+  (setq mu4e-contexts
+        `( ,(make-mu4e-context
+             :name "Gmail"
+             :enter-func (lambda () (mu4e-message "Loading Gmail..."))
+             :match-func (lambda (msg)
+                           (when msg
+                             (string-prefix-p "/gmail" (mu4e-message-field msg :maildir))))
+             :vars '((user-mail-address . "your-address@gmail.com")
+                     (user-full-name . "username1")
+                     (mu4e-sent-folder   . "/gmail/Sent")
+                     (mu4e-drafts-folder . "/gmail/Drafts")
+                     (mu4e-trash-folder  . "/gmail/Trash")
+                     (mu4e-refile-folder . "/gmail/Archive")
+                     (smtpmail-smtp-server . "smtp.gmail.com")
+                     (smtpmail-smtp-service . 465)
+                     (smtpmail-stream-type . ssl)))
+
+           ,(make-mu4e-context
+             :name "DEI"
+             :enter-func (lambda () (mu4e-message "Loading DEI..."))
+             :match-func (lambda (msg)
+                           (when msg
+                             (string-prefix-p "/dei" (mu4e-message-field msg :maildir))))
+             :vars '((user-mail-address . "your-address@student.dei.uc.pt")
+                     (user-full-name . "username2")
+                     (mu4e-sent-folder   . "/dei/mail/sent-mail")
+                     (mu4e-drafts-folder . "/dei/mail/Drafts")
+                     (mu4e-trash-folder  . "/dei/mail/Trash")
+                     (mu4e-refile-folder . "/dei/mail/Archive")
+                     (smtpmail-smtp-server . "smtp.dei.uc.pt")
+                     (smtpmail-smtp-service . 465)
+                     (smtpmail-stream-type . ssl)))))
+)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org7546bae" class="outline-3">
+<h3 id="org7546bae">Configuring msmtp</h3>
+<div class="outline-text-3" id="text-org7546bae">
+<p>
+<b>Msmtp</b> is a simple and effective SMTP client we use to send emails
+from Emacs through <b>mu4e</b>.
+</p>
+</div>
+<div id="outline-container-org09eddbf" class="outline-4">
+<h4 id="org09eddbf">Create the configuration file</h4>
+<div class="outline-text-4" id="text-org09eddbf">
+<p>
+Create a file called <code>~/.msmtprc</code> with the following content. Replace
+all placeholder values with your actual information:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-conf"># Set default values
+defaults
+auth           on
+tls            on
+tls_trust_file /etc/ssl/certs/ca-certificates.crt
+logfile        ~/.msmtp.log
+
+# Gmail account
+account gmail
+host smtp.gmail.com
+port 465
+from your-address@gmail.com
+user your-address@gmail.com
+passwordeval gpg --no-tty --for-your-eyes-only -dq ~/.password-store/gmail.gpg
+tls_starttls off
+tls on
+
+# DEI account
+account dei
+host smtp.dei.uc.pt
+port 465
+from your-address@student.dei.uc.pt
+user your-address@student.dei.uc.pt
+passwordeval gpg --no-tty --for-your-eyes-only -dq ~/.password-store/dei.gpg
+tls_starttls off
+tls on
+
+# Set default account
+account default : gmail
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org97d0ee6" class="outline-4">
+<h4 id="org97d0ee6">Secure the file</h4>
+<div class="outline-text-4" id="text-org97d0ee6">
+<p>
+<b>Msmtp</b> expects the configuration file to be <b>only readable by the
+user</b> for security reasons. So, change the permissions:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">chmod 600 ~/.msmtprc
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org0c292b7" class="outline-2">
+<h2 id="org0c292b7">Using Mu4e - Use Case</h2>
+<div class="outline-text-2" id="text-org0c292b7">
+<p>
+Once everything is configured, you are ready to start managing your
+emails directly from Emacs using <b>Mu4e</b>.
+</p>
+</div>
+<div id="outline-container-orgbf2f27c" class="outline-3">
+<h3 id="orgbf2f27c">Launch Mu4e</h3>
+<div class="outline-text-3" id="text-orgbf2f27c">
+<p>
+Open Emacs and launch Mu4e by typing:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">M-x mu4e
+</pre>
+</div>
+
+<p>
+This will open the <b>mu4e</b> main dashboard.
+</p>
+</div>
+</div>
+<div id="outline-container-org8a783d8" class="outline-3">
+<h3 id="org8a783d8">Interface Overview</h3>
+<div class="outline-text-3" id="text-org8a783d8">
+<p>
+<b>Mu4e</b> is divided into sections:
+</p>
+
+<ul class="org-ul">
+<li><b>Jump to maildir</b>: Quickly go to a mailbox (e.g., inbox, sent).</li>
+<li><b>Compose a new message</b>: Start writing a new email.</li>
+<li><b>Update mail &amp; index</b>: Syncs emails using <b>mbsync</b> and re-indexes them with <b>mu</b>.</li>
+<li><b>Search mail</b>: Allows you to perform complex searches.</li>
+<li><b>Bookmarks</b>: Custom queries for quick access.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgbfa010e" class="outline-3">
+<h3 id="orgbfa010e">Basic Shortcuts</h3>
+<div class="outline-text-3" id="text-orgbfa010e">
+<p>
+Here is a table with essential <b>mu4e</b> commands and keybindings:
+</p>
+
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
 <col  class="org-left" />
+
+<col  class="org-left" />
 </colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Action</th>
+<th scope="col" class="org-left">Keybinding</th>
+</tr>
+</thead>
 <tbody>
 <tr>
-<td class="org-left">indexing messages; checked: 16817; updated/new: 16817; cleaned-up: 0</td>
+<td class="org-left">Open Mu4e</td>
+<td class="org-left">M-x mu4e</td>
+</tr>
+
+<tr>
+<td class="org-left">Sync &amp; index mail</td>
+<td class="org-left">U</td>
+</tr>
+
+<tr>
+<td class="org-left">Compose a new email</td>
+<td class="org-left">C</td>
+</tr>
+
+<tr>
+<td class="org-left">Reply to a message</td>
+<td class="org-left">R</td>
+</tr>
+
+<tr>
+<td class="org-left">Forward a message</td>
+<td class="org-left">f</td>
+</tr>
+
+<tr>
+<td class="org-left">Mark for deletion</td>
+<td class="org-left">d</td>
+</tr>
+
+<tr>
+<td class="org-left">Move to another folder</td>
+<td class="org-left">m</td>
+</tr>
+
+<tr>
+<td class="org-left">Search mails</td>
+<td class="org-left">/</td>
+</tr>
+
+<tr>
+<td class="org-left">View attachment</td>
+<td class="org-left">V</td>
+</tr>
+
+<tr>
+<td class="org-left">Toggle context (account)</td>
+<td class="org-left">;</td>
+</tr>
+
+<tr>
+<td class="org-left">Send</td>
+<td class="org-left">C-c C-c</td>
 </tr>
 </tbody>
 </table>
+</div>
+</div>
+<div id="outline-container-orgcb41274" class="outline-3">
+<h3 id="orgcb41274">Writing and Sending Emails</h3>
+<div class="outline-text-3" id="text-orgcb41274">
+<p>
+To compose a new email:
+</p>
 
+<ol class="org-ol">
+<li>Press <code>c</code> inside <b>mu4e</b>.</li>
+<li>Fill in the <code>To:</code>, <code>Subject:</code> and message body.</li>
+<li>Press <code>C-c C-c</code> to send.</li>
+</ol>
 
 <p>
-chmod 600 ~/.msmtprc
+<b>Mu4e</b> will send your message using <b>msmtp</b> based on the current
+context (Gmail or DEI).
 </p>
 </div>
-<div id="postamble" class="status">
-<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.1 (<a href="https://orgmode.org">Org</a> mode 9.7.11)</p>
+</div>
+<div id="outline-container-org3946f04" class="outline-3">
+<h3 id="org3946f04">Switching Contexts</h3>
+<div class="outline-text-3" id="text-org3946f04">
+<p>
+If you configured <b>mu4e-contexts</b>, <b>mu4e</b> automatically chooses the
+context based on the folder or message. But you can also manually
+switch:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">; Switch context manually
+M-x mu4e-context-switch
+</pre>
+</div>
+
+<p>
+You can also press <code>;</code> while inside <b>mu4e</b> to switch between configured contexts.
+</p>
+</div>
+</div>
+<div id="outline-container-org60a9cac" class="outline-3">
+<h3 id="org60a9cac">Searching Emails</h3>
+<div class="outline-text-3" id="text-org60a9cac">
+<p>
+You can search all indexed mail using <code>/</code>:
+</p>
+
+<pre class="example" id="orgb05b643">
+from:someone@example.com subject:meeting date:today
+</pre>
+
+<p>
+You can use advanced queries like:
+</p>
+
+<ul class="org-ul">
+<li><b>flag:unread</b> – Unread emails</li>
+<li><b>maildir:/gmail/INBOX</b> – Mails in Gmail inbox</li>
+<li><b>to:joao</b> – Emails sent to João</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orga708ec2" class="outline-3">
+<h3 id="orga708ec2">Syncing Mail</h3>
+<div class="outline-text-3" id="text-orga708ec2">
+<p>
+To manually sync your mail (run <b>mbsync</b> and reindex):
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">U
+</pre>
+</div>
+
+<p>
+Alternatively, <b>mu4e</b> is configured to sync automatically every 3
+minutes based on:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(setq mu4e-update-interval (* 3 60)) ; every 3 minutes
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orga0c5faf" class="outline-3">
+<h3 id="orga0c5faf">Deleting and Archiving</h3>
+<div class="outline-text-3" id="text-orga0c5faf">
+<ul class="org-ul">
+<li>Press <code>d</code> to mark an email for trash.</li>
+<li>Press <code>r</code> to refile (archive) a message.</li>
+<li>Execute marked actions with <code>x</code>.</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgf8f7a89" class="outline-2">
+<h2 id="orgf8f7a89">Final Thoughts</h2>
+<div class="outline-text-2" id="text-orgf8f7a89">
+<p>
+And that's it! You now have a fully working setup of <b>mu4e</b> with
+multiple email accounts in Emacs. This configuration is both minimal
+and powerful, giving you a streamlined workflow integrated right into
+your Emacs environment.
+</p>
+
+<p>
+If you have any questions or suggestions, feel free to open an issue
+or pull request on the GitHub repository.
+</p>
+</div>
+</div>
+<div id="outline-container-orgadbe219" class="outline-2">
+<h2 id="orgadbe219">Footer</h2>
+<div class="outline-text-2" id="text-orgadbe219">
+<p>
+Copyright © 2025 Joao ES Moreira
+</p>
+
+<p>
+The contents of this website are licensed under the <a href="https://creativecommons.org/licenses/by-nd/4.0/">Creative Commons
+Attribution-NoDerivatives 4.0 International License</a> (CC-BY-ND 4.0).
+</p>
+
+<p>
+The source code of this website is licensed under the MIT license,
+and available in <a href="https://github.com/JoaoESmoreira/joaomoreira.com/">GitHub</a> repositor.  User-submitted contributions to
+the site are welcome, as long as the contributor agrees to license
+their submission with the CC-BY-ND 4.0 license.
+</p>
+</div>
+</div>
 </div>
 </body>
 </html>

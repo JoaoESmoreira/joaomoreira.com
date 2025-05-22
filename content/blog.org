@@ -11,9 +11,10 @@ as a personal log of discoveries and experiments—not intended for
 academic publication, but rather as a place to document my journey and
 share practical insights. Feel free to explore and learn alongside me!
 
-| Posts       | Date             |
-|-------------+------------------|
-| [[file:./hello_world.org][Hello World]] | <2025-05-10 Fri> |
+| Posts       | Date             | Description                              |
+|-------------+------------------+------------------------------------------|
+| [[file:./hello_world.org][Hello World]] | <2025-05-10 Fri> | How to generate a web site with org      |
+| [[file:./mu4e.org][Mu4e]]        | <2025-05-10 Fri> | How to configure a email client on emacs |
 
 
 * Footer
