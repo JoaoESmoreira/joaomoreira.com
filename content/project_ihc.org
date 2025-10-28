@@ -1,0 +1,28 @@
+#+TITLE: JoaoESmoreira
+#+AUTHOR: Joao ES Moreira
+#+SETUPFILE: ~/Documents/OrgFiles/themes/responsive-dark-light.setup
+#+INCLUDE: "./header.org"
+
+
+* Human-Computer Interaction
+
+This project was developed as part of the Human-Computer Interaction course and focuses on designing and implementing an interactive web application that emphasizes usability, accessibility, and user-centered design principles.
+
+The system integrates both frontend and backend components, combining responsive interface design with real-time communication and data visualization. A key feature of the application is the use of an interactive map, allowing users to explore and interact with geospatial information intuitively.
+
+The full repository and documentation can be found here: [[https://github.com/JoaoESmoreira/IHC-project/][IHC-Project
+Repository]].
+
+** Technologies Used
+- *Java* — Core language for backend and distributed logic.  
+- *Spring Boot* — Framework for building the MVC web layer and REST APIs.  
+- *Hacker News API* — Example of external REST integration.  
+- *Java RMI* — Data access layer for distributed communication.  
+- *WebSockets* — Enables real-time asynchronous updates between server and clients.
+
+** APP
+[[file:assets/app_ihc.png]]
+
+
+* Footer
+#+INCLUDE: "./footer.org"

@@ -1,11 +1,55 @@
-
 #+TITLE: JoaoESmoreira
 #+AUTHOR: Joao ES Moreira
 #+SETUPFILE: ~/Documents/OrgFiles/themes/responsive-dark-light.setup
 #+INCLUDE: "./header.org"
 
-* Other projects
-About this content.
+
+* Projects
+In this section, you will find a collection of projects of the
+different areas I’ve explored throughout my academic and personal
+journey. My work encompasses *software engineering*, *data analysis*,
+*artificial intelligence*, *web development*, and *system design*. 
+
+Some of these projects were developed within academic courses, while
+others were created proactively to deepen my understanding of the
+technologies I’m most passionate about. From *low-level systems* to
+*full-stack* applications, this space serves as a living portfolio of
+my learning path. Feel free to explore and learn alongside me!
+
+
+** Software Engineering Projects
+
+| Posts                              | Description                                                              |
+|------------------------------------+--------------------------------------------------------------------------|
+| [[file:./project_gp.org][Project Management Course]]          | I worked as a Project Manager in the development of a mobile application |
+| [[file:./project_sd.org][Googol Engine - Distributed System]] | Distributed web page search engine                                       |
+| [[file:./project_ihc.org][Human-Computer Interaction]]         | Development of a mobile game                                             |
+| [[file:./project_bd.org][Data Base Project]]                  | Development of a database system in psql                                 |
+
+
+** Data Science & Machine Learning & Artificial Intelligence
+
+| Posts                                      | Description                                                  |
+|--------------------------------------------+--------------------------------------------------------------|
+| [[file:./project_snake_game.org][Snake Game]]                                 | Snake game with reinforcement learning                       |
+| [[file:./project_astp.org][Time Series Analysis]]                       | Weather Time Series Analysis and Forecasting                 |
+| [[file:./project_complex_systems.org][Complex Systems Modelling]]                  | Predator-Prey Modelling                                      |
+| [[file:./project_rp.org][Pattern Recognition]]                        | Default of Credit Card Clients Prediction                    |
+| [[file:./project_ce.org][Frozen Lake Problem]]                        | Solving the Frozen Lake Problem with evolutionary techniques |
+| [[file:./project_fia.org][Rolling in the Hill — Evolutionary Edition]] | Generate optimized vehicles to traverse challenging terrains |
+
+
+** Algorithms and Low level programming
+
+| Posts                           | Description                                             |
+|---------------------------------+---------------------------------------------------------|
+| [[file:./project_cg.org][Computer Graphics]]               | Computer graphic project in =C++= and =OpenGL=          |
+| [[file:./project_comp.org][JUC Compiler]]                    | Compiler of JavaUC Language                             |
+| [[file:./project_rc.org][Communication Networks Project]]  | Building a socket transaction system in =C++=           |
+| [[file:./project_so.org][Computational Offloading System]] | Parallel computational offloading simulator in =C=      |
+| [[file:./project_bt_iterator.org][Binary Tree Iterator]]            | Implementation of a iterator for a binary tree in =C++= |
+
+
 
 * Footer
 #+INCLUDE: "./footer.org"

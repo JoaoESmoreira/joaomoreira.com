@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>JoaoESmoreira</title>
+<meta name="description" content="Header" />
+<meta name="generator" content="Org Mode" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.min.css">
+<style>body { max-width: 800px; margin: auto; }</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/github-dark.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+<style>
+pre code {
+display: block;
+background-color: #e6e6e6;
+color: #000000;
+padding: 1em;
+border-radius: 6px;
+overflow-x: auto;
+font-size: 0.95em;
+}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.min.css">
+<style>body { max-width: 800px; margin: auto; }</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/github-dark.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+<style>
+pre code {
+display: block;
+background-color: #e6e6e6;
+color: #000000;
+padding: 1em;
+border-radius: 6px;
+overflow-x: auto;
+font-size: 0.95em;
+}
+</style>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">JoaoESmoreira</h1>
+<div class="org-header">
+
+    <!--
+  <div class="topbar-menu-container">
+    <span class="topbar-menu"><a class="current" href="http://localhost:8080/">Home</a></span>
+    <span class="topbar-menu"><a href="http://localhost:8080/projects.html">Projects</a></span>
+    <span class="topbar-menu"><a href="http://localhost:8080/blog.html">Blog</a></span>
+    <span class="topbar-menu"><a href="http://localhost:8080/emacsphere.html">Emacsphere</a></span>
+  </div>
+    -->
+
+  <div class="topbar-menu-container">
+    <span class="topbar-menu"><a href="index.html">Home</a></span>
+    <span class="topbar-menu"><a href="projects.html">Projects</a></span>
+    <span class="topbar-menu"><a href="blog.html">Blog</a></span>
+    <span class="topbar-menu"><a href="emacsphere.html">Emacsphere</a></span>
+  </div>
+
+</div>
+<div id="outline-container-orgffa2bc0" class="outline-2">
+<h2 id="orgffa2bc0">Snake-Game</h2>
+<div class="outline-text-2" id="text-orgffa2bc0">
+<p>
+This project implements the classic Snake Game in Python, featuring
+two main modes: manual play and <b>Reinforcement Learning</b> (RL)
+training/evaluation.  The game engine defines the grid, snake, apple,
+and rules.  The environment exposes observations and rewards, and the
+agent handles decision-making and the training/evaluation loop.
+</p>
+
+<p>
+The full repository and documentation can be found here: <a href="https://github.com/JoaoESmoreira/Snake-Game/">Snake-Game Project
+Repository</a>.
+</p>
+</div>
+<div id="outline-container-orgfe4894b" class="outline-3">
+<h3 id="orgfe4894b">Technologies Used</h3>
+<div class="outline-text-3" id="text-orgfe4894b">
+<p>
+To run the project correctly, the following technologies are required:
+</p>
+<ul class="org-ul">
+<li>python 3.10+</li>
+<li>pygame</li>
+<li>torch</li>
+<li>numpy</li>
+<li>matplotlib</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org3fc56d8" class="outline-3">
+<h3 id="org3fc56d8">Gameplay Preview</h3>
+<div class="outline-text-3" id="text-org3fc56d8">
+<p>
+Below is a short preview of the game in action:
+</p>
+
+
+<div id="orgdfe137c" class="figure">
+<p><img src="assets/snake.png" alt="snake.png" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org5e38cf3" class="outline-3">
+<h3 id="org5e38cf3">Installation</h3>
+<div class="outline-text-3" id="text-org5e38cf3">
+<p>
+From the project root, install the dependencies listed in
+<code>requirements.txt</code>:
+</p>
+
+<pre><code class="language-lisp">python -m venv .venv source .venv/bin/activate # On Windows:
+.venv\Scripts\activate pip install --upgrade pip pip install -r
+requirements.txt 
+</code></pre>
+</div>
+</div>
+<div id="outline-container-orgb84ccac" class="outline-3">
+<h3 id="orgb84ccac">How to Run</h3>
+<div class="outline-text-3" id="text-orgb84ccac">
+</div>
+<div id="outline-container-orgec2aee2" class="outline-4">
+<h4 id="orgec2aee2">Manual Game Mode</h4>
+<div class="outline-text-4" id="text-orgec2aee2">
+<p>
+To play manually, run the game module located in the <code>src/</code> folder:
+</p>
+
+<pre><code class="language-lisp">python src/snack.py
+</code></pre>
+</div>
+</div>
+<div id="outline-container-org31b7288" class="outline-4">
+<h4 id="org31b7288">Reinforcement Learning Mode</h4>
+<div class="outline-text-4" id="text-org31b7288">
+<p>
+To train or evaluate the RL agent, run the training module:
+</p>
+
+<pre><code class="language-lisp">python src/agent.py
+</code></pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org4a1e913" class="outline-3">
+<h3 id="org4a1e913">Game Logic</h3>
+<div class="outline-text-3" id="text-org4a1e913">
+<p>
+The game runs on a grid. Each “tick”, the snake moves one cell in its
+current direction.  Eating an apple increases the snake’s length and
+spawns a new apple in a free position.  The game ends if the snake
+hits its body or the borders.
+</p>
+
+<p>
+In RL mode, the environment provides observations and rewards, guiding
+the agent to maximize its score.
+</p>
+</div>
+</div>
+<div id="outline-container-orgc9e92c4" class="outline-3">
+<h3 id="orgc9e92c4">Contributing</h3>
+<div class="outline-text-3" id="text-orgc9e92c4">
+<p>
+Contributions are what make the open source community such an amazing
+place to be learn, inspire, and create. Any contributions you make are
+greatly appreciated.
+</p>
+
+<ul class="org-ul">
+<li>Fork the Project</li>
+
+<li>Create your Feature Branch (git checkout -b feature/AmazingFeature)</li>
+
+<li>Commit your Changes (git commit -m 'Add some AmazingFeature') Push
+to the Branch (git push origin feature/AmazingFeature)</li>
+
+<li>Open a Pull Request</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgece6404" class="outline-3">
+<h3 id="orgece6404">License</h3>
+<div class="outline-text-3" id="text-orgece6404">
+<p>
+This project is distributed under the MIT License.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgefd89e7" class="outline-2">
+<h2 id="orgefd89e7">Footer</h2>
+<div class="outline-text-2" id="text-orgefd89e7">
+<p>
+Copyright © 2025 Joao ES Moreira
+</p>
+
+<p>
+The contents of this website are licensed under the <a href="https://creativecommons.org/licenses/by-nd/4.0/">Creative Commons
+Attribution-NoDerivatives 4.0 International License</a> (CC-BY-ND 4.0).
+</p>
+
+<p>
+The source code of this website is licensed under the MIT license,
+and available in <a href="https://github.com/JoaoESmoreira/joaomoreira.com/">GitHub</a> repositor.  User-submitted contributions to
+the site are welcome, as long as the contributor agrees to license
+their submission with the CC-BY-ND 4.0 license.
+</p>
+</div>
+</div>
+</div>
+</body>
+</html>

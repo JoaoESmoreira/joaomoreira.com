@@ -1,0 +1,342 @@
+#+TITLE: JoaoESmoreira
+#+AUTHOR: Joao ES Moreira
+#+SETUPFILE: ~/Documents/OrgFiles/themes/responsive-dark-light.setup
+#+INCLUDE: "./header.org"
+
+
+
+* Data Base Project
+
+The main objective of this project is to apply industry-standard
+practices in the design, implementation, and deployment of
+database-driven applications.  
+
+The project covers all key phases of the software development
+lifecycle, from initial planning and modeling to testing and delivery,
+with a strong emphasis on data management and system reliability.
+
+The full repository and documentation can be found here: [[https://github.com/JoaoESmoreira/BD-Project/][DB Project
+Repository]].
+
+** Objectives
+The project aims to:
+
+- Demonstrate how a database application can be organized, planned, and executed.  
+- Develop both conceptual and physical data models to support and persist application data.  
+- Design, implement, test, and deploy a complete database system.  
+- Install, configure, manage, and tune a modern relational DBMS such as *PostgreSQL*.  
+- Apply client, and server, side programming using *SQL* and *PL/pgSQL*.  
+
+** Dependencies
+To run the project correctly, some technologies are required.  
+Follow this simple documentation to help you set up everything properly.
+
+*** Technologies Used
+**** Programming Languages
+- Python
+- SQL and PL/pgSQL
+**** Database Management System
+- PostgreSQL
+**** Python Libraries
+- Flask
+- Psycopg2
+- werkzeug.security
+- flask_jwt_extended
+**** Other Technologies
+- Onda
+- Postman
+
+*** Tips for Dependencies
+Before you do something, check these shell commands and verify what you need to install.
+
+#+begin_src emacs-lisp
+# check if already installed:
+flask --version
+
+sudo pip3 install flask
+
+# check if it's correctly installed:
+python3
+>>> import flask
+>>>                  # it's all right
+>>> from werkzeug.security import generate_password_hash, check_password_hash
+>>>                  # it's all right
+#+end_src
+
+*** Tools Installation
+If you don't have some of the listed dependencies installed, here is how to do it.
+
+**** Python and Libraries
+#+begin_src emacs-lisp
+sudo apt install python3 python3-pip      # Install python and pip
+
+sudo pip install flask
+sudo pip install werkzeug
+sudo apt install libpq-dev                # In case you don't have this library
+sudo pip install psycopg2
+pip install flask-jwt-extended
+#+end_src
+
+**** PostgreSQL
+#+begin_src emacs-lisp
+# Create the file repository configuration:
+sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
+
+# Import the repository signing key:
+wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+
+# Update the package lists:
+sudo apt-get update
+
+# Install the latest version of PostgreSQL:
+sudo apt-get -y install postgresql
+#+end_src
+
+**** Postman
+#+begin_src emacs-lisp
+sudo apt install postman
+#+end_src
+
+*Note:*  
+If you want to know more, visit:  
+- [[https://www.python.org/downloads/][Python]]  
+- [[https://pip.pypa.io/en/stable/installing/][Pip]]  
+- [[https://www.postgresql.org/download/][PostgreSQL]]  
+- [[https://postman.com/][Postman]]
+
+** DataBase Setup
+To set up the database, access PostgreSQL DBMS using `psql` or `pgadmin4`.  
+We used the *psql client* with the following command:
+
+#+begin_src emacs-lisp
+# Use the default credentials:
+# Username: postgres
+# Password: postgres
+
+psql -h localhost -p 5432 -U postgres
+#+end_src
+
+After access, create the database and connect to it:
+
+#+begin_src emacs-lisp
+CREATE DATABASE dbshop;
+
+# List databases:
+\l
+
+# Connect to the created database:
+\c dbshop
+#+end_src
+
+Then, execute the following commands to build your schema:
+
+#+begin_src emacs-lisp
+\i schema.sql       # create tables
+\i insert.sql       # insert data
+\i trigger.sql      # create triggers
+\i drop_tables.sql  # drop all tables (optional)
+#+end_src
+
+*Note:*  
+If you use pgAdmin4, see:  
+- [[https://www.pgadmin.org/docs/pgadmin4/development/database_dialog.html][Create database]]  
+- [[https://linuxhint.com/run-sql-file-postgresql/][Run SQL file]]
+
+** User Manual
+Before starting → run the script `test.py` to encrypt the first users’ passwords.  
+To run the project → `python3 main.py`
+
+*** Users Login
+*Description:* User authentication with username and password.  
+A *superadmin* was created to register other admins and sellers.
+
+#+begin_src emacs-lisp
+URL: /api/login
+Method: PUT
+
+# Input
+{
+   "username": "SuperAdmin",
+   "password": "SuperAdmin"
+}
+
+# Output
+{
+   "status": 200,
+   "token": "TOKEN"
+}
+#+end_src
+
+*** Users Registration
+*Description:* Only admins can register other admins and sellers.  
+Anyone can register as a buyer.
+
+#+begin_src emacs-lisp
+URL: /api/register
+Method: POST
+#+end_src
+
+**** Register admin/seller
+#+begin_src emacs-lisp
+{
+   "username": "Put a name",
+   "nif": 0,
+   "email": "Put an email",
+   "adress": "Put an address",
+   "password": "Put a pass",
+   "token": "Token received in login",
+   "user_type": "administrator/seller"
+}
+#+end_src
+
+**** Register buyer
+#+begin_src emacs-lisp
+{
+   "username": "Put a name",
+   "nif": 0,
+   "email": "Put an email",
+   "adress": "Put an address",
+   "password": "Put a pass"
+}
+#+end_src
+
+*** Product Creation
+*Description:* Only sellers can create products.
+
+#+begin_src emacs-lisp
+URL: /api/product/add
+Method: POST
+
+{
+   "type": "Put a type",
+   "description": "Put a description",
+   "height": 0,
+   "weight": 0,
+   "colour": "Put a color",
+   "stock": 0,
+   "price": 0,
+   "token": "Token received in login"
+}
+#+end_src
+
+*** Update Product Details
+*Description:* Only sellers can update products.
+
+#+begin_src emacs-lisp
+URL: /api/product/{prod_id}
+Method: PUT
+
+{
+   "description": "new description",
+   "height": "new height",
+   "weight": "new weight",
+   "colour": "new colour",
+   "price": "new price",
+   "token": "Token received in login"
+}
+#+end_src
+
+*** Obtain Product Details
+*Description:* All users can see product details.
+
+#+begin_src emacs-lisp
+URL: /api/product/{product_id}
+Method: GET
+#+end_src
+
+*** Make an Order
+*Description:* Only buyers can make orders.
+
+#+begin_src emacs-lisp
+URL: /api/order
+Method: PUT
+
+{
+   "cart": [[Prod1, Quantity1], [Prod2, Quantity2], ...],
+   "token": "Token received in login"
+}
+#+end_src
+
+*** Rate and Comment a Product
+*Description:* Buyers can rate and comment on purchased products.
+
+#+begin_src emacs-lisp
+URL: /api/rating/{product_id}
+Method: POST
+
+{
+    "rating": 0,
+    "comment": "Put a comment",
+    "token": "Token received in login"
+}
+#+end_src
+
+*** Questions and Comments (Forum)
+*Description:* All users can ask or comment about products.
+
+**** Leave a Question
+#+begin_src emacs-lisp
+URL: /api/questions/{prod_id}
+Method: POST
+
+{
+   "question": "Put a question",
+   "token": "Token received in login"
+}
+#+end_src
+
+**** Answer a Question
+#+begin_src emacs-lisp
+URL: /api/questions/{prod_id}/{comment_id}
+Method: POST
+
+{
+   "question": "Put a question",
+   "token": "Token received in login"
+}
+#+end_src
+
+*** Sales Statistics
+*Description:* Obtain sales statistics for the last 12 months.
+
+#+begin_src emacs-lisp
+URL: /api/statistics
+Method: GET
+
+# Output Example
+{
+    "results": [
+        {
+            "month": "07-2021",
+            "orders": 1,
+            "total_value": "1622"
+        },
+        {
+            "month": "09-2021",
+            "orders": 2,
+            "total_value": "2144"
+        },
+        {
+            "month": "03-2022",
+            "orders": 1,
+            "total_value": "2784"
+        },
+        {
+            "month": "01-2022",
+            "orders": 1,
+            "total_value": "4800"
+        },
+        {
+            "month": "05-2022",
+            "orders": 5,
+            "total_value": "14717"
+        }
+    ],
+    "status": 200
+}
+#+end_src
+
+
+
+* Footer
+#+INCLUDE: "./footer.org"

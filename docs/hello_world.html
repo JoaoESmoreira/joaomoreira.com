@@ -48,26 +48,26 @@ font-size: 0.95em;
 <h1 class="title">JoaoESmoreira</h1>
 <div class="org-header">
 
+    <!--
   <div class="topbar-menu-container">
     <span class="topbar-menu"><a class="current" href="http://localhost:8080/">Home</a></span>
     <span class="topbar-menu"><a href="http://localhost:8080/projects.html">Projects</a></span>
-    <span class="topbar-menu"><a href="http://localhost:8080/emacsphere.html">Emacsphere</a></span>
     <span class="topbar-menu"><a href="http://localhost:8080/blog.html">Blog</a></span>
-  </div>
-
-    <!--
-  <div class="topbar-menu-container">
-    <span class="topbar-menu"><a href="index.html">Home</a></span>
-    <span class="topbar-menu"><a href="projects.html">Projects</a></span>
-    <span class="topbar-menu"><a href="emacsphere.html">Emacsphere</a></span>
-    <span class="topbar-menu"><a href="blog.html">Blog</a></span>
+    <span class="topbar-menu"><a href="http://localhost:8080/emacsphere.html">Emacsphere</a></span>
   </div>
     -->
 
+  <div class="topbar-menu-container">
+    <span class="topbar-menu"><a href="index.html">Home</a></span>
+    <span class="topbar-menu"><a href="projects.html">Projects</a></span>
+    <span class="topbar-menu"><a href="blog.html">Blog</a></span>
+    <span class="topbar-menu"><a href="emacsphere.html">Emacsphere</a></span>
+  </div>
+
 </div>
-<div id="outline-container-org1a5f117" class="outline-2">
-<h2 id="org1a5f117">Hello World</h2>
-<div class="outline-text-2" id="text-org1a5f117">
+<div id="outline-container-org76d72ee" class="outline-2">
+<h2 id="org76d72ee">Hello World</h2>
+<div class="outline-text-2" id="text-org76d72ee">
 <p>
 Hello there!
 </p>
@@ -78,9 +78,9 @@ In this blog I intend to show you how I generated this website using
 my GitHub repository <a href="https://github.com/JoaoESmoreira/joaomoreira.com/">https://github.com/JoaoESmoreira/joaomoreira.com/</a>
 </p>
 </div>
-<div id="outline-container-org4c5a1a9" class="outline-3">
-<h3 id="org4c5a1a9">Project Setup</h3>
-<div class="outline-text-3" id="text-org4c5a1a9">
+<div id="outline-container-orga8034fd" class="outline-3">
+<h3 id="orga8034fd">Project Setup</h3>
+<div class="outline-text-3" id="text-orga8034fd">
 <p>
 First things first, create the following structure in your project
 folder: <code>&lt;M-x&gt; mkdir &lt;RET&gt; content</code> contains all the Org files you want to
@@ -95,9 +95,9 @@ after publishing.
 </p>
 </div>
 </div>
-<div id="outline-container-orga1cf902" class="outline-3">
-<h3 id="orga1cf902">Configuring Emacs for Export</h3>
-<div class="outline-text-3" id="text-orga1cf902">
+<div id="outline-container-org5c9e0de" class="outline-3">
+<h3 id="org5c9e0de">Configuring Emacs for Export</h3>
+<div class="outline-text-3" id="text-org5c9e0de">
 <p>
 Create a file named <b>build-site.el</b> in the root of your project and
 add the following Emacs Lisp code:
@@ -140,9 +140,9 @@ for better readability.
 </p>
 </div>
 </div>
-<div id="outline-container-org675cba9" class="outline-3">
-<h3 id="org675cba9">Automating publish process with Shell Script</h3>
-<div class="outline-text-3" id="text-org675cba9">
+<div id="outline-container-org182f59e" class="outline-3">
+<h3 id="org182f59e">Automating publish process with Shell Script</h3>
+<div class="outline-text-3" id="text-org182f59e">
 <p>
 To simplify the build process, create a shell script named build.sh:
 </p>
@@ -157,9 +157,9 @@ Do not forget to give execution permission to this file: <code>&lt;M-x&gt; chmod
 </p>
 </div>
 </div>
-<div id="outline-container-orga4fdbd7" class="outline-3">
-<h3 id="orga4fdbd7">Preview the generated website</h3>
-<div class="outline-text-3" id="text-orga4fdbd7">
+<div id="outline-container-org5036a6d" class="outline-3">
+<h3 id="org5036a6d">Preview the generated website</h3>
+<div class="outline-text-3" id="text-org5036a6d">
 <p>
 In order to preview the result of your web site, let's install the
 <a href="https://github.com/skeeto/emacs-web-server">simple-httpd</a> Emacs package. This package is a lightweight, pure-Elisp
@@ -188,9 +188,9 @@ highlighting.
 </code></pre>
 </div>
 </div>
-<div id="outline-container-orgcbd9e10" class="outline-3">
-<h3 id="orgcbd9e10">Write your first page</h3>
-<div class="outline-text-3" id="text-orgcbd9e10">
+<div id="outline-container-orgc4e0525" class="outline-3">
+<h3 id="orgc4e0525">Write your first page</h3>
+<div class="outline-text-3" id="text-orgc4e0525">
 <p>
 Create a file named <b>index.org</b> inside content/ with the following
 content:
@@ -214,9 +214,9 @@ httpd-serve-directory &lt;RET&gt; path/to/docs</code> and open the link
 </div>
 </div>
 </div>
-<div id="outline-container-org36efeba" class="outline-2">
-<h2 id="org36efeba">Understanding Keyboard Shortcuts in Emacs</h2>
-<div class="outline-text-2" id="text-org36efeba">
+<div id="outline-container-org57560b4" class="outline-2">
+<h2 id="org57560b4">Understanding Keyboard Shortcuts in Emacs</h2>
+<div class="outline-text-2" id="text-org57560b4">
 <p>
 Emacs uses specific key notations that sometimes differ depending on
 the operating system. Here is a breakdown of the two main ones used
@@ -235,9 +235,9 @@ commands.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org4f934c8" class="outline-2">
-<h2 id="org4f934c8">Conclusion</h2>
-<div class="outline-text-2" id="text-org4f934c8">
+<div id="outline-container-orge8a7d27" class="outline-2">
+<h2 id="orge8a7d27">Conclusion</h2>
+<div class="outline-text-2" id="text-orge8a7d27">
 <p>
 You now have a fully working static website built with Org Mode and
 Emacs. Expand it by adding more org files in <b>content/</b> and rerunning
@@ -245,9 +245,9 @@ Emacs. Expand it by adding more org files in <b>content/</b> and rerunning
 </p>
 </div>
 </div>
-<div id="outline-container-org7ca5b4a" class="outline-2">
-<h2 id="org7ca5b4a">Footer</h2>
-<div class="outline-text-2" id="text-org7ca5b4a">
+<div id="outline-container-org88d2c6f" class="outline-2">
+<h2 id="org88d2c6f">Footer</h2>
+<div class="outline-text-2" id="text-org88d2c6f">
 <p>
 Copyright © 2025 Joao ES Moreira
 </p>

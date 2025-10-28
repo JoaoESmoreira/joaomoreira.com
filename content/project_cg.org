@@ -1,0 +1,72 @@
+#+TITLE: JoaoESmoreira
+#+AUTHOR: Joao ES Moreira
+#+SETUPFILE: ~/Documents/OrgFiles/themes/responsive-dark-light.setup
+#+INCLUDE: "./header.org"
+
+
+* Computer Graphics project
+CG-Proj is a computer graphics project developed for the Computer
+Graphics course within the the Informatics Engineering curriculum at
+the University of Coimbra. The project demonstrates real-time
+rendering, lighting, camera control, and interactive manipulation of
+scene parameters.
+
+The full repository and documentation can be found here:  
+[[https://github.com/JoaoESmoreira/CG-Project/][Computer-Graphics-Project Repository]].
+
+* Technologies Used  
+- C and C++ (project is implemented mainly in C++).  
+- OpenGL
+- Make utility for build automation.
+
+
+* Features  
+- Real-time rendering of 3D geometry with different materials.  
+- Switchable lighting sources: spot light and bulb (point) light.  
+- Interactive control of camera orientation and position.  
+- Adjustable RGB intensities for lights.  
+- Mesh point toggling (show/hide mesh vertices).  
+- Multiple predefined camera positions (front, back, left, right).  
+
+* Controls  
+| Key       | Function                                    |
+|-----------+---------------------------------------------|
+| *ESC*     | Exit the application                        |
+| *W* / *w* | Move camera upward                          |
+| *S* / *s* | Move camera downward                        |
+| *A* / *a* | Rotate camera left                          |
+| *D* / *d* | Rotate camera right                         |
+| *1*       | Position camera on right side               |
+| *2*       | Position camera on front side               |
+| *3*       | Position camera on left side                |
+| *4*       | Position camera on back side                |
+| *M* / *m* | Change material of the objects              |
+| *Y* / *y* | Toggle mesh points visibility               |
+| *P* / *p* | Toggle spot light                           |
+| *O* / *o* | Toggle bulb (point) light                   |
+| *H* / *h* | Move spot light to left side                |
+| *J* / *j* | Move spot light to front side               |
+| *K* / *k* | Move spot light to back side                |
+| *L* / *l* | Move spot light to right side               |
+| *R* / *r* | Increase / change red intensity of lights   |
+| *G* / *g* | Increase / change green intensity of lights |
+| *B* / *b* | Increase / change blue intensity of lights  |
+| *I* / *i* | Adjust blue intensity of light(s)           |
+
+** Build & Run  
+In the =src= directory there is a Makefile that you can use to manage
+compilation and execution. The typical commands are:
+
+#+begin_src emacs-lisp
+# run the code with:
+make
+
+# compile the code with:
+make compile
+
+# clean bin and object files with:
+make clean
+#+end_src
+
+* Footer
+#+INCLUDE: "./footer.org"

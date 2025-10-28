@@ -1,0 +1,79 @@
+#+TITLE: JoaoESmoreira
+#+AUTHOR: Joao ES Moreira
+#+SETUPFILE: ~/Documents/OrgFiles/themes/responsive-dark-light.setup
+#+INCLUDE: "./header.org"
+
+
+
+* Time Series Analysis and Forecasting
+
+This project focuses on the *time series analysis* of mean temperature
+data for a selected location. The goal is to model and forecast
+temperature trends using different time series analysis techniques,
+including exponential smoothing and other machine-learning methods, to
+assess their predictive accuracy.
+
+In addition to forecasting mean temperature, we extend the analysis by
+incorporating multivariate models that consider other weather
+variables. This approach allows for a more comprehensive understanding
+of the relationships between different weather factors, ultimately
+leading to more reliable forecasts.
+
+The full repository and documentation can be found here: [[https://github.com/JoaoESmoreira/astp-project/][Time Series Analysis Project Repository]].
+
+** Technologies Used
+To run the project correctly, the following technologies are required:
+- python 3.10+
+- scikit‑learn
+- pandas
+- numpy
+- matplotlib
+- seaborn
+
+** Data
+
+The dataset used for this project was obtained from the Open-Meteo
+Historical Weather API, which provides daily weather observations for
+various locations worldwide. For this analysis, we selected data from
+Tokyo for the period spanning from January 1st, 1940, to the present.
+The primary variable of interest is the mean daily temperature,
+supplemented with additional weather variables for multivariate
+analysis.  
+
+The dataset contains daily observations structured with a
+date column and corresponding values for each weather variable.
+
+
+** Repository Structure
+
+The repository is organized into several main directories to maintain
+clarity and separation of concerns throughout the project:
+
+- *src/* – Contains all the project’s source code, including scripts and
+  Jupyter notebooks. This is where the main logic and implementation
+  of the project are developed.
+
+- *data/* – Stores all datasets and input files used in the
+  experiments. 
+
+- *docs/* – Holds documentation/report files
+
+- *delevery/* – Includes final deliverables such as reports,
+  slides, and results ready for submission or presentation.
+
+- *requirements.txt* – Lists all dependencies required to run the
+  project in a reproducible environment.
+
+
+This structure ensures that the project remains modular, easy to
+navigate, and reproducible across different environments.
+
+
+** License
+
+This project is distributed under the [MIT](LICENSE) License.
+
+
+
+* Footer
+#+INCLUDE: "./footer.org"

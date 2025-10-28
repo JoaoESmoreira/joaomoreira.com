@@ -65,98 +65,85 @@ font-size: 0.95em;
   </div>
 
 </div>
-<div id="outline-container-org8cade95" class="outline-2">
-<h2 id="org8cade95">Emacsphere</h2>
-<div class="outline-text-2" id="text-org8cade95">
+<div id="outline-container-org4692909" class="outline-2">
+<h2 id="org4692909">Rolling in the Hill — Evolutionary Edition</h2>
+<div class="outline-text-2" id="text-org4692909">
 <p>
-For a while now, I’ve been using Emacs only as my IDE for both
-academic and personal projects. This project, Emacsphere, is an
-effort to transform Emacs into a powerful and efficient environment —
-one that maximizes productivity and simplifies the workflow.
+The goal of this project was to design an <b>evolutionary algorithm</b>
+capable of generating an optimized motorized vehicle that could
+traverse challenging terrains. Using <b>Unity</b> as a simulation
+environment, the project explores the performance of different genetic
+strategies such as <b>mutation</b>, <b>crossover</b>, <b>selection</b>, and
+<b>elitism</b>.
 </p>
 
 <p>
-The goal is to configure Emacs in a way that takes full advantage of
-its extensive capabilities. I aim to turn Emacs into a versatile
-platform where it’s possible to manage desktop files, handle with
-git-based projects, organize tasks and notes with org-mode, and stay
-up to date by reading news and feeds directly within Emacs.
-</p>
-
-<p>
-Emacsphere should be more than just a text editor — it's an evolving
-ecosystem tailored for focus, control, and creativity.
-</p>
-
-<p>
-You can find the source code of this project at <a href="https://github.com/JoaoESmoreira/emacsphere">Emacsphere</a>.
+The full repository and documentation can be found here: <a href="https://github.com/JoaoESmoreira/FIA-project/">FIA-Project
+Repository</a>.
 </p>
 </div>
-<div id="outline-container-org07152d1" class="outline-3">
-<h3 id="org07152d1">Installation</h3>
-<div class="outline-text-3" id="text-org07152d1">
+<div id="outline-container-orge3ef608" class="outline-3">
+<h3 id="orge3ef608">Technologies Used</h3>
+<div class="outline-text-3" id="text-orge3ef608">
+<p>
+The project was entirely implemented in <code>C#</code> and developed using the
+<code>Unity</code> game engine.
+</p>
+
+<p>
+Unity was used to simulate physical environments and vehicle dynamics,
+while <code>C#</code> provided the tools to implement the genetic algorithm logic,
+control evolution, and collect performance data across multiple
+scenarios.
+</p>
 </div>
-<div id="outline-container-orga974472" class="outline-4">
-<h4 id="orga974472">Requirements</h4>
-<div class="outline-text-4" id="text-orga974472">
+</div>
+<div id="outline-container-org91ac415" class="outline-3">
+<h3 id="org91ac415">Repository Structure</h3>
+<div class="outline-text-3" id="text-org91ac415">
 <ul class="org-ul">
-<li>Emacs 29 or higher</li>
+<li><b>docs/</b>: Contains the final report and presentation materials.</li>
+<li><b>src/</b>: Source code implementing the genetic algorithm and Unity simulation scripts.</li>
+<li><b>data/</b>: Stores experimental results and configuration files for different terrains (GapRoad, HillRoad, ObstacleRoad).</li>
+<li><b>results/</b>: Statistical plots (average fitness, best fitness, standard deviation) and vehicle evolution screenshots.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org9062aa4" class="outline-4">
-<h4 id="org9062aa4">Steps</h4>
-<div class="outline-text-4" id="text-org9062aa4">
-<ol class="org-ol">
-<li><b>Install Emacs:</b>
-
+<div id="outline-container-orgfcb1f70" class="outline-3">
+<h3 id="orgfcb1f70">Objectives</h3>
+<div class="outline-text-3" id="text-orgfcb1f70">
+<p>
+The main objectives of the project were:
+</p>
 <ul class="org-ul">
-<li>On Ubuntu/Debian: <code>sudo apt install emacs</code></li>
-<li>On macOS: <code>brew install emacs</code></li>
-<li>On Windows: Download the Emacs version for Windows from <a href="https://www.gnu.org/software/emacs/download.html#nonfree">emacsforwindows</a>.</li>
-</ul></li>
-
-<li><p>
-<b>Clone the Configuration Repository:</b>
+<li>Implement and analyze a Genetic Algorithm for vehicle design.</li>
+<li>Explore various terrains with increasing difficulty.</li>
+<li>Evaluate performance based on vehicle distance, speed, and stability.</li>
+<li>Tune genetic parameters (mutation, crossover, elitism) to achieve optimal convergence.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgc99b2cd" class="outline-3">
+<h3 id="orgc99b2cd">Genetic Algorithm Design</h3>
+<div class="outline-text-3" id="text-orgc99b2cd">
+<p>
+The evolutionary process is modeled using several genetic operators:
 </p>
 
-<p>
-Clone this repository to the Emacs configuration directory:
-</p></li>
-</ol>
-
-<pre><code class="language-lisp">git clone https://github.com/JoaoESmoreira/emacsphere.git ~/.emacs.d
-</code></pre>
-
-<ol class="org-ol">
-<li><b>Install Dependencies:</b>
-
 <ul class="org-ul">
-<li>Open Emacs and it will start to install the dependencies.</li>
-</ul></li>
-
-<li><b>Configure Plugins and Extensions:</b>
-
-<ul class="org-ul">
-<li>Customize the packages as needed to suit your workflow.</li>
-</ul></li>
-
-<li><p>
-<b>Restart Emacs:</b>
-</p>
-
-<p>
-After installing all the packages, restart Emacs to ensure all
-configurations and extensions are active.
-</p></li>
-</ol>
+<li><b>Recombination</b>: Uniform crossover to generate offspring by mixing parental genes.</li>
+<li><b>Mutation</b>: Gaussian mutation for introducing diversity in each generation.</li>
+<li><b>Parent Selection</b>: Roulette wheel selection based on fitness proportion.</li>
+<li><b>Elitism</b>: Preservation of the best individuals between generations.</li>
+<li><b>Fitness Function</b>: Evaluates each vehicle according to maximum distance, velocity, and structural characteristics.</li>
+<li><b>Parameters</b>: Mutation probability, crossover rate, elitism size, and number of generations are configurable.</li>
+</ul>
 </div>
 </div>
 </div>
-</div>
-<div id="outline-container-orgb6173dc" class="outline-2">
-<h2 id="orgb6173dc">Footer</h2>
-<div class="outline-text-2" id="text-orgb6173dc">
+<div id="outline-container-org0300a9b" class="outline-2">
+<h2 id="org0300a9b">Footer</h2>
+<div class="outline-text-2" id="text-org0300a9b">
 <p>
 Copyright © 2025 Joao ES Moreira
 </p>

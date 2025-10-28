@@ -65,98 +65,108 @@ font-size: 0.95em;
   </div>
 
 </div>
-<div id="outline-container-org8cade95" class="outline-2">
-<h2 id="org8cade95">Emacsphere</h2>
-<div class="outline-text-2" id="text-org8cade95">
+<div id="outline-container-org25ca01e" class="outline-2">
+<h2 id="org25ca01e">Binary Tree Iterator Project</h2>
+<div class="outline-text-2" id="text-org25ca01e">
 <p>
-For a while now, I’ve been using Emacs only as my IDE for both
-academic and personal projects. This project, Emacsphere, is an
-effort to transform Emacs into a powerful and efficient environment —
-one that maximizes productivity and simplifies the workflow.
+This project aims to <b><b>implement an iterator for a binary tree</b></b> in C++.  
+The goal is to provide a simple and efficient way to traverse a binary search tree using iterator semantics,  
+similar to the behavior of standard C++ containers.
 </p>
 
 <p>
-The goal is to configure Emacs in a way that takes full advantage of
-its extensive capabilities. I aim to turn Emacs into a versatile
-platform where it’s possible to manage desktop files, handle with
-git-based projects, organize tasks and notes with org-mode, and stay
-up to date by reading news and feeds directly within Emacs.
+<b><b>Repository:</b></b> <a href="https://github.com/JoaoESmoreira/Binary-Tree">Binary-Tree Repository</a>
 </p>
 
 <p>
-Emacsphere should be more than just a text editor — it's an evolving
-ecosystem tailored for focus, control, and creativity.
+<b><b>License:</b></b> MIT
 </p>
 
 <p>
-You can find the source code of this project at <a href="https://github.com/JoaoESmoreira/emacsphere">Emacsphere</a>.
+<b><b>Languages Used:</b></b> C++
 </p>
 </div>
-<div id="outline-container-org07152d1" class="outline-3">
-<h3 id="org07152d1">Installation</h3>
-<div class="outline-text-3" id="text-org07152d1">
-</div>
-<div id="outline-container-orga974472" class="outline-4">
-<h4 id="orga974472">Requirements</h4>
-<div class="outline-text-4" id="text-orga974472">
+<div id="outline-container-org3cba5d5" class="outline-3">
+<h3 id="org3cba5d5">Requirements</h3>
+<div class="outline-text-3" id="text-org3cba5d5">
 <ul class="org-ul">
-<li>Emacs 29 or higher</li>
+<li>g++ ≥ 9.0 or clang++ ≥ 10.0</li>
+<li>C++17 or newer standard</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org9062aa4" class="outline-4">
-<h4 id="org9062aa4">Steps</h4>
-<div class="outline-text-4" id="text-org9062aa4">
-<ol class="org-ol">
-<li><b>Install Emacs:</b>
-
+<div id="outline-container-org8eecdd7" class="outline-3">
+<h3 id="org8eecdd7">Description</h3>
+<div class="outline-text-3" id="text-org8eecdd7">
+<p>
+The project defines a <code>BinaryTree</code> data structure and an <b><b>iterator class</b></b> that allows traversal of the tree in an <b>in-order</b> sequence.  
+This iterator supports standard C++ operations such as incrementing and dereferencing, enabling usage in range-based loops and STL-like algorithms.
+</p>
+</div>
+</div>
+<div id="outline-container-orgbe804db" class="outline-3">
+<h3 id="orgbe804db">Features</h3>
+<div class="outline-text-3" id="text-orgbe804db">
 <ul class="org-ul">
-<li>On Ubuntu/Debian: <code>sudo apt install emacs</code></li>
-<li>On macOS: <code>brew install emacs</code></li>
-<li>On Windows: Download the Emacs version for Windows from <a href="https://www.gnu.org/software/emacs/download.html#nonfree">emacsforwindows</a>.</li>
-</ul></li>
-
-<li><p>
-<b>Clone the Configuration Repository:</b>
+<li>Implementation of a templated <code>BinaryTree</code> class.</li>
+<li>Support for inserting, searching, and removing elements.</li>
+<li>Custom iterator for in-order traversal.</li>
+<li>Example usage provided in <code>main.cpp</code>.</li>
+<li>Auxiliary string functions defined in <code>str.cpp</code>.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org5938c61" class="outline-3">
+<h3 id="org5938c61">How to Compile</h3>
+<div class="outline-text-3" id="text-org5938c61">
+<p>
+Use any modern C++ compiler (C++17 or higher).
 </p>
 
-<p>
-Clone this repository to the Emacs configuration directory:
-</p></li>
-</ol>
-
-<pre><code class="language-lisp">git clone https://github.com/JoaoESmoreira/emacsphere.git ~/.emacs.d
+<pre><code class="language-lisp">g++ -std=c++17 -O2 -Wall -Wextra -pedantic main.cpp -o binary-tree
 </code></pre>
+</div>
+</div>
+<div id="outline-container-orgb008c56" class="outline-3">
+<h3 id="orgb008c56">Example Usage</h3>
+<div class="outline-text-3" id="text-orgb008c56">
+<pre><code class="language-cpp">#include "binarytree.hpp"
+#include <iostream>
 
-<ol class="org-ol">
-<li><b>Install Dependencies:</b>
+int main() {
+    BinaryTree<int> bt;
 
-<ul class="org-ul">
-<li>Open Emacs and it will start to install the dependencies.</li>
-</ul></li>
+    bt.insert(8);
+    bt.insert(3);
+    bt.insert(10);
+    bt.insert(1);
+    bt.insert(6);
 
-<li><b>Configure Plugins and Extensions:</b>
+    std::cout << "In-order traversal using iterator: ";
+    for (auto it = bt.begin(); it != bt.end(); ++it)
+        std::cout << *it << " ";
+    std::cout << std::endl;
 
-<ul class="org-ul">
-<li>Customize the packages as needed to suit your workflow.</li>
-</ul></li>
-
-<li><p>
-<b>Restart Emacs:</b>
-</p>
-
-<p>
-After installing all the packages, restart Emacs to ensure all
-configurations and extensions are active.
-</p></li>
-</ol>
+    return 0;
+}
+</code></pre>
 </div>
 </div>
 </div>
+<div id="outline-container-org771cdcd" class="outline-2">
+<h2 id="org771cdcd">Repository Structure</h2>
+<div class="outline-text-2" id="text-org771cdcd">
+<dl class="org-dl">
+<dt><b>binarytree.hpp</b></dt><dd>Binary tree and iterator implementation.</dd>
+<dt><b>main.cpp</b></dt><dd>Example demonstrating tree operations and iteration.</dd>
+<dt><b>str.cpp</b></dt><dd>Auxiliary string handling utilities.</dd>
+<dt><b>LICENSE</b></dt><dd>MIT license file.</dd>
+</dl>
 </div>
-<div id="outline-container-orgb6173dc" class="outline-2">
-<h2 id="orgb6173dc">Footer</h2>
-<div class="outline-text-2" id="text-orgb6173dc">
+</div>
+<div id="outline-container-orgafd013b" class="outline-2">
+<h2 id="orgafd013b">Footer</h2>
+<div class="outline-text-2" id="text-orgafd013b">
 <p>
 Copyright © 2025 Joao ES Moreira
 </p>

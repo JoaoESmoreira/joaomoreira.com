@@ -1,0 +1,78 @@
+#+TITLE: JoaoESmoreira
+#+AUTHOR: Joao ES Moreira
+#+SETUPFILE: ~/Documents/OrgFiles/themes/responsive-dark-light.setup
+#+INCLUDE: "./header.org"
+
+* JUC Compiler
+
+The main goal of the project is to build a working compiler capable of
+performing lexical, syntactic, and semantic analysis for the JUC
+language.  The grammar was provided in *EBNF notation* and required
+disambiguation to avoid *Shift-Reduce* and *Reduce-Reduce* conflicts,
+allowing smooth integration with *Yacc* for bottom-up parsing.
+
+The full repository and documentation can be found here:  
+[[https://github.com/JoaoESmoreira/COMP-Project/][JUC-Project Repository]].
+
+** Technologies Used
+- *C Language* — Core implementation language
+- *Lex* — Lexical analysis tool
+- *Yacc* — Syntactic analysis (parser generator)
+- *LLVM* - High-level assembly language
+- *Linux/Unix Environment* — Compilation and execution
+
+** Repository Structure
+- *src/*: source code implementing Lex, Yacc, and compiler logic
+- *docs/*: project documentation (including this report)
+- *Makefile*: build and run automation
+- *README.org*: project overview and build instructions
+
+
+** Grammar Design
+The grammar was rewritten to eliminate ambiguities by defining
+*operator precedence* and *associativity* using directives:
+- ~%left~, ~%right~, and ~%nonassoc~
+- Precedence is defined from lower to higher levels
+
+To correctly handle optional *if-then-else* statements, a special *NO
+ELSE* non-associative operator was introduced with the ~%prec~
+directive to control precedence when *else* is omitted.
+
+** Data Structures
+
+*** Token
+A ~token_t~ structure was created to store the lexical information
+produced by *Lex*, containing:
+- ~value~ (token value)
+- ~line~ and ~col~ (token position in the source file)
+
+*** Abstract Syntax Tree (AST)
+The AST represents the hierarchical structure of the source program.
+Each node is represented by an ~ast_node_t~ structure containing:
+- ~id~: node name (e.g., "MethodDecl", "FieldDecl")
+- ~value~: token value (~yytext~ from lexical analysis)
+- ~type~: node type (set during semantic analysis)
+- ~line~, ~col~: position in source code
+- ~child~, ~brother~: pointers to the first child and next sibling
+  nodes
+
+*** Symbol Table
+The *symbol table* stores information about identifiers, parameters,
+and methods.  It uses two main structures:
+1. ~param_list~: linked list for method parameters
+2. ~symbol_table~: stores symbols and nested scopes
+
+Each function symbol points to another symbol table representing its
+local scope.
+
+** Algorithms
+The algorithms used involve recursive traversal of *trees* and *linked
+lists*.  During AST traversal:
+- Global variables and functions are identified through sibling
+  traversal
+- Function bodies are analyzed by exploring children before siblings
+- Information is propagated upward during recursion to annotate the
+  AST and update the symbol table
+
+* Footer
+#+INCLUDE: "./footer.org"

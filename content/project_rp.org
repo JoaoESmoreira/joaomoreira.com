@@ -1,0 +1,88 @@
+#+TITLE: JoaoESmoreira
+#+AUTHOR: Joao ES Moreira
+#+SETUPFILE: ~/Documents/OrgFiles/themes/responsive-dark-light.setup
+#+INCLUDE: "./header.org"
+
+
+* Default of Credit Card Clients Prediction
+This project aims to predict the likelihood of credit card clients
+defaulting on their payments using machine learning techniques. The
+dataset used for this project is sourced from Kaggle and is titled
+"Default of Credit Card Clients Dataset".
+
+The full repository and documentation can be found here: [[https://github.com/JoaoESmoreira/RP-Project/][Credit Card
+Prediction Repository]].
+
+** Technologies Used
+To run the project correctly, the following technologies are required:
+- python 3.10+
+- scikit‑learn
+- pandas
+- numpy
+- matplotlib
+- seaborn
+
+** Problem Statement
+The problem at hand is a binary classification task, where the goal is
+to predict whether a credit card client will default on their payments
+(class 1) or not (class 0). This prediction is based on various
+demographic and credit-related features provided in the dataset.
+
+** Dataset
+The dataset contains various features including:
+
+- Limit Balance
+- Gender
+- Education
+- Marital Status
+- Age
+- Payment history for the past six months (Sep 2005 - Apr 2005)
+- Bill statement amounts for the past six months
+- Previous payment amounts for the past six months
+
+The target variable is "default.payment.next.month", which indicates
+whether the client defaulted on their credit card payment in the
+following month.
+
+** Approach
+1. Data Exploration: Conduct exploratory data analysis (EDA) to
+   understand the distribution of features, identify patterns, and
+   visualize relationships between variables.
+2. Data Preprocessing: Perform data cleaning, handle missing values,
+   encode categorical variables, and scale numerical features.
+3. Feature Selection and Reduction: Employ various techniques such as
+   univariate feature selection, principal component analysis (PCA),
+   and correlation analysis to select and reduce the dimensionality of
+   features.
+4. Model Building: Experiment with different classification algorithms
+   including Logistic Regression, Decision Trees, Random Forests,
+   Support Vector Machines (SVM), k-Nearest Neighbors (k-NN) and Naive
+   Bayes.
+5. Model Evaluation: Evaluate the performance of each model using
+   appropriate evaluation metrics such as accuracy, precision, recall
+   and area under the ROC curve.
+
+** Requirements
+- Python 3.x
+- Jupyter Notebook (for running the code)
+- Required libraries: pandas, numpy, scikit-learn, matplotlib, seaborn
+
+** Repository Structure
+- *data*: Contains the dataset file(s).
+- *src*:
+	- *exp*, *new exp*: experiments data.
+	- *models*: MDC Mahalanobis model and generic train model
+	- *resources*: images used in the report
+	- Jupyter notebooks, train scripts and other support
+          notebooks.
+- *docs*: PDF Documents and Report
+- *README.md*: Overview of the project and instructions for running
+  the code.
+- *requirements.txt*: List of required Python libraries with versions.
+
+** Credits
+*Dataset Source*: Default of Credit Card Clients Dataset on Kaggle.
+
+
+* Footer
+#+INCLUDE: "./footer.org"

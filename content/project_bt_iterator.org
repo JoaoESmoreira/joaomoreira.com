@@ -1,0 +1,75 @@
+#+TITLE: JoaoESmoreira
+#+AUTHOR: Joao ES Moreira
+#+SETUPFILE: ~/Documents/OrgFiles/themes/responsive-dark-light.setup
+#+INCLUDE: "./header.org"
+
+
+* Binary Tree Iterator Project
+
+This project aims to **implement an iterator for a binary tree** in C++.  
+The goal is to provide a simple and efficient way to traverse a binary search tree using iterator semantics,  
+similar to the behavior of standard C++ containers.
+
+**Repository:** [[https://github.com/JoaoESmoreira/Binary-Tree][Binary-Tree Repository]]
+
+**License:** MIT
+
+**Languages Used:** C++
+
+** Requirements
+- g++ ≥ 9.0 or clang++ ≥ 10.0
+- C++17 or newer standard
+
+** Description
+
+The project defines a =BinaryTree= data structure and an **iterator class** that allows traversal of the tree in an *in-order* sequence.  
+This iterator supports standard C++ operations such as incrementing and dereferencing, enabling usage in range-based loops and STL-like algorithms.
+
+** Features
+- Implementation of a templated =BinaryTree= class.
+- Support for inserting, searching, and removing elements.
+- Custom iterator for in-order traversal.
+- Example usage provided in =main.cpp=.
+- Auxiliary string functions defined in =str.cpp=.
+
+** How to Compile
+
+Use any modern C++ compiler (C++17 or higher).
+
+#+begin_src emacs-lisp
+g++ -std=c++17 -O2 -Wall -Wextra -pedantic main.cpp -o binary-tree
+#+end_src
+
+** Example Usage
+
+#+begin_src cpp
+#include "binarytree.hpp"
+#include <iostream>
+
+int main() {
+    BinaryTree<int> bt;
+
+    bt.insert(8);
+    bt.insert(3);
+    bt.insert(10);
+    bt.insert(1);
+    bt.insert(6);
+
+    std::cout << "In-order traversal using iterator: ";
+    for (auto it = bt.begin(); it != bt.end(); ++it)
+        std::cout << *it << " ";
+    std::cout << std::endl;
+
+    return 0;
+}
+#+end_src
+
+* Repository Structure
+- *binarytree.hpp* :: Binary tree and iterator implementation.
+- *main.cpp* :: Example demonstrating tree operations and iteration.
+- *str.cpp* :: Auxiliary string handling utilities.
+- *LICENSE* :: MIT license file.
+
+
+* Footer
+#+INCLUDE: "./footer.org"

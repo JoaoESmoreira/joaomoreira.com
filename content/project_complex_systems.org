@@ -1,0 +1,79 @@
+#+TITLE: JoaoESmoreira
+#+AUTHOR: Joao ES Moreira
+#+SETUPFILE: ~/Documents/OrgFiles/themes/responsive-dark-light.setup
+#+INCLUDE: "./header.org"
+
+
+* Complex Systems - Predator-Prey Modelling
+
+In recent years, complex systems, characterized by nonlinear and
+dynamic interactions among multiple components, have provided fertile
+ground for exploring emergent phenomena and understanding the
+interplay between different entities. A remarkable example of such
+phenomena is the predator-prey dynamics.
+
+With this work, we aim to explore the duality of possible outcomes,
+where populations may either coexist or face mutual extinction
+depending on interactions and environmental conditions. Through the
+proposed simulation, we seek to establish a simplified parallel to
+what occurs in nature, highlighting how small changes can disrupt
+ecosystems and lead to species extinction. We recognize that nature
+maintains a fragile balance, whose understanding is crucial for the
+conservation and preservation of biodiversity. By analyzing the
+obtained results, we aim to gain insights into the underlying
+mechanisms governing predator-prey dynamics in complex systems, thus
+contributing to a deeper understanding of emergent phenomena within
+these systems.
+
+The full repository and documentation can be found here: [[https://github.com/JoaoESmoreira/CS-Project][Complex
+Systems Project Repository]].
+
+
+** Proposed Model
+This model presents three distinct types of agents: wolves
+(predators), sheep (prey), and grass (the sheep’s energy source), all
+located on a grid.
+
+Characteristics of wolves and sheep:
+- *Movement:* Agents randomly choose a position in their Moore
+  neighborhood and move to that position.
+
+- *Energy:* Agents consume energy to move, which can be replenished
+  when they feed.
+
+- *Feeding:* Sheep feed on grass, while wolves feed on sheep when they
+  occupy the same cell.
+
+- *Reproduction:* An agent can reproduce by dividing into two
+  individuals, with energy equally split between them.
+
+- *Death:* Agents die if they run out of energy. Sheep may also die
+  when eaten by wolves. Grass regrows in each cell at a constant
+  rate. It is important to note that updates occur asynchronously,
+  following the order in which agents were added to the environment.
+
+In this model, the following parameters can be modified:
+- Number of individuals
+- Reproduction rate
+- Energy gained from food
+
+** Used tools
+- Python3
+- meza predator prey
+
+** Run Project
+#+begin_src emacs-lisp
+python3 -m venv env
+. ./env/bin/activate
+pip install -r requirements.txt
+
+cd src
+python3 run.py    # visualization mode
+cd our_model
+python3 model.py    # experiments
+#+end_src
+
+
+
+* Footer
+#+INCLUDE: "./footer.org"

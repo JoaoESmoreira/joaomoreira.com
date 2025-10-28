@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>JoaoESmoreira</title>
+<meta name="description" content="Header" />
+<meta name="generator" content="Org Mode" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.min.css">
+<style>body { max-width: 800px; margin: auto; }</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/github-dark.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+<style>
+pre code {
+display: block;
+background-color: #e6e6e6;
+color: #000000;
+padding: 1em;
+border-radius: 6px;
+overflow-x: auto;
+font-size: 0.95em;
+}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.min.css">
+<style>body { max-width: 800px; margin: auto; }</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/github-dark.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+<style>
+pre code {
+display: block;
+background-color: #e6e6e6;
+color: #000000;
+padding: 1em;
+border-radius: 6px;
+overflow-x: auto;
+font-size: 0.95em;
+}
+</style>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">JoaoESmoreira</h1>
+<div class="org-header">
+
+    <!--
+  <div class="topbar-menu-container">
+    <span class="topbar-menu"><a class="current" href="http://localhost:8080/">Home</a></span>
+    <span class="topbar-menu"><a href="http://localhost:8080/projects.html">Projects</a></span>
+    <span class="topbar-menu"><a href="http://localhost:8080/blog.html">Blog</a></span>
+    <span class="topbar-menu"><a href="http://localhost:8080/emacsphere.html">Emacsphere</a></span>
+  </div>
+    -->
+
+  <div class="topbar-menu-container">
+    <span class="topbar-menu"><a href="index.html">Home</a></span>
+    <span class="topbar-menu"><a href="projects.html">Projects</a></span>
+    <span class="topbar-menu"><a href="blog.html">Blog</a></span>
+    <span class="topbar-menu"><a href="emacsphere.html">Emacsphere</a></span>
+  </div>
+
+</div>
+<div id="outline-container-orgf8296b1" class="outline-2">
+<h2 id="orgf8296b1">JUC Compiler</h2>
+<div class="outline-text-2" id="text-orgf8296b1">
+<p>
+The main goal of the project is to build a working compiler capable of
+performing lexical, syntactic, and semantic analysis for the JUC
+language.  The grammar was provided in <b>EBNF notation</b> and required
+disambiguation to avoid <b>Shift-Reduce</b> and <b>Reduce-Reduce</b> conflicts,
+allowing smooth integration with <b>Yacc</b> for bottom-up parsing.
+</p>
+
+<p>
+The full repository and documentation can be found here:  
+<a href="https://github.com/JoaoESmoreira/COMP-Project/">JUC-Project Repository</a>.
+</p>
+</div>
+<div id="outline-container-org70702a9" class="outline-3">
+<h3 id="org70702a9">Technologies Used</h3>
+<div class="outline-text-3" id="text-org70702a9">
+<ul class="org-ul">
+<li><b>C Language</b> — Core implementation language</li>
+<li><b>Lex</b> — Lexical analysis tool</li>
+<li><b>Yacc</b> — Syntactic analysis (parser generator)</li>
+<li><b>LLVM</b> - High-level assembly language</li>
+<li><b>Linux/Unix Environment</b> — Compilation and execution</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgbdd4b32" class="outline-3">
+<h3 id="orgbdd4b32">Repository Structure</h3>
+<div class="outline-text-3" id="text-orgbdd4b32">
+<ul class="org-ul">
+<li><b>src/</b>: source code implementing Lex, Yacc, and compiler logic</li>
+<li><b>docs/</b>: project documentation (including this report)</li>
+<li><b>Makefile</b>: build and run automation</li>
+<li><b>README.org</b>: project overview and build instructions</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org81a6ef0" class="outline-3">
+<h3 id="org81a6ef0">Grammar Design</h3>
+<div class="outline-text-3" id="text-org81a6ef0">
+<p>
+The grammar was rewritten to eliminate ambiguities by defining
+<b>operator precedence</b> and <b>associativity</b> using directives:
+</p>
+<ul class="org-ul">
+<li><code>%left</code>, <code>%right</code>, and <code>%nonassoc</code></li>
+<li>Precedence is defined from lower to higher levels</li>
+</ul>
+
+<p>
+To correctly handle optional <b>if-then-else</b> statements, a special <b>NO
+ELSE</b> non-associative operator was introduced with the <code>%prec</code>
+directive to control precedence when <b>else</b> is omitted.
+</p>
+</div>
+</div>
+<div id="outline-container-org2893047" class="outline-3">
+<h3 id="org2893047">Data Structures</h3>
+<div class="outline-text-3" id="text-org2893047">
+</div>
+<div id="outline-container-orgbbf0762" class="outline-4">
+<h4 id="orgbbf0762">Token</h4>
+<div class="outline-text-4" id="text-orgbbf0762">
+<p>
+A <code>token_t</code> structure was created to store the lexical information
+produced by <b>Lex</b>, containing:
+</p>
+<ul class="org-ul">
+<li><code>value</code> (token value)</li>
+<li><code>line</code> and <code>col</code> (token position in the source file)</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org3321bd6" class="outline-4">
+<h4 id="org3321bd6">Abstract Syntax Tree (AST)</h4>
+<div class="outline-text-4" id="text-org3321bd6">
+<p>
+The AST represents the hierarchical structure of the source program.
+Each node is represented by an <code>ast_node_t</code> structure containing:
+</p>
+<ul class="org-ul">
+<li><code>id</code>: node name (e.g., "MethodDecl", "FieldDecl")</li>
+<li><code>value</code>: token value (<code>yytext</code> from lexical analysis)</li>
+<li><code>type</code>: node type (set during semantic analysis)</li>
+<li><code>line</code>, <code>col</code>: position in source code</li>
+<li><code>child</code>, <code>brother</code>: pointers to the first child and next sibling
+nodes</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org1d36234" class="outline-4">
+<h4 id="org1d36234">Symbol Table</h4>
+<div class="outline-text-4" id="text-org1d36234">
+<p>
+The <b>symbol table</b> stores information about identifiers, parameters,
+and methods.  It uses two main structures:
+</p>
+<ol class="org-ol">
+<li><code>param_list</code>: linked list for method parameters</li>
+<li><code>symbol_table</code>: stores symbols and nested scopes</li>
+</ol>
+
+<p>
+Each function symbol points to another symbol table representing its
+local scope.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org0e09ee4" class="outline-3">
+<h3 id="org0e09ee4">Algorithms</h3>
+<div class="outline-text-3" id="text-org0e09ee4">
+<p>
+The algorithms used involve recursive traversal of <b>trees</b> and <b>linked
+lists</b>.  During AST traversal:
+</p>
+<ul class="org-ul">
+<li>Global variables and functions are identified through sibling
+traversal</li>
+<li>Function bodies are analyzed by exploring children before siblings</li>
+<li>Information is propagated upward during recursion to annotate the
+AST and update the symbol table</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orga0868f1" class="outline-2">
+<h2 id="orga0868f1">Footer</h2>
+<div class="outline-text-2" id="text-orga0868f1">
+<p>
+Copyright © 2025 Joao ES Moreira
+</p>
+
+<p>
+The contents of this website are licensed under the <a href="https://creativecommons.org/licenses/by-nd/4.0/">Creative Commons
+Attribution-NoDerivatives 4.0 International License</a> (CC-BY-ND 4.0).
+</p>
+
+<p>
+The source code of this website is licensed under the MIT license,
+and available in <a href="https://github.com/JoaoESmoreira/joaomoreira.com/">GitHub</a> repositor.  User-submitted contributions to
+the site are welcome, as long as the contributor agrees to license
+their submission with the CC-BY-ND 4.0 license.
+</p>
+</div>
+</div>
+</div>
+</body>
+</html>

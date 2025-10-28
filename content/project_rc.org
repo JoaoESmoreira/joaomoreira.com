@@ -1,0 +1,130 @@
+#+TITLE: JoaoESmoreira
+#+AUTHOR: Joao ES Moreira
+#+SETUPFILE: ~/Documents/OrgFiles/themes/responsive-dark-light.setup
+#+INCLUDE: "./header.org"
+
+
+#+TITLE: RC-Project
+#+AUTHOR: João More
+#+OPTIONS: toc:nil num:nil
+
+* Communication Networks Project
+
+The main objective of the project is to build a socket transaction
+system for the *Networking and Communication* subject.
+
+The full repository and documentation can be found here:
+[[https://github.com/JoaoESmoreira/RC-Project/][RC-Project
+Repository]].
+
+** Pre Requirements
+
+In order to run this project, it is required to have some tools.  
+A *C* compiler such as ~gcc~ (or others) and an operating system such as *GNU/Linux* are necessary.  
+In this case, we are using a *Lubuntu* distribution.  
+
+We assume that *netcat* is installed by default in the OS. Otherwise, you will have to install it manually.
+
+** Obtain the Main Code
+
+To obtain the source code, open your terminal and clone this project:
+
+#+begin_src emacs-lisp
+git clone https://github.com/JoaoESmoreira/RC-Project
+#+end_src
+
+** Compile
+
+Once you have access to the repository, you can compile the code.  
+There are two options: compile without print debug or compile with print debug.
+
+#+begin_src emacs-lisp
+make
+#+end_src
+
+#+begin_src emacs-lisp
+make debug
+#+end_src
+
+After that, two executables will be created: ~stock_server~ and ~operations_terminal~.
+
+** Run
+
+To run the server, execute:
+
+#+begin_src emacs-lisp
+./stock_server {STOCK PORT} {CONFIG PORT} {config file}
+#+end_src
+
+In another terminal, use *netcat* to simulate the admin usage:
+
+#+begin_src emacs-lisp
+nc -u localhost 9876
+#+end_src
+
+Finally, for user usage:
+
+#+begin_src emacs-lisp
+./operations_terminal {IP ADDRESS of server} {STOCK PORT}
+#+end_src
+
+** Running Server
+
+First of all, the admin must log in with their credentials.  
+To do this, just press *Enter* and the server will send you messages with the respective instructions.  
+
+After you run the server and *netcat*, it is time for the admin to send some instructions to the server.
+
+** Admin Interaction
+
+*** Operations
+
+**** Add a New User
+#+begin_src emacs-lisp
+ADD_USER {username} {password} {the sockets we have access} {budget}
+#+end_src
+
+**** List All Users
+#+begin_src emacs-lisp
+LIST
+#+end_src
+
+**** Delete a User
+#+begin_src emacs-lisp
+DEL {username}
+#+end_src
+
+**** Refresh the Time
+#+begin_src emacs-lisp
+REFRESH {new time}
+#+end_src
+
+**** To Log Out
+#+begin_src emacs-lisp
+QUIT
+#+end_src
+
+**** To Turn Off the Server
+#+begin_src emacs-lisp
+QUIT_SERVER
+#+end_src
+
+** User Interaction
+
+When you log in as a user, the server will ask for your credentials.  
+It’s only possible to log in if the admin has previously added you.  
+
+The operations are selected by a number, and the server will send all the information you need.
+
+You can:
+
+- Subscribe to a market to receive all information via multicast  
+- Buy auctions  
+- Sell auctions  
+- Turn on/off the market feed  
+- Check your wallet  
+- Log out
+
+
+* Footer
+#+INCLUDE: "./footer.org"

@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>JoaoESmoreira</title>
+<meta name="description" content="Header" />
+<meta name="generator" content="Org Mode" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.min.css">
+<style>body { max-width: 800px; margin: auto; }</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/github-dark.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+<style>
+pre code {
+display: block;
+background-color: #e6e6e6;
+color: #000000;
+padding: 1em;
+border-radius: 6px;
+overflow-x: auto;
+font-size: 0.95em;
+}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.min.css">
+<style>body { max-width: 800px; margin: auto; }</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/github-dark.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+<style>
+pre code {
+display: block;
+background-color: #e6e6e6;
+color: #000000;
+padding: 1em;
+border-radius: 6px;
+overflow-x: auto;
+font-size: 0.95em;
+}
+</style>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">JoaoESmoreira</h1>
+<div class="org-header">
+
+    <!--
+  <div class="topbar-menu-container">
+    <span class="topbar-menu"><a class="current" href="http://localhost:8080/">Home</a></span>
+    <span class="topbar-menu"><a href="http://localhost:8080/projects.html">Projects</a></span>
+    <span class="topbar-menu"><a href="http://localhost:8080/blog.html">Blog</a></span>
+    <span class="topbar-menu"><a href="http://localhost:8080/emacsphere.html">Emacsphere</a></span>
+  </div>
+    -->
+
+  <div class="topbar-menu-container">
+    <span class="topbar-menu"><a href="index.html">Home</a></span>
+    <span class="topbar-menu"><a href="projects.html">Projects</a></span>
+    <span class="topbar-menu"><a href="blog.html">Blog</a></span>
+    <span class="topbar-menu"><a href="emacsphere.html">Emacsphere</a></span>
+  </div>
+
+</div>
+<div id="outline-container-org355576d" class="outline-2">
+<h2 id="org355576d">Time Series Analysis and Forecasting</h2>
+<div class="outline-text-2" id="text-org355576d">
+<p>
+This project focuses on the <b>time series analysis</b> of mean temperature
+data for a selected location. The goal is to model and forecast
+temperature trends using different time series analysis techniques,
+including exponential smoothing and other machine-learning methods, to
+assess their predictive accuracy.
+</p>
+
+<p>
+In addition to forecasting mean temperature, we extend the analysis by
+incorporating multivariate models that consider other weather
+variables. This approach allows for a more comprehensive understanding
+of the relationships between different weather factors, ultimately
+leading to more reliable forecasts.
+</p>
+
+<p>
+The full repository and documentation can be found here: <a href="https://github.com/JoaoESmoreira/astp-project/">Time Series Analysis Project Repository</a>.
+</p>
+</div>
+<div id="outline-container-orgfb85cd0" class="outline-3">
+<h3 id="orgfb85cd0">Technologies Used</h3>
+<div class="outline-text-3" id="text-orgfb85cd0">
+<p>
+To run the project correctly, the following technologies are required:
+</p>
+<ul class="org-ul">
+<li>python 3.10+</li>
+<li>scikit‑learn</li>
+<li>pandas</li>
+<li>numpy</li>
+<li>matplotlib</li>
+<li>seaborn</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org18bee54" class="outline-3">
+<h3 id="org18bee54">Data</h3>
+<div class="outline-text-3" id="text-org18bee54">
+<p>
+The dataset used for this project was obtained from the Open-Meteo
+Historical Weather API, which provides daily weather observations for
+various locations worldwide. For this analysis, we selected data from
+Tokyo for the period spanning from January 1st, 1940, to the present.
+The primary variable of interest is the mean daily temperature,
+supplemented with additional weather variables for multivariate
+analysis.  
+</p>
+
+<p>
+The dataset contains daily observations structured with a
+date column and corresponding values for each weather variable.
+</p>
+</div>
+</div>
+<div id="outline-container-org4745e8b" class="outline-3">
+<h3 id="org4745e8b">Repository Structure</h3>
+<div class="outline-text-3" id="text-org4745e8b">
+<p>
+The repository is organized into several main directories to maintain
+clarity and separation of concerns throughout the project:
+</p>
+
+<ul class="org-ul">
+<li><b>src/</b> – Contains all the project’s source code, including scripts and
+Jupyter notebooks. This is where the main logic and implementation
+of the project are developed.</li>
+
+<li><b>data/</b> – Stores all datasets and input files used in the
+experiments.</li>
+
+<li><b>docs/</b> – Holds documentation/report files</li>
+
+<li><b>delevery/</b> – Includes final deliverables such as reports,
+slides, and results ready for submission or presentation.</li>
+
+<li><b>requirements.txt</b> – Lists all dependencies required to run the
+project in a reproducible environment.</li>
+</ul>
+
+
+<p>
+This structure ensures that the project remains modular, easy to
+navigate, and reproducible across different environments.
+</p>
+</div>
+</div>
+<div id="outline-container-org9b83b97" class="outline-3">
+<h3 id="org9b83b97">License</h3>
+<div class="outline-text-3" id="text-org9b83b97">
+<p>
+This project is distributed under the [MIT](LICENSE) License.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgf8e0c9c" class="outline-2">
+<h2 id="orgf8e0c9c">Footer</h2>
+<div class="outline-text-2" id="text-orgf8e0c9c">
+<p>
+Copyright © 2025 Joao ES Moreira
+</p>
+
+<p>
+The contents of this website are licensed under the <a href="https://creativecommons.org/licenses/by-nd/4.0/">Creative Commons
+Attribution-NoDerivatives 4.0 International License</a> (CC-BY-ND 4.0).
+</p>
+
+<p>
+The source code of this website is licensed under the MIT license,
+and available in <a href="https://github.com/JoaoESmoreira/joaomoreira.com/">GitHub</a> repositor.  User-submitted contributions to
+the site are welcome, as long as the contributor agrees to license
+their submission with the CC-BY-ND 4.0 license.
+</p>
+</div>
+</div>
+</div>
+</body>
+</html>

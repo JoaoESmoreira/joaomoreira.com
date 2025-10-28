@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>JoaoESmoreira</title>
+<meta name="description" content="Header" />
+<meta name="generator" content="Org Mode" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.min.css">
+<style>body { max-width: 800px; margin: auto; }</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/github-dark.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+<style>
+pre code {
+display: block;
+background-color: #e6e6e6;
+color: #000000;
+padding: 1em;
+border-radius: 6px;
+overflow-x: auto;
+font-size: 0.95em;
+}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.min.css">
+<style>body { max-width: 800px; margin: auto; }</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/github-dark.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+<style>
+pre code {
+display: block;
+background-color: #e6e6e6;
+color: #000000;
+padding: 1em;
+border-radius: 6px;
+overflow-x: auto;
+font-size: 0.95em;
+}
+</style>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">JoaoESmoreira</h1>
+<div class="org-header">
+
+    <!--
+  <div class="topbar-menu-container">
+    <span class="topbar-menu"><a class="current" href="http://localhost:8080/">Home</a></span>
+    <span class="topbar-menu"><a href="http://localhost:8080/projects.html">Projects</a></span>
+    <span class="topbar-menu"><a href="http://localhost:8080/blog.html">Blog</a></span>
+    <span class="topbar-menu"><a href="http://localhost:8080/emacsphere.html">Emacsphere</a></span>
+  </div>
+    -->
+
+  <div class="topbar-menu-container">
+    <span class="topbar-menu"><a href="index.html">Home</a></span>
+    <span class="topbar-menu"><a href="projects.html">Projects</a></span>
+    <span class="topbar-menu"><a href="blog.html">Blog</a></span>
+    <span class="topbar-menu"><a href="emacsphere.html">Emacsphere</a></span>
+  </div>
+
+</div>
+<div id="outline-container-org249faa0" class="outline-2">
+<h2 id="org249faa0">Default of Credit Card Clients Prediction</h2>
+<div class="outline-text-2" id="text-org249faa0">
+<p>
+This project aims to predict the likelihood of credit card clients
+defaulting on their payments using machine learning techniques. The
+dataset used for this project is sourced from Kaggle and is titled
+"Default of Credit Card Clients Dataset".
+</p>
+
+<p>
+The full repository and documentation can be found here: <a href="https://github.com/JoaoESmoreira/RP-Project/">Credit Card
+Prediction Repository</a>.
+</p>
+</div>
+<div id="outline-container-org6963a0e" class="outline-3">
+<h3 id="org6963a0e">Technologies Used</h3>
+<div class="outline-text-3" id="text-org6963a0e">
+<p>
+To run the project correctly, the following technologies are required:
+</p>
+<ul class="org-ul">
+<li>python 3.10+</li>
+<li>scikit‑learn</li>
+<li>pandas</li>
+<li>numpy</li>
+<li>matplotlib</li>
+<li>seaborn</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org0570ed5" class="outline-3">
+<h3 id="org0570ed5">Problem Statement</h3>
+<div class="outline-text-3" id="text-org0570ed5">
+<p>
+The problem at hand is a binary classification task, where the goal is
+to predict whether a credit card client will default on their payments
+(class 1) or not (class 0). This prediction is based on various
+demographic and credit-related features provided in the dataset.
+</p>
+</div>
+</div>
+<div id="outline-container-org5171b63" class="outline-3">
+<h3 id="org5171b63">Dataset</h3>
+<div class="outline-text-3" id="text-org5171b63">
+<p>
+The dataset contains various features including:
+</p>
+
+<ul class="org-ul">
+<li>Limit Balance</li>
+<li>Gender</li>
+<li>Education</li>
+<li>Marital Status</li>
+<li>Age</li>
+<li>Payment history for the past six months (Sep 2005 - Apr 2005)</li>
+<li>Bill statement amounts for the past six months</li>
+<li>Previous payment amounts for the past six months</li>
+</ul>
+
+<p>
+The target variable is "default.payment.next.month", which indicates
+whether the client defaulted on their credit card payment in the
+following month.
+</p>
+</div>
+</div>
+<div id="outline-container-orge179441" class="outline-3">
+<h3 id="orge179441">Approach</h3>
+<div class="outline-text-3" id="text-orge179441">
+<ol class="org-ol">
+<li>Data Exploration: Conduct exploratory data analysis (EDA) to
+understand the distribution of features, identify patterns, and
+visualize relationships between variables.</li>
+<li>Data Preprocessing: Perform data cleaning, handle missing values,
+encode categorical variables, and scale numerical features.</li>
+<li>Feature Selection and Reduction: Employ various techniques such as
+univariate feature selection, principal component analysis (PCA),
+and correlation analysis to select and reduce the dimensionality of
+features.</li>
+<li>Model Building: Experiment with different classification algorithms
+including Logistic Regression, Decision Trees, Random Forests,
+Support Vector Machines (SVM), k-Nearest Neighbors (k-NN) and Naive
+Bayes.</li>
+<li>Model Evaluation: Evaluate the performance of each model using
+appropriate evaluation metrics such as accuracy, precision, recall
+and area under the ROC curve.</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgf4d79af" class="outline-3">
+<h3 id="orgf4d79af">Requirements</h3>
+<div class="outline-text-3" id="text-orgf4d79af">
+<ul class="org-ul">
+<li>Python 3.x</li>
+<li>Jupyter Notebook (for running the code)</li>
+<li>Required libraries: pandas, numpy, scikit-learn, matplotlib, seaborn</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org22ead85" class="outline-3">
+<h3 id="org22ead85">Repository Structure</h3>
+<div class="outline-text-3" id="text-org22ead85">
+<ul class="org-ul">
+<li><b>data</b>: Contains the dataset file(s).</li>
+<li><b>src</b>:
+<ul class="org-ul">
+<li><b>exp</b>, <b>new exp</b>: experiments data.</li>
+<li><b>models</b>: MDC Mahalanobis model and generic train model</li>
+<li><b>resources</b>: images used in the report</li>
+<li>Jupyter notebooks, train scripts and other support
+notebooks.</li>
+</ul></li>
+<li><b>docs</b>: PDF Documents and Report</li>
+<li><b>README.md</b>: Overview of the project and instructions for running
+the code.</li>
+<li><b>requirements.txt</b>: List of required Python libraries with versions.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org90c4ae5" class="outline-3">
+<h3 id="org90c4ae5">Credits</h3>
+<div class="outline-text-3" id="text-org90c4ae5">
+<p>
+<b>Dataset Source</b>: Default of Credit Card Clients Dataset on Kaggle.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgfc87ab4" class="outline-2">
+<h2 id="orgfc87ab4">Footer</h2>
+<div class="outline-text-2" id="text-orgfc87ab4">
+<p>
+Copyright © 2025 Joao ES Moreira
+</p>
+
+<p>
+The contents of this website are licensed under the <a href="https://creativecommons.org/licenses/by-nd/4.0/">Creative Commons
+Attribution-NoDerivatives 4.0 International License</a> (CC-BY-ND 4.0).
+</p>
+
+<p>
+The source code of this website is licensed under the MIT license,
+and available in <a href="https://github.com/JoaoESmoreira/joaomoreira.com/">GitHub</a> repositor.  User-submitted contributions to
+the site are welcome, as long as the contributor agrees to license
+their submission with the CC-BY-ND 4.0 license.
+</p>
+</div>
+</div>
+</div>
+</body>
+</html>

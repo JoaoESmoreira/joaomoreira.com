@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>JoaoESmoreira RC-Project</title>
+<meta name="description" content="Header" />
+<meta name="generator" content="Org Mode" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.min.css">
+<style>body { max-width: 800px; margin: auto; }</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/github-dark.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+<style>
+pre code {
+display: block;
+background-color: #e6e6e6;
+color: #000000;
+padding: 1em;
+border-radius: 6px;
+overflow-x: auto;
+font-size: 0.95em;
+}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.min.css">
+<style>body { max-width: 800px; margin: auto; }</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/github-dark.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+<style>
+pre code {
+display: block;
+background-color: #e6e6e6;
+color: #000000;
+padding: 1em;
+border-radius: 6px;
+overflow-x: auto;
+font-size: 0.95em;
+}
+</style>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">JoaoESmoreira RC-Project</h1>
+<div class="org-header">
+
+    <!--
+  <div class="topbar-menu-container">
+    <span class="topbar-menu"><a class="current" href="http://localhost:8080/">Home</a></span>
+    <span class="topbar-menu"><a href="http://localhost:8080/projects.html">Projects</a></span>
+    <span class="topbar-menu"><a href="http://localhost:8080/blog.html">Blog</a></span>
+    <span class="topbar-menu"><a href="http://localhost:8080/emacsphere.html">Emacsphere</a></span>
+  </div>
+    -->
+
+  <div class="topbar-menu-container">
+    <span class="topbar-menu"><a href="index.html">Home</a></span>
+    <span class="topbar-menu"><a href="projects.html">Projects</a></span>
+    <span class="topbar-menu"><a href="blog.html">Blog</a></span>
+    <span class="topbar-menu"><a href="emacsphere.html">Emacsphere</a></span>
+  </div>
+
+</div>
+<div id="outline-container-orgc48ff5d" class="outline-2">
+<h2 id="orgc48ff5d">Communication Networks Project</h2>
+<div class="outline-text-2" id="text-orgc48ff5d">
+<p>
+The main objective of the project is to build a socket transaction
+system for the <b>Networking and Communication</b> subject.
+</p>
+
+<p>
+The full repository and documentation can be found here:
+<a href="https://github.com/JoaoESmoreira/RC-Project/">RC-Project
+Repository</a>.
+</p>
+</div>
+<div id="outline-container-org45da3b0" class="outline-3">
+<h3 id="org45da3b0">Pre Requirements</h3>
+<div class="outline-text-3" id="text-org45da3b0">
+<p>
+In order to run this project, it is required to have some tools.  
+A <b>C</b> compiler such as <code>gcc</code> (or others) and an operating system such as <b>GNU/Linux</b> are necessary.  
+In this case, we are using a <b>Lubuntu</b> distribution.  
+</p>
+
+<p>
+We assume that <b>netcat</b> is installed by default in the OS. Otherwise, you will have to install it manually.
+</p>
+</div>
+</div>
+<div id="outline-container-orga161899" class="outline-3">
+<h3 id="orga161899">Obtain the Main Code</h3>
+<div class="outline-text-3" id="text-orga161899">
+<p>
+To obtain the source code, open your terminal and clone this project:
+</p>
+
+<pre><code class="language-lisp">git clone https://github.com/JoaoESmoreira/RC-Project
+</code></pre>
+</div>
+</div>
+<div id="outline-container-org884e57d" class="outline-3">
+<h3 id="org884e57d">Compile</h3>
+<div class="outline-text-3" id="text-org884e57d">
+<p>
+Once you have access to the repository, you can compile the code.  
+There are two options: compile without print debug or compile with print debug.
+</p>
+
+<pre><code class="language-lisp">make
+</code></pre>
+
+<pre><code class="language-lisp">make debug
+</code></pre>
+
+<p>
+After that, two executables will be created: <code>stock_server</code> and <code>operations_terminal</code>.
+</p>
+</div>
+</div>
+<div id="outline-container-org8b1f197" class="outline-3">
+<h3 id="org8b1f197">Run</h3>
+<div class="outline-text-3" id="text-org8b1f197">
+<p>
+To run the server, execute:
+</p>
+
+<pre><code class="language-lisp">./stock_server {STOCK PORT} {CONFIG PORT} {config file}
+</code></pre>
+
+<p>
+In another terminal, use <b>netcat</b> to simulate the admin usage:
+</p>
+
+<pre><code class="language-lisp">nc -u localhost 9876
+</code></pre>
+
+<p>
+Finally, for user usage:
+</p>
+
+<pre><code class="language-lisp">./operations_terminal {IP ADDRESS of server} {STOCK PORT}
+</code></pre>
+</div>
+</div>
+<div id="outline-container-orgc8e63f0" class="outline-3">
+<h3 id="orgc8e63f0">Running Server</h3>
+<div class="outline-text-3" id="text-orgc8e63f0">
+<p>
+First of all, the admin must log in with their credentials.  
+To do this, just press <b>Enter</b> and the server will send you messages with the respective instructions.  
+</p>
+
+<p>
+After you run the server and <b>netcat</b>, it is time for the admin to send some instructions to the server.
+</p>
+</div>
+</div>
+<div id="outline-container-org4ff01c5" class="outline-3">
+<h3 id="org4ff01c5">Admin Interaction</h3>
+<div class="outline-text-3" id="text-org4ff01c5">
+</div>
+<div id="outline-container-orgfab6caf" class="outline-4">
+<h4 id="orgfab6caf">Operations</h4>
+<div class="outline-text-4" id="text-orgfab6caf">
+</div>
+<ul class="org-ul">
+<li><a id="orgb20590f"></a>Add a New User<br />
+<div class="outline-text-5" id="text-orgb20590f">
+<pre><code class="language-lisp">ADD_USER {username} {password} {the sockets we have access} {budget}
+</code></pre>
+</div>
+</li>
+<li><a id="org4e88962"></a>List All Users<br />
+<div class="outline-text-5" id="text-org4e88962">
+<pre><code class="language-lisp">LIST
+</code></pre>
+</div>
+</li>
+<li><a id="org60d5578"></a>Delete a User<br />
+<div class="outline-text-5" id="text-org60d5578">
+<pre><code class="language-lisp">DEL {username}
+</code></pre>
+</div>
+</li>
+<li><a id="org0587d40"></a>Refresh the Time<br />
+<div class="outline-text-5" id="text-org0587d40">
+<pre><code class="language-lisp">REFRESH {new time}
+</code></pre>
+</div>
+</li>
+<li><a id="orgfe9ad3f"></a>To Log Out<br />
+<div class="outline-text-5" id="text-orgfe9ad3f">
+<pre><code class="language-lisp">QUIT
+</code></pre>
+</div>
+</li>
+<li><a id="org2ce501f"></a>To Turn Off the Server<br />
+<div class="outline-text-5" id="text-org2ce501f">
+<pre><code class="language-lisp">QUIT_SERVER
+</code></pre>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgf3ca6ac" class="outline-3">
+<h3 id="orgf3ca6ac">User Interaction</h3>
+<div class="outline-text-3" id="text-orgf3ca6ac">
+<p>
+When you log in as a user, the server will ask for your credentials.  
+It’s only possible to log in if the admin has previously added you.  
+</p>
+
+<p>
+The operations are selected by a number, and the server will send all the information you need.
+</p>
+
+<p>
+You can:
+</p>
+
+<ul class="org-ul">
+<li>Subscribe to a market to receive all information via multicast</li>
+<li>Buy auctions</li>
+<li>Sell auctions</li>
+<li>Turn on/off the market feed</li>
+<li>Check your wallet</li>
+<li>Log out</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org3ab5ac2" class="outline-2">
+<h2 id="org3ab5ac2">Footer</h2>
+<div class="outline-text-2" id="text-org3ab5ac2">
+<p>
+Copyright © 2025 Joao ES Moreira
+</p>
+
+<p>
+The contents of this website are licensed under the <a href="https://creativecommons.org/licenses/by-nd/4.0/">Creative Commons
+Attribution-NoDerivatives 4.0 International License</a> (CC-BY-ND 4.0).
+</p>
+
+<p>
+The source code of this website is licensed under the MIT license,
+and available in <a href="https://github.com/JoaoESmoreira/joaomoreira.com/">GitHub</a> repositor.  User-submitted contributions to
+the site are welcome, as long as the contributor agrees to license
+their submission with the CC-BY-ND 4.0 license.
+</p>
+</div>
+</div>
+</div>
+</body>
+</html>

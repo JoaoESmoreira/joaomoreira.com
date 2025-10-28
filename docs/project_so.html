@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>JoaoESmoreira</title>
+<meta name="description" content="Header" />
+<meta name="generator" content="Org Mode" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.min.css">
+<style>body { max-width: 800px; margin: auto; }</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/github-dark.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+<style>
+pre code {
+display: block;
+background-color: #e6e6e6;
+color: #000000;
+padding: 1em;
+border-radius: 6px;
+overflow-x: auto;
+font-size: 0.95em;
+}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.min.css">
+<style>body { max-width: 800px; margin: auto; }</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/github-dark.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+<style>
+pre code {
+display: block;
+background-color: #e6e6e6;
+color: #000000;
+padding: 1em;
+border-radius: 6px;
+overflow-x: auto;
+font-size: 0.95em;
+}
+</style>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">JoaoESmoreira</h1>
+<div class="org-header">
+
+    <!--
+  <div class="topbar-menu-container">
+    <span class="topbar-menu"><a class="current" href="http://localhost:8080/">Home</a></span>
+    <span class="topbar-menu"><a href="http://localhost:8080/projects.html">Projects</a></span>
+    <span class="topbar-menu"><a href="http://localhost:8080/blog.html">Blog</a></span>
+    <span class="topbar-menu"><a href="http://localhost:8080/emacsphere.html">Emacsphere</a></span>
+  </div>
+    -->
+
+  <div class="topbar-menu-container">
+    <span class="topbar-menu"><a href="index.html">Home</a></span>
+    <span class="topbar-menu"><a href="projects.html">Projects</a></span>
+    <span class="topbar-menu"><a href="blog.html">Blog</a></span>
+    <span class="topbar-menu"><a href="emacsphere.html">Emacsphere</a></span>
+  </div>
+
+</div>
+<div id="outline-container-orgf28a396" class="outline-2">
+<h2 id="orgf28a396">Computational Offloading System</h2>
+<div class="outline-text-2" id="text-orgf28a396">
+<p>
+This project implements a <b>computational offloading simulator</b>, designed to emulate distributed task execution across multiple processing nodes.  
+</p>
+
+<p>
+The main goal of this project is to simulate <b>task offloading</b> — the transfer of computationally intensive tasks from local devices to more powerful remote servers.  
+</p>
+
+
+<div id="org5648038" class="figure">
+<p><img src="./assets/so_app.png" alt="so_app.png" />
+</p>
+</div>
+
+<p>
+This concept is highly relevant in environments with limited resources such as smartphones or IoT devices.
+</p>
+</div>
+<div id="outline-container-orgc562fdf" class="outline-3">
+<h3 id="orgc562fdf">Technologies Used</h3>
+<div class="outline-text-3" id="text-orgc562fdf">
+<p>
+The system was developed in <b>C language</b> as part of a Systems Programming assignment.
+The main technologies used:
+</p>
+<ul class="org-ul">
+<li>C Programming Language</li>
+<li>POSIX Threads (pthreads)</li>
+<li>Inter-Process Communication (IPC)</li>
+<li>Shared Memory, Semaphores, Message Queues</li>
+<li>Linux Environment</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orged502ea" class="outline-3">
+<h3 id="orged502ea">Implementation</h3>
+<div class="outline-text-3" id="text-orged502ea">
+<p>
+The implementation uses the C standard libraries and several system-level mechanisms, including:
+</p>
+
+<ul class="org-ul">
+<li><b>Threads</b> (<code>&lt;pthread.h&gt;</code>) for concurrent task management</li>
+<li><b>Processes</b> created with the <code>fork()</code> system call</li>
+<li><b>Shared memory</b>, <b>message queues</b>, and <b>inter-process communication (IPC)</b> (<code>&lt;sys/shm.h&gt;</code>, <code>&lt;sys/msg.h&gt;</code>, <code>&lt;sys/ipc.h&gt;</code>)</li>
+<li><b>Synchronization mechanisms</b> such as semaphores, mutexes, and condition variables (<code>&lt;semaphore.h&gt;</code>, <code>&lt;pthread.h&gt;</code>)</li>
+</ul>
+
+<p>
+The program also performs <b>logging</b> in <code>log.txt</code> and reads configurations from <code>configFile.txt</code>.
+</p>
+</div>
+</div>
+<div id="outline-container-org9f127d5" class="outline-3">
+<h3 id="org9f127d5">Compilation and Execution</h3>
+<div class="outline-text-3" id="text-org9f127d5">
+<p>
+A <code>Makefile</code> is included to simplify compilation and execution.
+</p>
+</div>
+<div id="outline-container-org672950c" class="outline-4">
+<h4 id="org672950c">To compile</h4>
+<div class="outline-text-4" id="text-org672950c">
+<pre><code class="language-lisp">make
+</code></pre>
+</div>
+</div>
+<div id="outline-container-org0909a4e" class="outline-4">
+<h4 id="org0909a4e">To start the simulator</h4>
+<div class="outline-text-4" id="text-org0909a4e">
+<pre><code class="language-lisp">./offload_simulator configFile.txt
+</code></pre>
+</div>
+</div>
+<div id="outline-container-org0a9cdcd" class="outline-4">
+<h4 id="org0a9cdcd">To run a mobile node</h4>
+<div class="outline-text-4" id="text-org0a9cdcd">
+<pre><code class="language-lisp">./mobile_node <requests> <interval_ms> <instructions_per_request> <max_exec_time>
+</code></pre>
+</div>
+</div>
+<div id="outline-container-org0b063c9" class="outline-4">
+<h4 id="org0b063c9">To show statistics</h4>
+<div class="outline-text-4" id="text-org0b063c9">
+<pre><code class="language-lisp">echo STATS > TASK_PIPE
+</code></pre>
+</div>
+</div>
+<div id="outline-container-org8187f33" class="outline-4">
+<h4 id="org8187f33">To terminate</h4>
+<div class="outline-text-4" id="text-org8187f33">
+<pre><code class="language-lisp">echo EXIT > TASK_PIPE
+</code></pre>
+</div>
+</div>
+<div id="outline-container-orgc285ed0" class="outline-4">
+<h4 id="orgc285ed0">To clean temporary files</h4>
+<div class="outline-text-4" id="text-orgc285ed0">
+<pre><code class="language-lisp">make clean
+</code></pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgd610429" class="outline-3">
+<h3 id="orgd610429">System Components</h3>
+<div class="outline-text-3" id="text-orgd610429">
+</div>
+<div id="outline-container-org0a45a5b" class="outline-4">
+<h4 id="org0a45a5b">System Manager</h4>
+<div class="outline-text-4" id="text-org0a45a5b">
+<p>
+Located in <code>offload_simulator.c</code>.  
+It initializes all resources, processes, shared memory, named pipes, and semaphores.  
+It also handles termination signals safely.
+</p>
+</div>
+</div>
+<div id="outline-container-org4398ce7" class="outline-4">
+<h4 id="org4398ce7">Mobile Node</h4>
+<div class="outline-text-4" id="text-org4398ce7">
+<p>
+Implemented in <code>mobile_node.c</code>.  
+It validates user input and sends tasks to the Task Manager through a named pipe.
+</p>
+</div>
+</div>
+<div id="outline-container-orgf3f3d96" class="outline-4">
+<h4 id="orgf3f3d96">Task Manager</h4>
+<div class="outline-text-4" id="text-orgf3f3d96">
+<p>
+Defined in <code>taskManager.c</code>.  
+It creates a task queue, unnamed pipes for each Edge Server, and threads for the <b>dispatcher</b> and <b>scheduler</b>.  
+It processes tasks from the named pipe and handles <b>STATS</b> and <b>EXIT</b> commands.
+</p>
+</div>
+</div>
+<div id="outline-container-orgb97078a" class="outline-4">
+<h4 id="orgb97078a">Scheduler</h4>
+<div class="outline-text-4" id="text-orgb97078a">
+<p>
+Prioritizes tasks based on total waiting time and maximum allowed execution time.  
+Tasks are ranked to optimize scheduling efficiency.
+</p>
+</div>
+</div>
+<div id="outline-container-orgc6c76d7" class="outline-4">
+<h4 id="orgc6c76d7">Dispatcher</h4>
+<div class="outline-text-4" id="text-orgc6c76d7">
+<p>
+Drops expired tasks and forwards valid ones to the first available Edge Server that can complete them.
+</p>
+</div>
+</div>
+<div id="outline-container-org4018d42" class="outline-4">
+<h4 id="org4018d42">Edge Server</h4>
+<div class="outline-text-4" id="text-org4018d42">
+<p>
+Implemented in <code>edgeServer.c</code>.  
+It launches virtual CPUs (vCPUs) as threads, processes incoming tasks, and interacts with the <b>Maintenance Manager</b> through message queues.
+</p>
+</div>
+</div>
+<div id="outline-container-org77e27f7" class="outline-4">
+<h4 id="org77e27f7">Maintenance Manager</h4>
+<div class="outline-text-4" id="text-org77e27f7">
+<p>
+Defined in <code>maintenanceManager.c</code>.  
+It randomly selects servers to enter maintenance mode, coordinating with Edge Servers using message queues.
+</p>
+</div>
+</div>
+<div id="outline-container-orgb55977a" class="outline-4">
+<h4 id="orgb55977a">Monitor</h4>
+<div class="outline-text-4" id="text-orgb55977a">
+<p>
+Monitors system load and adjusts the operating mode based on queue utilization and waiting time.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org6d52175" class="outline-3">
+<h3 id="org6d52175">Repository Structure</h3>
+<div class="outline-text-3" id="text-org6d52175">
+<ul class="org-ul">
+<li><b>src/</b> — C source files for all components (Task Manager, Edge Server, Mobile Node, etc.)</li>
+<li><b>include/</b> — Header files for shared structures and constants</li>
+<li><b>configFile.txt</b> — Configuration file used for initialization</li>
+<li><b>log.txt</b> — Output log file for runtime information</li>
+<li><b>Makefile</b> — Build automation script</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orga318894" class="outline-2">
+<h2 id="orga318894">Footer</h2>
+<div class="outline-text-2" id="text-orga318894">
+<p>
+Copyright © 2025 Joao ES Moreira
+</p>
+
+<p>
+The contents of this website are licensed under the <a href="https://creativecommons.org/licenses/by-nd/4.0/">Creative Commons
+Attribution-NoDerivatives 4.0 International License</a> (CC-BY-ND 4.0).
+</p>
+
+<p>
+The source code of this website is licensed under the MIT license,
+and available in <a href="https://github.com/JoaoESmoreira/joaomoreira.com/">GitHub</a> repositor.  User-submitted contributions to
+the site are welcome, as long as the contributor agrees to license
+their submission with the CC-BY-ND 4.0 license.
+</p>
+</div>
+</div>
+</div>
+</body>
+</html>

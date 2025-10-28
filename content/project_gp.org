@@ -1,0 +1,47 @@
+#+TITLE: JoaoESmoreira
+#+AUTHOR: Joao ES Moreira
+#+SETUPFILE: ~/Documents/OrgFiles/themes/responsive-dark-light.setup
+#+INCLUDE: "./header.org"
+
+
+
+* Project Managment
+
+This repository documents a software development project where I
+served as the **Project Manager (PM)**, coordinating a team of **10
+members** throughout the full development lifecycle.  
+
+The project involved the planning, implementation, and delivery of a
+mobile application, following agile principles and emphasizing
+collaboration, version control, and continuous integration.
+
+The full repository and documentation can be found here: [[https://github.com/JoaoESmoreira/GP-project][GP Project
+Repository]].
+
+
+** Repository Structure
+
+- *docs/*: Project documentation, including requirements, design, and management.
+- *src/*: Application source code, separated by platform (Android, iOS) or shared code.
+- *tests/*: Automated tests, including unit, integration, and end-to-end (E2E) tests.
+- *assets/*: Media resources (images, audio, etc.).
+- *build/*: Build and CI/CD scripts and configurations.
+- *config/*: Project configuration files.
+
+** Tools Used
+
+- Programming Language: 
+    - JavaScript
+- Markup Languages: 
+    - HTML
+    - CSS
+- Tools: 
+    - React
+    - Express
+    - SQL Server
+- Project Management: Markdown Files 
+- Version Control: Git
+- Continuous Integration: (Specify, e.g. GitHub Actions, Jenkins, etc.)
+
+* Footer
+#+INCLUDE: "./footer.org"
