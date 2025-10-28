@@ -16,9 +16,10 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
 <script>hljs.highlightAll();</script>
 <style>
-pre.src {
+pre code {
+display: block;
 background-color: #e6e6e6;
-color: #1e1e1e;
+color: #000000;
 padding: 1em;
 border-radius: 6px;
 overflow-x: auto;
@@ -31,9 +32,10 @@ font-size: 0.95em;
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
 <script>hljs.highlightAll();</script>
 <style>
-pre.src {
+pre code {
+display: block;
 background-color: #e6e6e6;
-color: #1e1e1e;
+color: #000000;
 padding: 1em;
 border-radius: 6px;
 overflow-x: auto;
@@ -45,24 +47,27 @@ font-size: 0.95em;
 <div id="content" class="content">
 <h1 class="title">JoaoESmoreira</h1>
 <div class="org-header">
+
   <div class="topbar-menu-container">
-    <!--
     <span class="topbar-menu"><a class="current" href="http://localhost:8080/">Home</a></span>
+    <span class="topbar-menu"><a href="http://localhost:8080/projects.html">Projects</a></span>
     <span class="topbar-menu"><a href="http://localhost:8080/emacsphere.html">Emacsphere</a></span>
     <span class="topbar-menu"><a href="http://localhost:8080/blog.html">Blog</a></span>
-    <span class="topbar-menu"><a href="http://localhost:8080/other_projects.html">Other-Projects</a></span>
   </div>
-    -->
+
+    <!--
   <div class="topbar-menu-container">
     <span class="topbar-menu"><a href="index.html">Home</a></span>
+    <span class="topbar-menu"><a href="projects.html">Projects</a></span>
     <span class="topbar-menu"><a href="emacsphere.html">Emacsphere</a></span>
     <span class="topbar-menu"><a href="blog.html">Blog</a></span>
-    <span class="topbar-menu"><a href="other_projects.html">Other-Projects</a></span>
   </div>
+    -->
+
 </div>
-<div id="outline-container-org54515c7" class="outline-2">
-<h2 id="org54515c7">Mu4e</h2>
-<div class="outline-text-2" id="text-org54515c7">
+<div id="outline-container-org2a6df50" class="outline-2">
+<h2 id="org2a6df50">Mu4e</h2>
+<div class="outline-text-2" id="text-org2a6df50">
 <p>
 Hello there!
 </p>
@@ -75,45 +80,41 @@ complete source code of my emacs configuration on my GitHub repository
 dedicated tab for the project at <a href="./emacsphere.html">Emacsphere</a>.
 </p>
 </div>
-<div id="outline-container-orgaa5112a" class="outline-3">
-<h3 id="orgaa5112a">Requirements</h3>
-<div class="outline-text-3" id="text-orgaa5112a">
+<div id="outline-container-org6ee701e" class="outline-3">
+<h3 id="org6ee701e">Requirements</h3>
+<div class="outline-text-3" id="text-org6ee701e">
 <p>
 Let's start by installing all required packages. In my case, I am
 installing it on <b>Arch Linux</b> by the way.
 </p>
 
-<div class="org-src-container">
-<pre class="src src-shell">sudo pacman -S isync msmtp 
+<pre><code class="language-lisp">sudo pacman -S isync msmtp 
 yay -S mu
-</pre>
+</code></pre>
 </div>
 </div>
+<div id="outline-container-orgb676323" class="outline-3">
+<h3 id="orgb676323">Configuring Mbsync</h3>
+<div class="outline-text-3" id="text-orgb676323">
 </div>
-<div id="outline-container-org397dd6a" class="outline-3">
-<h3 id="org397dd6a">Configuring Mbsync</h3>
-<div class="outline-text-3" id="text-org397dd6a">
-</div>
-<div id="outline-container-org26c0304" class="outline-4">
-<h4 id="org26c0304">Encripting Passwords</h4>
-<div class="outline-text-4" id="text-org26c0304">
+<div id="outline-container-org4907700" class="outline-4">
+<h4 id="org4907700">Encripting Passwords</h4>
+<div class="outline-text-4" id="text-org4907700">
 <p>
 First thing first, let’s securely store and encrypt your passwords.
 </p>
 
-<div class="org-src-container">
-<pre class="src src-bash">mkdir -p .password-store/
+<pre><code class="language-lisp">mkdir -p .password-store/
 cd .passwrod-store
 
-touch "your-password" &gt; gmail
-touch "your-password" &gt; dei
+touch "your-password" > gmail
+touch "your-password" > dei
 
 gpg -c .password-store/gmail
 gpg -c .password-store/dei
 
 rm gmail dei
-</pre>
-</div>
+</code></pre>
 
 <p>
 If you’re using Gmail, you must create an App Password.  You can do
@@ -121,16 +122,15 @@ this by visiting: <a href="https://myaccount.google.com/apppasswords">https://my
 </p>
 </div>
 </div>
-<div id="outline-container-org9684681" class="outline-4">
-<h4 id="org9684681">Setting up mbsyncrc</h4>
-<div class="outline-text-4" id="text-org9684681">
+<div id="outline-container-org60ee097" class="outline-4">
+<h4 id="org60ee097">Setting up mbsyncrc</h4>
+<div class="outline-text-4" id="text-org60ee097">
 <p>
 Create the configuration file at <code>~/.mbsyncrc</code> and past the following
 content. Make sure you replace email addresses with your actual ones.
 </p>
 
-<div class="org-src-container">
-<pre class="src src-shell"># #############
+<pre><code class="language-lisp"># #############
 # # gmail
 # #############
 IMAPAccount gmail
@@ -179,46 +179,40 @@ Patterns INBOX mail/Drafts mail/Junk mail/sent-mail mail/Trash
 Create Both
 Expunge Both
 SyncState *
-</pre>
-</div>
+</code></pre>
 
 <p>
 Before syncing your emails, make sure to create the local mail
 directories:
 </p>
 
-<div class="org-src-container">
-<pre class="src src-shell">mkdir -p ~/Mail/gmail
+<pre><code class="language-lisp">mkdir -p ~/Mail/gmail
 mkdir -p ~/Mail/dei
-</pre>
+</code></pre>
 </div>
 </div>
 </div>
-</div>
-<div id="outline-container-orgc610268" class="outline-3">
-<h3 id="orgc610268">Setting up MU and Indexing</h3>
-<div class="outline-text-3" id="text-orgc610268">
+<div id="outline-container-org4a7ef97" class="outline-3">
+<h3 id="org4a7ef97">Setting up MU and Indexing</h3>
+<div class="outline-text-3" id="text-org4a7ef97">
 <p>
 Now, sync your emails and index them using <b>mu</b>.
 </p>
 
-<div class="org-src-container">
-<pre class="src src-shell">mbsync -a
+<pre><code class="language-lisp">mbsync -a
 mu init --maildir=~/Mail --my-address=your_address@gmail.com --my-address=your_address@student.dei.uc.pt
 mu index                                                                                                 
-</pre>
+</code></pre>
 </div>
 </div>
-</div>
-<div id="outline-container-org6ca04af" class="outline-3">
-<h3 id="org6ca04af">Configuring mu4e in Emacs</h3>
-<div class="outline-text-3" id="text-org6ca04af">
+<div id="outline-container-org37e56e0" class="outline-3">
+<h3 id="org37e56e0">Configuring mu4e in Emacs</h3>
+<div class="outline-text-3" id="text-org37e56e0">
 <p>
 Paste the following configuration in your Emacs config file:
 </p>
 
-<div class="org-src-container">
-<pre class="src src-emacs-lisp">(use-package mu4e
+<pre><code class="language-lisp">(use-package mu4e
   :ensure nil
   :load-path "/usr/share/emacs/site-lisp/mu4e/"
   :config
@@ -278,28 +272,26 @@ Paste the following configuration in your Emacs config file:
                      (smtpmail-smtp-service . 465)
                      (smtpmail-stream-type . ssl)))))
 )
-</pre>
+</code></pre>
 </div>
 </div>
-</div>
-<div id="outline-container-org7546bae" class="outline-3">
-<h3 id="org7546bae">Configuring msmtp</h3>
-<div class="outline-text-3" id="text-org7546bae">
+<div id="outline-container-org10a36c0" class="outline-3">
+<h3 id="org10a36c0">Configuring msmtp</h3>
+<div class="outline-text-3" id="text-org10a36c0">
 <p>
 <b>Msmtp</b> is a simple and effective SMTP client we use to send emails
 from Emacs through <b>mu4e</b>.
 </p>
 </div>
-<div id="outline-container-org09eddbf" class="outline-4">
-<h4 id="org09eddbf">Create the configuration file</h4>
-<div class="outline-text-4" id="text-org09eddbf">
+<div id="outline-container-orgaecf000" class="outline-4">
+<h4 id="orgaecf000">Create the configuration file</h4>
+<div class="outline-text-4" id="text-orgaecf000">
 <p>
 Create a file called <code>~/.msmtprc</code> with the following content. Replace
 all placeholder values with your actual information:
 </p>
 
-<div class="org-src-container">
-<pre class="src src-conf"># Set default values
+<pre><code class="language-conf"># Set default values
 defaults
 auth           on
 tls            on
@@ -328,54 +320,49 @@ tls on
 
 # Set default account
 account default : gmail
-</pre>
+</code></pre>
 </div>
 </div>
-</div>
-<div id="outline-container-org97d0ee6" class="outline-4">
-<h4 id="org97d0ee6">Secure the file</h4>
-<div class="outline-text-4" id="text-org97d0ee6">
+<div id="outline-container-org8a5aa52" class="outline-4">
+<h4 id="org8a5aa52">Secure the file</h4>
+<div class="outline-text-4" id="text-org8a5aa52">
 <p>
 <b>Msmtp</b> expects the configuration file to be <b>only readable by the
 user</b> for security reasons. So, change the permissions:
 </p>
 
-<div class="org-src-container">
-<pre class="src src-shell">chmod 600 ~/.msmtprc
-</pre>
+<pre><code class="language-lisp">chmod 600 ~/.msmtprc
+</code></pre>
 </div>
 </div>
 </div>
 </div>
-</div>
-<div id="outline-container-org0c292b7" class="outline-2">
-<h2 id="org0c292b7">Using Mu4e - Use Case</h2>
-<div class="outline-text-2" id="text-org0c292b7">
+<div id="outline-container-orge8b7bcf" class="outline-2">
+<h2 id="orge8b7bcf">Using Mu4e - Use Case</h2>
+<div class="outline-text-2" id="text-orge8b7bcf">
 <p>
 Once everything is configured, you are ready to start managing your
 emails directly from Emacs using <b>Mu4e</b>.
 </p>
 </div>
-<div id="outline-container-orgbf2f27c" class="outline-3">
-<h3 id="orgbf2f27c">Launch Mu4e</h3>
-<div class="outline-text-3" id="text-orgbf2f27c">
+<div id="outline-container-orgd346929" class="outline-3">
+<h3 id="orgd346929">Launch Mu4e</h3>
+<div class="outline-text-3" id="text-orgd346929">
 <p>
 Open Emacs and launch Mu4e by typing:
 </p>
 
-<div class="org-src-container">
-<pre class="src src-emacs-lisp">M-x mu4e
-</pre>
-</div>
+<pre><code class="language-lisp">M-x mu4e
+</code></pre>
 
 <p>
 This will open the <b>mu4e</b> main dashboard.
 </p>
 </div>
 </div>
-<div id="outline-container-org8a783d8" class="outline-3">
-<h3 id="org8a783d8">Interface Overview</h3>
-<div class="outline-text-3" id="text-org8a783d8">
+<div id="outline-container-org2396aac" class="outline-3">
+<h3 id="org2396aac">Interface Overview</h3>
+<div class="outline-text-3" id="text-org2396aac">
 <p>
 <b>Mu4e</b> is divided into sections:
 </p>
@@ -389,9 +376,9 @@ This will open the <b>mu4e</b> main dashboard.
 </ul>
 </div>
 </div>
-<div id="outline-container-orgbfa010e" class="outline-3">
-<h3 id="orgbfa010e">Basic Shortcuts</h3>
-<div class="outline-text-3" id="text-orgbfa010e">
+<div id="outline-container-org4b1af43" class="outline-3">
+<h3 id="org4b1af43">Basic Shortcuts</h3>
+<div class="outline-text-3" id="text-org4b1af43">
 <p>
 Here is a table with essential <b>mu4e</b> commands and keybindings:
 </p>
@@ -469,9 +456,9 @@ Here is a table with essential <b>mu4e</b> commands and keybindings:
 </table>
 </div>
 </div>
-<div id="outline-container-orgcb41274" class="outline-3">
-<h3 id="orgcb41274">Writing and Sending Emails</h3>
-<div class="outline-text-3" id="text-orgcb41274">
+<div id="outline-container-orgef18dfb" class="outline-3">
+<h3 id="orgef18dfb">Writing and Sending Emails</h3>
+<div class="outline-text-3" id="text-orgef18dfb">
 <p>
 To compose a new email:
 </p>
@@ -488,34 +475,32 @@ context (Gmail or DEI).
 </p>
 </div>
 </div>
-<div id="outline-container-org3946f04" class="outline-3">
-<h3 id="org3946f04">Switching Contexts</h3>
-<div class="outline-text-3" id="text-org3946f04">
+<div id="outline-container-orgafad407" class="outline-3">
+<h3 id="orgafad407">Switching Contexts</h3>
+<div class="outline-text-3" id="text-orgafad407">
 <p>
 If you configured <b>mu4e-contexts</b>, <b>mu4e</b> automatically chooses the
 context based on the folder or message. But you can also manually
 switch:
 </p>
 
-<div class="org-src-container">
-<pre class="src src-emacs-lisp">; Switch context manually
+<pre><code class="language-lisp">; Switch context manually
 M-x mu4e-context-switch
-</pre>
-</div>
+</code></pre>
 
 <p>
 You can also press <code>;</code> while inside <b>mu4e</b> to switch between configured contexts.
 </p>
 </div>
 </div>
-<div id="outline-container-org60a9cac" class="outline-3">
-<h3 id="org60a9cac">Searching Emails</h3>
-<div class="outline-text-3" id="text-org60a9cac">
+<div id="outline-container-orga8abab2" class="outline-3">
+<h3 id="orga8abab2">Searching Emails</h3>
+<div class="outline-text-3" id="text-orga8abab2">
 <p>
 You can search all indexed mail using <code>/</code>:
 </p>
 
-<pre class="example" id="orgb05b643">
+<pre class="example" id="org2d8badd">
 from:someone@example.com subject:meeting date:today
 </pre>
 
@@ -530,32 +515,28 @@ You can use advanced queries like:
 </ul>
 </div>
 </div>
-<div id="outline-container-orga708ec2" class="outline-3">
-<h3 id="orga708ec2">Syncing Mail</h3>
-<div class="outline-text-3" id="text-orga708ec2">
+<div id="outline-container-orgfb93666" class="outline-3">
+<h3 id="orgfb93666">Syncing Mail</h3>
+<div class="outline-text-3" id="text-orgfb93666">
 <p>
 To manually sync your mail (run <b>mbsync</b> and reindex):
 </p>
 
-<div class="org-src-container">
-<pre class="src src-emacs-lisp">U
-</pre>
-</div>
+<pre><code class="language-lisp">U
+</code></pre>
 
 <p>
 Alternatively, <b>mu4e</b> is configured to sync automatically every 3
 minutes based on:
 </p>
 
-<div class="org-src-container">
-<pre class="src src-emacs-lisp">(setq mu4e-update-interval (* 3 60)) ; every 3 minutes
-</pre>
+<pre><code class="language-lisp">(setq mu4e-update-interval (* 3 60)) ; every 3 minutes
+</code></pre>
 </div>
 </div>
-</div>
-<div id="outline-container-orga0c5faf" class="outline-3">
-<h3 id="orga0c5faf">Deleting and Archiving</h3>
-<div class="outline-text-3" id="text-orga0c5faf">
+<div id="outline-container-org2b9103f" class="outline-3">
+<h3 id="org2b9103f">Deleting and Archiving</h3>
+<div class="outline-text-3" id="text-org2b9103f">
 <ul class="org-ul">
 <li>Press <code>d</code> to mark an email for trash.</li>
 <li>Press <code>r</code> to refile (archive) a message.</li>
@@ -564,9 +545,9 @@ minutes based on:
 </div>
 </div>
 </div>
-<div id="outline-container-orgf8f7a89" class="outline-2">
-<h2 id="orgf8f7a89">Final Thoughts</h2>
-<div class="outline-text-2" id="text-orgf8f7a89">
+<div id="outline-container-orga082ffb" class="outline-2">
+<h2 id="orga082ffb">Final Thoughts</h2>
+<div class="outline-text-2" id="text-orga082ffb">
 <p>
 And that's it! You now have a fully working setup of <b>mu4e</b> with
 multiple email accounts in Emacs. This configuration is both minimal
@@ -580,9 +561,9 @@ or pull request on the GitHub repository.
 </p>
 </div>
 </div>
-<div id="outline-container-orgadbe219" class="outline-2">
-<h2 id="orgadbe219">Footer</h2>
-<div class="outline-text-2" id="text-orgadbe219">
+<div id="outline-container-orgdb77d86" class="outline-2">
+<h2 id="orgdb77d86">Footer</h2>
+<div class="outline-text-2" id="text-orgdb77d86">
 <p>
 Copyright © 2025 Joao ES Moreira
 </p>

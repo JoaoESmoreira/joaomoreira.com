@@ -64,12 +64,12 @@ for better readability.
 ** Automating publish process with Shell Script
 To simplify the build process, create a shell script named build.sh:
 
-#+begin_src shell
+#+begin_src emacs-lisp
 #!/bin/sh
 emacs -Q --script build-site.el
 #+end_src
 
-Do not forget to give execution permission to this file: =<M-x> chomod
+Do not forget to give execution permission to this file: =<M-x> chmod
 <RET> file_path <RET> u+x=.
 
 ** Preview the generated website

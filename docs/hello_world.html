@@ -16,9 +16,10 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
 <script>hljs.highlightAll();</script>
 <style>
-pre.src {
+pre code {
+display: block;
 background-color: #e6e6e6;
-color: #1e1e1e;
+color: #000000;
 padding: 1em;
 border-radius: 6px;
 overflow-x: auto;
@@ -31,9 +32,10 @@ font-size: 0.95em;
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
 <script>hljs.highlightAll();</script>
 <style>
-pre.src {
+pre code {
+display: block;
 background-color: #e6e6e6;
-color: #1e1e1e;
+color: #000000;
 padding: 1em;
 border-radius: 6px;
 overflow-x: auto;
@@ -45,24 +47,27 @@ font-size: 0.95em;
 <div id="content" class="content">
 <h1 class="title">JoaoESmoreira</h1>
 <div class="org-header">
+
   <div class="topbar-menu-container">
-    <!--
     <span class="topbar-menu"><a class="current" href="http://localhost:8080/">Home</a></span>
+    <span class="topbar-menu"><a href="http://localhost:8080/projects.html">Projects</a></span>
     <span class="topbar-menu"><a href="http://localhost:8080/emacsphere.html">Emacsphere</a></span>
     <span class="topbar-menu"><a href="http://localhost:8080/blog.html">Blog</a></span>
-    <span class="topbar-menu"><a href="http://localhost:8080/other_projects.html">Other-Projects</a></span>
   </div>
-    -->
+
+    <!--
   <div class="topbar-menu-container">
     <span class="topbar-menu"><a href="index.html">Home</a></span>
+    <span class="topbar-menu"><a href="projects.html">Projects</a></span>
     <span class="topbar-menu"><a href="emacsphere.html">Emacsphere</a></span>
     <span class="topbar-menu"><a href="blog.html">Blog</a></span>
-    <span class="topbar-menu"><a href="other_projects.html">Other-Projects</a></span>
   </div>
+    -->
+
 </div>
-<div id="outline-container-orgbd98406" class="outline-2">
-<h2 id="orgbd98406">Hello World</h2>
-<div class="outline-text-2" id="text-orgbd98406">
+<div id="outline-container-org1a5f117" class="outline-2">
+<h2 id="org1a5f117">Hello World</h2>
+<div class="outline-text-2" id="text-org1a5f117">
 <p>
 Hello there!
 </p>
@@ -73,9 +78,9 @@ In this blog I intend to show you how I generated this website using
 my GitHub repository <a href="https://github.com/JoaoESmoreira/joaomoreira.com/">https://github.com/JoaoESmoreira/joaomoreira.com/</a>
 </p>
 </div>
-<div id="outline-container-orgc82429b" class="outline-3">
-<h3 id="orgc82429b">Project Setup</h3>
-<div class="outline-text-3" id="text-orgc82429b">
+<div id="outline-container-org4c5a1a9" class="outline-3">
+<h3 id="org4c5a1a9">Project Setup</h3>
+<div class="outline-text-3" id="text-org4c5a1a9">
 <p>
 First things first, create the following structure in your project
 folder: <code>&lt;M-x&gt; mkdir &lt;RET&gt; content</code> contains all the Org files you want to
@@ -90,16 +95,15 @@ after publishing.
 </p>
 </div>
 </div>
-<div id="outline-container-orgc12f73b" class="outline-3">
-<h3 id="orgc12f73b">Configuring Emacs for Export</h3>
-<div class="outline-text-3" id="text-orgc12f73b">
+<div id="outline-container-orga1cf902" class="outline-3">
+<h3 id="orga1cf902">Configuring Emacs for Export</h3>
+<div class="outline-text-3" id="text-orga1cf902">
 <p>
 Create a file named <b>build-site.el</b> in the root of your project and
 add the following Emacs Lisp code:
 </p>
 
-<div class="org-src-container">
-<pre class="src src-emacs-lisp">(require 'ox-publish)
+<pre><code class="language-lisp">(require 'ox-publish)
 
 ;; Define the publishing project
 (setq org-publish-project-alist
@@ -121,14 +125,13 @@ add the following Emacs Lisp code:
 (setq org-html-validation-link nil               ;; Don't show validation link
       org-html-head-include-scripts nil          ;; Use our own scripts
       org-html-head-include-default-style nil    ;; Use our own styles
-      org-html-head "&lt;link rel=\"stylesheet\" href=\"https://cdn.simplecss.org/simple.min.css\" /&gt;")
+      org-html-head "<link rel=\"stylesheet\" href=\"https://cdn.simplecss.org/simple.min.css\" />")
 
 ;; Generate the site output
 (org-publish-all t)
 
 (message "Build complete")
-</pre>
-</div>
+</code></pre>
 
 <p>
 This script configures Org Mode to process all org files in <b>content/</b>
@@ -137,28 +140,26 @@ for better readability.
 </p>
 </div>
 </div>
-<div id="outline-container-org11f2930" class="outline-3">
-<h3 id="org11f2930">Automating publish process with Shell Script</h3>
-<div class="outline-text-3" id="text-org11f2930">
+<div id="outline-container-org675cba9" class="outline-3">
+<h3 id="org675cba9">Automating publish process with Shell Script</h3>
+<div class="outline-text-3" id="text-org675cba9">
 <p>
 To simplify the build process, create a shell script named build.sh:
 </p>
 
-<div class="org-src-container">
-<pre class="src src-shell">#!/bin/sh
+<pre><code class="language-lisp">#!/bin/sh
 emacs -Q --script build-site.el
-</pre>
-</div>
+</code></pre>
 
 <p>
-Do not forget to give execution permission to this file: <code>&lt;M-x&gt; chomod
+Do not forget to give execution permission to this file: <code>&lt;M-x&gt; chmod
 &lt;RET&gt; file_path &lt;RET&gt; u+x</code>.
 </p>
 </div>
 </div>
-<div id="outline-container-org4b79102" class="outline-3">
-<h3 id="org4b79102">Preview the generated website</h3>
-<div class="outline-text-3" id="text-org4b79102">
+<div id="outline-container-orga4fdbd7" class="outline-3">
+<h3 id="orga4fdbd7">Preview the generated website</h3>
+<div class="outline-text-3" id="text-orga4fdbd7">
 <p>
 In order to preview the result of your web site, let's install the
 <a href="https://github.com/skeeto/emacs-web-server">simple-httpd</a> Emacs package. This package is a lightweight, pure-Elisp
@@ -170,45 +171,39 @@ directly from within Emacs.
 It is possible to install it from <a href="https://melpa.org/#/getting-started">MELPA</a> using <code>&lt;M-x&gt; package-install</code> or
 adding the following code snippet into your Emacs configuration:
 </p>
-<div class="org-src-container">
-<pre class="src src-emacs-lisp">(use-package simple-httpd
+<pre><code class="language-lisp">(use-package simple-httpd
   :ensure t)
-</pre>
-</div>
+</code></pre>
 
 <p>
 Sinse you are working in your Emacs configuration, take some advantage
 and install the following package to ensure better syntax
 highlighting.
 </p>
-<div class="org-src-container">
-<pre class="src src-emacs-lisp">(use-package htmlize
+<pre><code class="language-lisp">(use-package htmlize
     :ensure t
     :defer t
     :config
         (setq org-html-htmlize-output-type 'inline-css))
-</pre>
+</code></pre>
 </div>
 </div>
-</div>
-<div id="outline-container-org12b6b25" class="outline-3">
-<h3 id="org12b6b25">Write your first page</h3>
-<div class="outline-text-3" id="text-org12b6b25">
+<div id="outline-container-orgcbd9e10" class="outline-3">
+<h3 id="orgcbd9e10">Write your first page</h3>
+<div class="outline-text-3" id="text-orgcbd9e10">
 <p>
 Create a file named <b>index.org</b> inside content/ with the following
 content:
 </p>
 
-<div class="org-src-container">
-<pre class="src src-org">#+TITLE: JoaoESmoreira
+<pre><code class="language-org">#+TITLE: JoaoESmoreira
 #+AUTHOR: Joao ES Moreira
 #+SETUPFILE: ~/path/for/your/themes/responsive-dark-light.setup
 #+INCLUDE: "./header.org"
 
  * Hello World
 Welcome to my first website built with Org Mode!
-</pre>
-</div>
+</code></pre>
 
 <p>
 Now it is possible to export all your org files to html with
@@ -219,9 +214,9 @@ httpd-serve-directory &lt;RET&gt; path/to/docs</code> and open the link
 </div>
 </div>
 </div>
-<div id="outline-container-org96d2ad5" class="outline-2">
-<h2 id="org96d2ad5">Understanding Keyboard Shortcuts in Emacs</h2>
-<div class="outline-text-2" id="text-org96d2ad5">
+<div id="outline-container-org36efeba" class="outline-2">
+<h2 id="org36efeba">Understanding Keyboard Shortcuts in Emacs</h2>
+<div class="outline-text-2" id="text-org36efeba">
 <p>
 Emacs uses specific key notations that sometimes differ depending on
 the operating system. Here is a breakdown of the two main ones used
@@ -240,9 +235,9 @@ commands.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgf8ee52f" class="outline-2">
-<h2 id="orgf8ee52f">Conclusion</h2>
-<div class="outline-text-2" id="text-orgf8ee52f">
+<div id="outline-container-org4f934c8" class="outline-2">
+<h2 id="org4f934c8">Conclusion</h2>
+<div class="outline-text-2" id="text-org4f934c8">
 <p>
 You now have a fully working static website built with Org Mode and
 Emacs. Expand it by adding more org files in <b>content/</b> and rerunning
@@ -250,9 +245,9 @@ Emacs. Expand it by adding more org files in <b>content/</b> and rerunning
 </p>
 </div>
 </div>
-<div id="outline-container-org671c6de" class="outline-2">
-<h2 id="org671c6de">Footer</h2>
-<div class="outline-text-2" id="text-org671c6de">
+<div id="outline-container-org7ca5b4a" class="outline-2">
+<h2 id="org7ca5b4a">Footer</h2>
+<div class="outline-text-2" id="text-org7ca5b4a">
 <p>
 Copyright © 2025 Joao ES Moreira
 </p>

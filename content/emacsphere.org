@@ -35,7 +35,7 @@ You can find the source code of this project at [[https://github.com/JoaoESmorei
 
    Clone this repository to the Emacs configuration directory:
 
-#+begin_src shell
+#+begin_src emacs-lisp
 git clone https://github.com/JoaoESmoreira/emacsphere.git ~/.emacs.d
 #+end_src
 
