@@ -1,0 +1,112 @@
+#+TITLE: JoaoESmoreira
+#+AUTHOR: Joao ES Moreira
+#+SETUPFILE: ~/Documents/OrgFiles/themes/responsive-dark-light.setup
+#+INCLUDE: "./header.org"
+
+
+* Optical Character Recognition
+
+The main goal of the project is to design and implement neural network
+models capable of recognizing *handwritten digits* (0–9). Each digit
+is represented as a binary 16×16 matrix (256 features), and different
+neural network architectures are trained and compared to classify them
+accurately.
+
+The project also includes the development of a simple graphical
+interface to test the trained models, allowing users to draw digits
+and visualize classification results.
+
+# The full repository and documentation can be found here:  
+# [[https://github.com/JoaoESmoreira/AC-Project/][Epileptic Seizure Prediction and Detection Project].
+
+** Technologies Used
+- Programming Language: MATLAB (2023b)
+- Required Toolbox: *Image Processing Toolbox*, *Neural Network
+  Toolbox*
+
+** Objectives
+- Implement and train neural networks for *Optical Character
+  Recognition (OCR)*.
+- Compare multiple architectures:
+  - A two-stage model with a *filter + classifier*.
+  - A single-stage *classifier* (with one or two layers).
+- Evaluate the influence of different activation functions and
+  training algorithms.
+- Develop a GUI that allows users to draw digits and test the
+  classifiers interactively.
+
+** Methodology
+*** Data Representation
+Each digit is encoded as a binary 16×16 matrix, converted into a 256×1
+vector. Training data is generated using the provided *mpaper.m*
+function and the *PerfectArial.mat* dataset.
+
+*** Neural Network Architectures
+1. *Filter + Classifier*
+   - The *filter* can be an associative memory or a binary perceptron
+     trained to correct imperfect inputs.
+   - The *classifier* is a single-layer neural network with 10 output
+     neurons (one per digit).
+
+2. *Classifier Only*
+   - Direct classification without pre-filtering.
+   - Tested with one or two layers (using *patternnet* for multi-layer
+     architectures).
+
+*** Activation Functions
+The following activation functions were tested:
+- *hardlim* (binary threshold)
+- *purelin* (linear)
+- *logsig* (sigmoidal)
+- *softmax* (for probabilistic classification)
+
+*** Training
+Training was performed using MATLAB’s Neural Network Toolbox. Both
+*incremental* and *batch* learning modes were explored, with
+algorithms such as:
+- *learnp* (Perceptron rule)
+- *learngd* (Gradient descent)
+- *trainlm* (Levenberg–Marquardt)
+Datasets were split into training and validation sets to prevent
+overfitting.
+
+*** Testing
+Testing was carried out using new samples generated with *mpaper*,
+ensuring they differed from the training set. The *sim* function was
+used to evaluate generalization performance.
+
+** Implementation Details
+*** Tools and Environment
+- Programming Language: MATLAB (2023b)
+- Required Toolbox: *Image Processing Toolbox*, *Neural Network
+  Toolbox*
+- Auxiliary Functions:
+  - *mpaper.m* — draw digits and create binary input vectors
+  - *grafica.m* — display digits
+  - *showim.m* — visualize digit grids
+  - *ocr_fun.m* — call the classifier and display results
+  - *myclassify.m* — custom classification script
+
+*** GUI Application
+A MATLAB App Designer interface (*2023OCRGUIPLxGy*) was built to:
+- Draw digits using *mpaper*.
+- Classify them using trained neural networks.
+- Display both input and output digits in a 5×10 grid.
+
+** Evaluation
+The following aspects were analyzed:
+1. Impact of dataset size and quality on model performance.
+2. Comparison of architectures (filter + classifier vs. classifier
+   only).
+3. Effectiveness of different activation functions.
+4. Classification accuracy and robustness to imperfect inputs.
+
+** References
+- MATLAB Documentation (R2023b): Neural Networks Toolbox
+- *PerfectArial.mat* — Reference digit dataset
+- *Statistical Pattern Recognition Toolbox* (© 1999–2003 V. Franc and
+  V. Hlavac)
+
+
+* Footer
+#+INCLUDE: "./footer.org"

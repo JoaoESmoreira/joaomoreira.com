@@ -1,0 +1,99 @@
+#+TITLE: JoaoESmoreira
+#+AUTHOR: Joao ES Moreira
+#+SETUPFILE: ~/Documents/OrgFiles/themes/responsive-dark-light.setup
+#+INCLUDE: "./header.org"
+
+
+* Epileptic Seizure Prediction and Detection Project
+The main objective of this project is to develop *machine learning models* capable of predicting
+and detecting *epileptic seizures* based on EEG data.
+
+# The full repository and documentation can be found here:  
+# [[https://github.com/JoaoESmoreira/AC-Project/][Epileptic Seizure Prediction and Detection Project].
+
+** Technologies Used
+- =MATLAB= is used as the main development environment.
+- Neural Network Toolbox functions such as =feedforwardnet=, =layrecnet=, and =trainNetwork= are employed.
+
+** Objectives
+The assignment focuses on the following learning goals:
+1. Build, train, and test multilayer neural networks for classification of large datasets.
+2. Build, train, and test dynamic neural networks (with delays) for multidimensional time series prediction.
+3. Apply feature reduction techniques using autoencoders.
+4. Configure, train, and test Convolutional Neural Networks (CNN) for multiclass classification.
+5. Configure, train, and test Long Short-Term Memory (LSTM) networks for time series classification.
+
+** Problem Description
+Epilepsy affects approximately 1% of the population, and around 30% of patients are resistant to treatment.
+EEG (Electroencephalogram) signals provide information about the brain’s electrical activity, which can be
+used to identify patterns associated with seizure states.
+
+The goal is to classify EEG signals into three main brain states:
+- *Interictal*: normal brain activity
+- *Preictal*: the phase before a seizure
+- *Ictal*: seizure occurring (including postictal phase)
+
+** Dataset
+The dataset contains EEG-derived features extracted from patients in the *European Epilepsy Database (FP7 EPILEPSIAE)*.
+Each EEG segment is divided into 2-second windows with 50% overlap, resulting in one 29-dimensional feature vector per second.
+
+Each group works with data from two patients:
+- Odd-numbered groups: Patients 44202 and 63502
+- Even-numbered groups: Patients 54802 and 112502
+
+** Methodology
+The project involves multiple machine learning models and techniques:
+- *Multilayer Perceptrons (MLP)* for shallow classification.
+- *Dynamic Neural Networks* (e.g., layrecnet) to include temporal memory.
+- *Autoencoders* for dimensionality reduction of the 29-feature space.
+- *Convolutional Neural Networks (CNN)* for image-based classification using 29x29 EEG feature maps.
+- *Long Short-Term Memory (LSTM)* networks for sequence learning.
+
+Data preprocessing includes:
+- Normalization and class balancing (interictal, preictal, ictal)
+- Temporal ordering of sequences
+- Creation of target matrices with one-hot encoding for the three classes.
+
+** Performance Metrics
+The models are evaluated using:
+- *Sensitivity (SE)* — ratio of correctly predicted seizures.
+- *Specificity (SP)* — ratio of correctly identified non-seizure states.
+
+Both metrics must be maximized to ensure clinical relevance.
+
+** Implementation Details
+- MATLAB is used as the main development environment.
+- Neural Network Toolbox functions such as =feedforwardnet=, =layrecnet=, and =trainNetwork= are employed.
+- GPU and parallel computing are supported for faster training.
+- A *Graphical User Interface (GUI)* is required to:
+  - Select the neural network type (shallow/deep).
+  - Choose datasets for training, validation, and testing.
+  - Display training and testing results with sensitivity and specificity.
+
+** Deliverables
+The final submission must include:
+- Report file: ~ML2023EpiReportPLxGy.pdf~
+- Code and trained networks: ~ML2023EpilepPLxGy.zip~
+Each =.m= file must include a header describing its functionality and authorship.
+
+** Feature Bands
+The EEG features correspond to normalized spectral power in 29 frequency bands,
+ranging from 0.5 Hz to 512 Hz.
+
+** Summary Table (Example)
+| Network Type | Purpose       | Architecture | Feature Reduction | Best Metric |
+|---------------+----------------+----------------+--------------------+--------------|
+| MLP           | Detection      | 3 layers (ReLU)| No                 | SE = 0.88    |
+| CNN           | Prediction     | 5 conv layers  | Yes (autoencoder)  | SP = 0.90    |
+| LSTM          | Detection      | 2 LSTM blocks  | No                 | SE = 0.92    |
+
+** References
+- European Epilepsy Database (FP7 EPILEPSIAE): https://www.epilepsiae.eu
+- MATLAB Neural Network Toolbox (R2023b)
+- ADC, DEI-FCTUC Machine Learning Course Materials
+
+
+
+
+* Footer
+#+INCLUDE: "./footer.org"

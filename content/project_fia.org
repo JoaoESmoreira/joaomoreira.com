@@ -25,6 +25,12 @@ while =C#= provided the tools to implement the genetic algorithm logic,
 control evolution, and collect performance data across multiple
 scenarios.
 
+** Cars Preview
+
+Below is a short preview of the project in action:
+
+[[file:assets/fia_app.png]]
+
 
 ** Repository Structure
 - *docs/*: Contains the final report and presentation materials.

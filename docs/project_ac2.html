@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>JoaoESmoreira</title>
+<meta name="description" content="Header" />
+<meta name="generator" content="Org Mode" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.min.css">
+<style>body { max-width: 800px; margin: auto; }</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/github-dark.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+<style>
+pre code {
+display: block;
+background-color: #e6e6e6;
+color: #000000;
+padding: 1em;
+border-radius: 6px;
+overflow-x: auto;
+font-size: 0.95em;
+}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.min.css">
+<style>body { max-width: 800px; margin: auto; }</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/github-dark.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+<style>
+pre code {
+display: block;
+background-color: #e6e6e6;
+color: #000000;
+padding: 1em;
+border-radius: 6px;
+overflow-x: auto;
+font-size: 0.95em;
+}
+</style>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">JoaoESmoreira</h1>
+<div class="org-header">
+
+    <!--
+  <div class="topbar-menu-container">
+    <span class="topbar-menu"><a class="current" href="http://localhost:8080/">Home</a></span>
+    <span class="topbar-menu"><a href="http://localhost:8080/projects.html">Projects</a></span>
+    <span class="topbar-menu"><a href="http://localhost:8080/blog.html">Blog</a></span>
+    <span class="topbar-menu"><a href="http://localhost:8080/emacsphere.html">Emacsphere</a></span>
+  </div>
+    -->
+
+  <div class="topbar-menu-container">
+    <span class="topbar-menu"><a href="index.html">Home</a></span>
+    <span class="topbar-menu"><a href="projects.html">Projects</a></span>
+    <span class="topbar-menu"><a href="blog.html">Blog</a></span>
+    <span class="topbar-menu"><a href="emacsphere.html">Emacsphere</a></span>
+  </div>
+
+</div>
+<div id="outline-container-orgd70c6c8" class="outline-2">
+<h2 id="orgd70c6c8">Epileptic Seizure Prediction and Detection Project</h2>
+<div class="outline-text-2" id="text-orgd70c6c8">
+<p>
+The main objective of this project is to develop <b>machine learning models</b> capable of predicting
+and detecting <b>epileptic seizures</b> based on EEG data.
+</p>
+</div>
+<div id="outline-container-org7f3bef8" class="outline-3">
+<h3 id="org7f3bef8">Technologies Used</h3>
+<div class="outline-text-3" id="text-org7f3bef8">
+<ul class="org-ul">
+<li><code>MATLAB</code> is used as the main development environment.</li>
+<li>Neural Network Toolbox functions such as <code>feedforwardnet</code>, <code>layrecnet</code>, and <code>trainNetwork</code> are employed.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org0ffb46a" class="outline-3">
+<h3 id="org0ffb46a">Objectives</h3>
+<div class="outline-text-3" id="text-org0ffb46a">
+<p>
+The assignment focuses on the following learning goals:
+</p>
+<ol class="org-ol">
+<li>Build, train, and test multilayer neural networks for classification of large datasets.</li>
+<li>Build, train, and test dynamic neural networks (with delays) for multidimensional time series prediction.</li>
+<li>Apply feature reduction techniques using autoencoders.</li>
+<li>Configure, train, and test Convolutional Neural Networks (CNN) for multiclass classification.</li>
+<li>Configure, train, and test Long Short-Term Memory (LSTM) networks for time series classification.</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org9e0b3bd" class="outline-3">
+<h3 id="org9e0b3bd">Problem Description</h3>
+<div class="outline-text-3" id="text-org9e0b3bd">
+<p>
+Epilepsy affects approximately 1% of the population, and around 30% of patients are resistant to treatment.
+EEG (Electroencephalogram) signals provide information about the brain’s electrical activity, which can be
+used to identify patterns associated with seizure states.
+</p>
+
+<p>
+The goal is to classify EEG signals into three main brain states:
+</p>
+<ul class="org-ul">
+<li><b>Interictal</b>: normal brain activity</li>
+<li><b>Preictal</b>: the phase before a seizure</li>
+<li><b>Ictal</b>: seizure occurring (including postictal phase)</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org598c4e0" class="outline-3">
+<h3 id="org598c4e0">Dataset</h3>
+<div class="outline-text-3" id="text-org598c4e0">
+<p>
+The dataset contains EEG-derived features extracted from patients in the <b>European Epilepsy Database (FP7 EPILEPSIAE)</b>.
+Each EEG segment is divided into 2-second windows with 50% overlap, resulting in one 29-dimensional feature vector per second.
+</p>
+
+<p>
+Each group works with data from two patients:
+</p>
+<ul class="org-ul">
+<li>Odd-numbered groups: Patients 44202 and 63502</li>
+<li>Even-numbered groups: Patients 54802 and 112502</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org750a5ed" class="outline-3">
+<h3 id="org750a5ed">Methodology</h3>
+<div class="outline-text-3" id="text-org750a5ed">
+<p>
+The project involves multiple machine learning models and techniques:
+</p>
+<ul class="org-ul">
+<li><b>Multilayer Perceptrons (MLP)</b> for shallow classification.</li>
+<li><b>Dynamic Neural Networks</b> (e.g., layrecnet) to include temporal memory.</li>
+<li><b>Autoencoders</b> for dimensionality reduction of the 29-feature space.</li>
+<li><b>Convolutional Neural Networks (CNN)</b> for image-based classification using 29x29 EEG feature maps.</li>
+<li><b>Long Short-Term Memory (LSTM)</b> networks for sequence learning.</li>
+</ul>
+
+<p>
+Data preprocessing includes:
+</p>
+<ul class="org-ul">
+<li>Normalization and class balancing (interictal, preictal, ictal)</li>
+<li>Temporal ordering of sequences</li>
+<li>Creation of target matrices with one-hot encoding for the three classes.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org3cd03fa" class="outline-3">
+<h3 id="org3cd03fa">Performance Metrics</h3>
+<div class="outline-text-3" id="text-org3cd03fa">
+<p>
+The models are evaluated using:
+</p>
+<ul class="org-ul">
+<li><b>Sensitivity (SE)</b> — ratio of correctly predicted seizures.</li>
+<li><b>Specificity (SP)</b> — ratio of correctly identified non-seizure states.</li>
+</ul>
+
+<p>
+Both metrics must be maximized to ensure clinical relevance.
+</p>
+</div>
+</div>
+<div id="outline-container-org1fdad7e" class="outline-3">
+<h3 id="org1fdad7e">Implementation Details</h3>
+<div class="outline-text-3" id="text-org1fdad7e">
+<ul class="org-ul">
+<li>MATLAB is used as the main development environment.</li>
+<li>Neural Network Toolbox functions such as <code>feedforwardnet</code>, <code>layrecnet</code>, and <code>trainNetwork</code> are employed.</li>
+<li>GPU and parallel computing are supported for faster training.</li>
+<li>A <b>Graphical User Interface (GUI)</b> is required to:
+<ul class="org-ul">
+<li>Select the neural network type (shallow/deep).</li>
+<li>Choose datasets for training, validation, and testing.</li>
+<li>Display training and testing results with sensitivity and specificity.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org94c7164" class="outline-3">
+<h3 id="org94c7164">Deliverables</h3>
+<div class="outline-text-3" id="text-org94c7164">
+<p>
+The final submission must include:
+</p>
+<ul class="org-ul">
+<li>Report file: <code>ML2023EpiReportPLxGy.pdf</code></li>
+<li>Code and trained networks: <code>ML2023EpilepPLxGy.zip</code></li>
+</ul>
+<p>
+Each <code>.m</code> file must include a header describing its functionality and authorship.
+</p>
+</div>
+</div>
+<div id="outline-container-org4cfa4a2" class="outline-3">
+<h3 id="org4cfa4a2">Feature Bands</h3>
+<div class="outline-text-3" id="text-org4cfa4a2">
+<p>
+The EEG features correspond to normalized spectral power in 29 frequency bands,
+ranging from 0.5 Hz to 512 Hz.
+</p>
+</div>
+</div>
+<div id="outline-container-org0ac3805" class="outline-3">
+<h3 id="org0ac3805">Summary Table (Example)</h3>
+<div class="outline-text-3" id="text-org0ac3805">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Network Type</th>
+<th scope="col" class="org-left">Purpose</th>
+<th scope="col" class="org-left">Architecture</th>
+<th scope="col" class="org-left">Feature Reduction</th>
+<th scope="col" class="org-left">Best Metric</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">MLP</td>
+<td class="org-left">Detection</td>
+<td class="org-left">3 layers (ReLU)</td>
+<td class="org-left">No</td>
+<td class="org-left">SE = 0.88</td>
+</tr>
+
+<tr>
+<td class="org-left">CNN</td>
+<td class="org-left">Prediction</td>
+<td class="org-left">5 conv layers</td>
+<td class="org-left">Yes (autoencoder)</td>
+<td class="org-left">SP = 0.90</td>
+</tr>
+
+<tr>
+<td class="org-left">LSTM</td>
+<td class="org-left">Detection</td>
+<td class="org-left">2 LSTM blocks</td>
+<td class="org-left">No</td>
+<td class="org-left">SE = 0.92</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-orge16f98d" class="outline-3">
+<h3 id="orge16f98d">References</h3>
+<div class="outline-text-3" id="text-orge16f98d">
+<ul class="org-ul">
+<li>European Epilepsy Database (FP7 EPILEPSIAE): <a href="https://www.epilepsiae.eu">https://www.epilepsiae.eu</a></li>
+<li>MATLAB Neural Network Toolbox (R2023b)</li>
+<li>ADC, DEI-FCTUC Machine Learning Course Materials</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgd0821e8" class="outline-2">
+<h2 id="orgd0821e8">Footer</h2>
+<div class="outline-text-2" id="text-orgd0821e8">
+<p>
+Copyright © 2025 Joao ES Moreira
+</p>
+
+<p>
+The contents of this website are licensed under the <a href="https://creativecommons.org/licenses/by-nd/4.0/">Creative Commons
+Attribution-NoDerivatives 4.0 International License</a> (CC-BY-ND 4.0).
+</p>
+
+<p>
+The source code of this website is licensed under the MIT license,
+and available in <a href="https://github.com/JoaoESmoreira/joaomoreira.com/">GitHub</a> repositor.  User-submitted contributions to
+the site are welcome, as long as the contributor agrees to license
+their submission with the CC-BY-ND 4.0 license.
+</p>
+</div>
+</div>
+</div>
+</body>
+</html>

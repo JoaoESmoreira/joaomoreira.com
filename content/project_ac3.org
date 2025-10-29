@@ -1,0 +1,81 @@
+#+TITLE: JoaoESmoreira
+#+AUTHOR: Joao ES Moreira
+#+SETUPFILE: ~/Documents/OrgFiles/themes/responsive-dark-light.setup
+#+INCLUDE: "./header.org"
+
+
+* Fuzzy and Neuro-Fuzzy Control of Dynamic Systems
+The project focuses on the design, implementation, and testing of both *fuzzy controllers* (Mamdani and Sugeno) and *neuro-fuzzy systems* for modeling dynamic processes.
+
+# The full repository and documentation can be found here:  
+# [[https://github.com/JoaoESmoreira/AC-Project/][Epileptic Seizure Prediction and Detection Project].
+
+** Technologies Used
+- MATLAB
+- Simulink
+- Fuzzy Logic Toolbox
+- ANFIS (Adaptive Neuro-Fuzzy Inference System)
+
+** Learning Objectives
+1. To design and test fuzzy controllers (Mamdani and TSK types).
+2. To model a dynamic process using clustering and optimization techniques.
+
+** Part A – Fuzzy Control
+The first part consists of implementing two fuzzy controllers, *Mamdani* and *Sugeno*, using MATLAB’s *Simulink* environment and the *Fuzzy Logic Toolbox*.
+
+*** Requirements
+- MATLAB with the Fuzzy Logic Toolbox.
+- Implementation of:
+  - Mamdani controllers with 9 and 25 rules.
+  - Sugeno controllers with 9 and 25 rules.
+- The system’s dynamics are defined by a given continuous transfer function.
+- Analysis of controller performance regarding:
+  - Reference tracking.
+  - Load and actuator disturbance compensation.
+  - Control effort minimization.
+
+*** Tools and Methods
+- *fuzzyLogicDesigner* or *fuzzy* command for building the FIS.
+- *Simulink* for simulation and visualization of system behavior.
+- Performance evaluation based on error integration and control effort.
+
+*** Deliverables
+- A PDF report describing the controllers and their performance.
+- The Simulink diagram (*.slx*).
+- Controller files (*.fis*).
+
+** Part B – Neuro-Fuzzy Systems
+The second part focuses on building *neuro-fuzzy models* of dynamic systems using clustering and adaptive learning techniques.
+
+*** Methodology
+- The dynamic process is modeled based on input-output time series data.
+- Training is performed using the *ANFIS* architecture with clustering and optimization.
+- The model aims to approximate the nonlinear function:
+  \[
+  y(k) = f(y(k-1), y(k-2), y(k-3), u(k-1), u(k-2), u(k-3))
+  \]
+
+*** Tools and Techniques
+- *anfisedit* or *neuroFuzzyDesigner* for the ANFIS GUI.
+- Clustering methods:
+  - *Subtractive Clustering*
+  - *Fuzzy C-Means (FCM)*
+- Data partitioning:
+  - 70% for training
+  - 30% for testing
+- Optimization performed by hybrid or backpropagation methods.
+
+*** Deliverables
+- A brief report describing the neuro-fuzzy models and performance results.
+- Plots of membership functions for each input variable.
+- Fuzzy model files (*.fis*), MATLAB training/testing scripts (*.m*), and Simulink diagrams (if used).
+
+** Notes
+- Use appropriate sampling times to ensure numerical stability.
+- Avoid reproducing assignment text; focus on analysis and interpretation.
+- Reports and files must be submitted in a single compressed archive named:
+  - ~ML2023FuzzyPLxGy.zip~
+  - The report file: ~ML2023FuzzyPLxGy.pdf~
+
+* Footer
+#+INCLUDE: "./footer.org"

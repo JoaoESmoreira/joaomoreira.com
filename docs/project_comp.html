@@ -65,9 +65,9 @@ font-size: 0.95em;
   </div>
 
 </div>
-<div id="outline-container-orgf8296b1" class="outline-2">
-<h2 id="orgf8296b1">JUC Compiler</h2>
-<div class="outline-text-2" id="text-orgf8296b1">
+<div id="outline-container-org5df9ac4" class="outline-2">
+<h2 id="org5df9ac4">JUC Compiler</h2>
+<div class="outline-text-2" id="text-org5df9ac4">
 <p>
 The main goal of the project is to build a working compiler capable of
 performing lexical, syntactic, and semantic analysis for the JUC
@@ -81,9 +81,9 @@ The full repository and documentation can be found here:
 <a href="https://github.com/JoaoESmoreira/COMP-Project/">JUC-Project Repository</a>.
 </p>
 </div>
-<div id="outline-container-org70702a9" class="outline-3">
-<h3 id="org70702a9">Technologies Used</h3>
-<div class="outline-text-3" id="text-org70702a9">
+<div id="outline-container-orge0ce15c" class="outline-3">
+<h3 id="orge0ce15c">Technologies Used</h3>
+<div class="outline-text-3" id="text-orge0ce15c">
 <ul class="org-ul">
 <li><b>C Language</b> — Core implementation language</li>
 <li><b>Lex</b> — Lexical analysis tool</li>
@@ -93,9 +93,9 @@ The full repository and documentation can be found here:
 </ul>
 </div>
 </div>
-<div id="outline-container-orgbdd4b32" class="outline-3">
-<h3 id="orgbdd4b32">Repository Structure</h3>
-<div class="outline-text-3" id="text-orgbdd4b32">
+<div id="outline-container-org0497ce4" class="outline-3">
+<h3 id="org0497ce4">Repository Structure</h3>
+<div class="outline-text-3" id="text-org0497ce4">
 <ul class="org-ul">
 <li><b>src/</b>: source code implementing Lex, Yacc, and compiler logic</li>
 <li><b>docs/</b>: project documentation (including this report)</li>
@@ -104,9 +104,9 @@ The full repository and documentation can be found here:
 </ul>
 </div>
 </div>
-<div id="outline-container-org81a6ef0" class="outline-3">
-<h3 id="org81a6ef0">Grammar Design</h3>
-<div class="outline-text-3" id="text-org81a6ef0">
+<div id="outline-container-orgd512542" class="outline-3">
+<h3 id="orgd512542">Grammar Design</h3>
+<div class="outline-text-3" id="text-orgd512542">
 <p>
 The grammar was rewritten to eliminate ambiguities by defining
 <b>operator precedence</b> and <b>associativity</b> using directives:
@@ -123,13 +123,13 @@ directive to control precedence when <b>else</b> is omitted.
 </p>
 </div>
 </div>
-<div id="outline-container-org2893047" class="outline-3">
-<h3 id="org2893047">Data Structures</h3>
-<div class="outline-text-3" id="text-org2893047">
+<div id="outline-container-org71985f3" class="outline-3">
+<h3 id="org71985f3">Data Structures</h3>
+<div class="outline-text-3" id="text-org71985f3">
 </div>
-<div id="outline-container-orgbbf0762" class="outline-4">
-<h4 id="orgbbf0762">Token</h4>
-<div class="outline-text-4" id="text-orgbbf0762">
+<div id="outline-container-orga308d02" class="outline-4">
+<h4 id="orga308d02">Token</h4>
+<div class="outline-text-4" id="text-orga308d02">
 <p>
 A <code>token_t</code> structure was created to store the lexical information
 produced by <b>Lex</b>, containing:
@@ -140,9 +140,9 @@ produced by <b>Lex</b>, containing:
 </ul>
 </div>
 </div>
-<div id="outline-container-org3321bd6" class="outline-4">
-<h4 id="org3321bd6">Abstract Syntax Tree (AST)</h4>
-<div class="outline-text-4" id="text-org3321bd6">
+<div id="outline-container-org884a239" class="outline-4">
+<h4 id="org884a239">Abstract Syntax Tree (AST)</h4>
+<div class="outline-text-4" id="text-org884a239">
 <p>
 The AST represents the hierarchical structure of the source program.
 Each node is represented by an <code>ast_node_t</code> structure containing:
@@ -157,9 +157,9 @@ nodes</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org1d36234" class="outline-4">
-<h4 id="org1d36234">Symbol Table</h4>
-<div class="outline-text-4" id="text-org1d36234">
+<div id="outline-container-orga8981a9" class="outline-4">
+<h4 id="orga8981a9">Symbol Table</h4>
+<div class="outline-text-4" id="text-orga8981a9">
 <p>
 The <b>symbol table</b> stores information about identifiers, parameters,
 and methods.  It uses two main structures:
@@ -176,9 +176,9 @@ local scope.
 </div>
 </div>
 </div>
-<div id="outline-container-org0e09ee4" class="outline-3">
-<h3 id="org0e09ee4">Algorithms</h3>
-<div class="outline-text-3" id="text-org0e09ee4">
+<div id="outline-container-org3bb67be" class="outline-3">
+<h3 id="org3bb67be">Algorithms</h3>
+<div class="outline-text-3" id="text-org3bb67be">
 <p>
 The algorithms used involve recursive traversal of <b>trees</b> and <b>linked
 lists</b>.  During AST traversal:
@@ -193,9 +193,9 @@ AST and update the symbol table</li>
 </div>
 </div>
 </div>
-<div id="outline-container-orga0868f1" class="outline-2">
-<h2 id="orga0868f1">Footer</h2>
-<div class="outline-text-2" id="text-orga0868f1">
+<div id="outline-container-org8e2256a" class="outline-2">
+<h2 id="org8e2256a">Footer</h2>
+<div class="outline-text-2" id="text-org8e2256a">
 <p>
 Copyright © 2025 Joao ES Moreira
 </p>

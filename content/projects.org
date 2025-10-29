@@ -29,24 +29,27 @@ my learning path. Feel free to explore and learn alongside me!
 
 ** Data Science & Machine Learning & Artificial Intelligence
 
-| Posts                                      | Description                                                  |
-|--------------------------------------------+--------------------------------------------------------------|
-| [[file:./project_snake_game.org][Snake Game]]                                 | Snake game with reinforcement learning                       |
-| [[file:./project_astp.org][Time Series Analysis]]                       | Weather Time Series Analysis and Forecasting                 |
-| [[file:./project_complex_systems.org][Complex Systems Modelling]]                  | Predator-Prey Modelling                                      |
-| [[file:./project_rp.org][Pattern Recognition]]                        | Default of Credit Card Clients Prediction                    |
-| [[file:./project_ce.org][Frozen Lake Problem]]                        | Solving the Frozen Lake Problem with evolutionary techniques |
-| [[file:./project_fia.org][Rolling in the Hill — Evolutionary Edition]] | Generate optimized vehicles to traverse challenging terrains |
+| Posts                                      | Description                                                                           |
+|--------------------------------------------+---------------------------------------------------------------------------------------|
+| [[file:./project_snake_game.org][Snake Game]]                                 | Snake game with reinforcement learning                                                |
+| [[file:./project_ce.org][Frozen Lake Problem]]                        | Solving the Frozen Lake Problem with evolutionary techniques                          |
+| [[file:./project_fia.org][Rolling in the Hill — Evolutionary Edition]] | Generate optimized vehicles to traverse challenging terrains                          |
+| [[file:./project_astp.org][Time Series Analysis]]                       | Weather Time Series Analysis and Forecasting                                          |
+| [[file:./project_complex_systems.org][Complex Systems Modelling]]                  | Predator-Prey Modelling                                                               |
+| [[file:./project_rp.org][Pattern Recognition]]                        | Default of Credit Card Clients Prediction                                             |
+| [[file:./project_ac1.org][Optical Character Recognition]]              | Development of a system capable of recognizing handwritten digits                     |
+| [[file:./project_ac2.org][Epileptic Seizure Prediction and Detection]] | Development of a system capable of predicting and detecting epileptic seizures        |
+| [[file:./project_ac3.org][Neuro-Fuzzy Control of Dynamic Systems]]     | Design, implementation, and testing of both fuzzy controllers and neuro-fuzzy systems |
 
 
 ** Algorithms and Low level programming
 
 | Posts                           | Description                                             |
 |---------------------------------+---------------------------------------------------------|
+| [[file:./project_so.org][Computational Offloading System]] | Parallel computational offloading simulator in =C=      |
 | [[file:./project_cg.org][Computer Graphics]]               | Computer graphic project in =C++= and =OpenGL=          |
 | [[file:./project_comp.org][JUC Compiler]]                    | Compiler of JavaUC Language                             |
 | [[file:./project_rc.org][Communication Networks Project]]  | Building a socket transaction system in =C++=           |
-| [[file:./project_so.org][Computational Offloading System]] | Parallel computational offloading simulator in =C=      |
 | [[file:./project_bt_iterator.org][Binary Tree Iterator]]            | Implementation of a iterator for a binary tree in =C++= |
 
 
