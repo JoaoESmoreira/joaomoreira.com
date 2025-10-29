@@ -1,0 +1,67 @@
+#+TITLE: JoaoESmoreira
+#+AUTHOR: Joao ES Moreira
+#+SETUPFILE: ~/Documents/OrgFiles/themes/responsive-dark-light.setup
+#+INCLUDE: "./header.org"
+
+* Content-Based Music Recommendation System
+This project aims to develop and analyze a *content-based music recommendation system* using Python.  
+It focuses on acquiring sensitivity and understanding of *Multimedia Information Retrieval (MIR)*, particularly for *music recommendation systems* that rely on extracted audio features rather than user behavior.
+
+** Tools and Libraries
+The following technologies were used:
+- *Python 3*
+- *Librosa* — for audio processing and feature extraction.
+- *NumPy* — for numerical computation and array manipulation.
+- *SciPy* — for statistical analysis (skewness, kurtosis, etc.).
+- *FFmpeg* — for reading =.mp3= files.
+
+** Objectives
+The main goal is to implement a system capable of recommending similar songs based on their audio content.  
+The project involves:
+- Feature extraction using the *Librosa* framework.
+- Implementation of multiple similarity metrics.
+- Evaluation of recommendation quality through both objective and subjective methods.
+
+** Dataset
+The system uses the **4Q Audio Emotion Dataset**, which contains:
+- Audio excerpts in =.mp3= format (including 4 query tracks).
+- Metadata file =panda_dataset_taffc_metadata.csv=, containing columns:
+  - *Song*, *Artist*, *Quadrant*, *MoodsStrSplit*, and *GenresStr*.
+- Pre-extracted features:
+  - =top100_features.csv= (audio feature vectors)
+  - =features.csv= (feature descriptions)
+
+Dataset available at:  
+[[http://mir.dei.uc.pt/downloads.html][http://mir.dei.uc.pt/downloads.html]]
+
+** Project Structure
+1. **Preparation**
+   - Familiarization with real-world recommendation systems (Spotify, Jango, Last.fm, etc.).
+   - Downloading and analyzing the dataset.
+   - Studying the *Librosa* framework and the base code (=mrs.py=).
+
+2. **Feature Extraction**
+   - Processing existing features from =top100_features.csv=.
+   - Extracting new features from the dataset using *Librosa*:
+     - *Spectral features:* MFCC, spectral centroid, bandwidth, contrast, flatness, rolloff.
+     - *Temporal features:* RMS energy, Zero Crossing Rate, F0.
+     - *Other features:* Tempo.
+   - Computing seven statistical measures for each feature:
+     - Mean, standard deviation, skewness, kurtosis, median, maximum, and minimum.
+   - Normalization of features to the [0, 1] range.
+   - (Optional bonus) Implementing feature extraction manually using only *NumPy* and *SciPy*.
+
+3. **Similarity Metrics**
+   - Implementation of three distance metrics:
+     - Euclidean Distance
+     - Manhattan Distance
+     - Cosine Similarity
+   - Generating similarity matrices (900×900) and recommendation rankings for the four query tracks.
+
+4. **Evaluation**
+   - *Objective Evaluation*: comparing recommendations against metadata (artist, genre, emotion, quadrant).
+   - *Subjective Evaluation*: human evaluation using a Likert scale (1–5) to rate recommendation quality.
+   - Computing *Precision* scores to assess performance in both evaluation types.
+
+* Footer
+#+INCLUDE: "./footer.org"

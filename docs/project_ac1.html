@@ -65,9 +65,9 @@ font-size: 0.95em;
   </div>
 
 </div>
-<div id="outline-container-org800c4e8" class="outline-2">
-<h2 id="org800c4e8">Optical Character Recognition</h2>
-<div class="outline-text-2" id="text-org800c4e8">
+<div id="outline-container-org2db81db" class="outline-2">
+<h2 id="org2db81db">Optical Character Recognition</h2>
+<div class="outline-text-2" id="text-org2db81db">
 <p>
 The main goal of the project is to design and implement neural network
 models capable of recognizing <b>handwritten digits</b> (0–9). Each digit
@@ -82,9 +82,9 @@ interface to test the trained models, allowing users to draw digits
 and visualize classification results.
 </p>
 </div>
-<div id="outline-container-org574e383" class="outline-3">
-<h3 id="org574e383">Technologies Used</h3>
-<div class="outline-text-3" id="text-org574e383">
+<div id="outline-container-orgc29364c" class="outline-3">
+<h3 id="orgc29364c">Technologies Used</h3>
+<div class="outline-text-3" id="text-orgc29364c">
 <ul class="org-ul">
 <li>Programming Language: MATLAB (2023b)</li>
 <li>Required Toolbox: <b>Image Processing Toolbox</b>, <b>Neural Network
@@ -92,9 +92,9 @@ Toolbox</b></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org197b9f6" class="outline-3">
-<h3 id="org197b9f6">Objectives</h3>
-<div class="outline-text-3" id="text-org197b9f6">
+<div id="outline-container-org843b998" class="outline-3">
+<h3 id="org843b998">Objectives</h3>
+<div class="outline-text-3" id="text-org843b998">
 <ul class="org-ul">
 <li>Implement and train neural networks for <b>Optical Character
 Recognition (OCR)</b>.</li>
@@ -110,13 +110,13 @@ classifiers interactively.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org460683b" class="outline-3">
-<h3 id="org460683b">Methodology</h3>
-<div class="outline-text-3" id="text-org460683b">
+<div id="outline-container-org5086b75" class="outline-3">
+<h3 id="org5086b75">Methodology</h3>
+<div class="outline-text-3" id="text-org5086b75">
 </div>
-<div id="outline-container-org13431f1" class="outline-4">
-<h4 id="org13431f1">Data Representation</h4>
-<div class="outline-text-4" id="text-org13431f1">
+<div id="outline-container-org44fe8f5" class="outline-4">
+<h4 id="org44fe8f5">Data Representation</h4>
+<div class="outline-text-4" id="text-org44fe8f5">
 <p>
 Each digit is encoded as a binary 16×16 matrix, converted into a 256×1
 vector. Training data is generated using the provided <b>mpaper.m</b>
@@ -124,9 +124,9 @@ function and the <b>PerfectArial.mat</b> dataset.
 </p>
 </div>
 </div>
-<div id="outline-container-org6c0e0ea" class="outline-4">
-<h4 id="org6c0e0ea">Neural Network Architectures</h4>
-<div class="outline-text-4" id="text-org6c0e0ea">
+<div id="outline-container-org97bb391" class="outline-4">
+<h4 id="org97bb391">Neural Network Architectures</h4>
+<div class="outline-text-4" id="text-org97bb391">
 <ol class="org-ol">
 <li><b>Filter + Classifier</b>
 <ul class="org-ul">
@@ -145,9 +145,9 @@ architectures).</li>
 </ol>
 </div>
 </div>
-<div id="outline-container-org1f5829a" class="outline-4">
-<h4 id="org1f5829a">Activation Functions</h4>
-<div class="outline-text-4" id="text-org1f5829a">
+<div id="outline-container-orgd59dbbb" class="outline-4">
+<h4 id="orgd59dbbb">Activation Functions</h4>
+<div class="outline-text-4" id="text-orgd59dbbb">
 <p>
 The following activation functions were tested:
 </p>
@@ -159,9 +159,9 @@ The following activation functions were tested:
 </ul>
 </div>
 </div>
-<div id="outline-container-org2bba907" class="outline-4">
-<h4 id="org2bba907">Training</h4>
-<div class="outline-text-4" id="text-org2bba907">
+<div id="outline-container-org8a4bbc3" class="outline-4">
+<h4 id="org8a4bbc3">Training</h4>
+<div class="outline-text-4" id="text-org8a4bbc3">
 <p>
 Training was performed using MATLAB’s Neural Network Toolbox. Both
 <b>incremental</b> and <b>batch</b> learning modes were explored, with
@@ -178,9 +178,9 @@ overfitting.
 </p>
 </div>
 </div>
-<div id="outline-container-orgdd99efd" class="outline-4">
-<h4 id="orgdd99efd">Testing</h4>
-<div class="outline-text-4" id="text-orgdd99efd">
+<div id="outline-container-org7b091a5" class="outline-4">
+<h4 id="org7b091a5">Testing</h4>
+<div class="outline-text-4" id="text-org7b091a5">
 <p>
 Testing was carried out using new samples generated with <b>mpaper</b>,
 ensuring they differed from the training set. The <b>sim</b> function was
@@ -189,13 +189,13 @@ used to evaluate generalization performance.
 </div>
 </div>
 </div>
-<div id="outline-container-org6e9d0db" class="outline-3">
-<h3 id="org6e9d0db">Implementation Details</h3>
-<div class="outline-text-3" id="text-org6e9d0db">
+<div id="outline-container-org794777b" class="outline-3">
+<h3 id="org794777b">Implementation Details</h3>
+<div class="outline-text-3" id="text-org794777b">
 </div>
-<div id="outline-container-org51638cc" class="outline-4">
-<h4 id="org51638cc">Tools and Environment</h4>
-<div class="outline-text-4" id="text-org51638cc">
+<div id="outline-container-org760d29d" class="outline-4">
+<h4 id="org760d29d">Tools and Environment</h4>
+<div class="outline-text-4" id="text-org760d29d">
 <ul class="org-ul">
 <li>Programming Language: MATLAB (2023b)</li>
 <li>Required Toolbox: <b>Image Processing Toolbox</b>, <b>Neural Network
@@ -211,9 +211,9 @@ Toolbox</b></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org7c313eb" class="outline-4">
-<h4 id="org7c313eb">GUI Application</h4>
-<div class="outline-text-4" id="text-org7c313eb">
+<div id="outline-container-org8dcb562" class="outline-4">
+<h4 id="org8dcb562">GUI Application</h4>
+<div class="outline-text-4" id="text-org8dcb562">
 <p>
 A MATLAB App Designer interface (<b>2023OCRGUIPLxGy</b>) was built to:
 </p>
@@ -225,9 +225,9 @@ A MATLAB App Designer interface (<b>2023OCRGUIPLxGy</b>) was built to:
 </div>
 </div>
 </div>
-<div id="outline-container-org9220362" class="outline-3">
-<h3 id="org9220362">Evaluation</h3>
-<div class="outline-text-3" id="text-org9220362">
+<div id="outline-container-org114ebbe" class="outline-3">
+<h3 id="org114ebbe">Evaluation</h3>
+<div class="outline-text-3" id="text-org114ebbe">
 <p>
 The following aspects were analyzed:
 </p>
@@ -240,9 +240,9 @@ only).</li>
 </ol>
 </div>
 </div>
-<div id="outline-container-org7a0fef0" class="outline-3">
-<h3 id="org7a0fef0">References</h3>
-<div class="outline-text-3" id="text-org7a0fef0">
+<div id="outline-container-org40eed21" class="outline-3">
+<h3 id="org40eed21">References</h3>
+<div class="outline-text-3" id="text-org40eed21">
 <ul class="org-ul">
 <li>MATLAB Documentation (R2023b): Neural Networks Toolbox</li>
 <li><b>PerfectArial.mat</b> — Reference digit dataset</li>
@@ -252,9 +252,9 @@ V. Hlavac)</li>
 </div>
 </div>
 </div>
-<div id="outline-container-orgf343610" class="outline-2">
-<h2 id="orgf343610">Footer</h2>
-<div class="outline-text-2" id="text-orgf343610">
+<div id="outline-container-org572aee5" class="outline-2">
+<h2 id="org572aee5">Footer</h2>
+<div class="outline-text-2" id="text-org572aee5">
 <p>
 Copyright © 2025 Joao ES Moreira
 </p>

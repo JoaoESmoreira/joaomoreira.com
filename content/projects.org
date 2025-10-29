@@ -19,12 +19,14 @@ my learning path. Feel free to explore and learn alongside me!
 
 ** Software Engineering Projects
 
-| Posts                              | Description                                                              |
-|------------------------------------+--------------------------------------------------------------------------|
-| [[file:./project_gp.org][Project Management Course]]          | I worked as a Project Manager in the development of a mobile application |
-| [[file:./project_sd.org][Googol Engine - Distributed System]] | Distributed web page search engine                                       |
-| [[file:./project_ihc.org][Human-Computer Interaction]]         | Development of a mobile game                                             |
-| [[file:./project_bd.org][Data Base Project]]                  | Development of a database system in psql                                 |
+| Posts                                     | Description                                                              |
+|-------------------------------------------+--------------------------------------------------------------------------|
+| [[file:./project_gp.org][Project Management Course]]                 | I worked as a Project Manager in the development of a mobile application |
+| [[file:./project_sd.org][Googol Engine - Distributed System]]        | Distributed web page search engine                                       |
+| [[file:./project_ihc.org][Human-Computer Interaction]]                | Development of a mobile game                                             |
+| [[file:./project_bd.org][Data Base Project]]                         | Development of a database system in psql                                 |
+| [[file:./project_mult2.org][Content-Based Music Recommendation System]] | Development of a content-based music recommendation system               |
+| [[file:./project_mult1.org][Image Compression Project]]                 | Implementation of the JPEG codec                                         |
 
 
 ** Data Science & Machine Learning & Artificial Intelligence

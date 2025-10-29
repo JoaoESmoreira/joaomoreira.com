@@ -1,0 +1,68 @@
+#+TITLE: JoaoESmoreira
+#+AUTHOR: Joao ES Moreira
+#+SETUPFILE: ~/Documents/OrgFiles/themes/responsive-dark-light.setup
+#+INCLUDE: "./header.org"
+
+* Image Compression Project
+
+The purpose of this project is to explore and understand the fundamental concepts of *Image Compression*, with a particular focus on the *JPEG codec*.  
+The work consists of implementing and analyzing the main mechanisms used in image compression using *Python*.
+
+The full repository and documentation can be found here:  
+[[https://github.com/JoaoESmoreira/Mult/tree/main/src/TP1][Image Compression Project Repository]].
+
+
+** Tools and Technologies
+- *Programming Language:* Python  
+- *Libraries:* NumPy, SciPy, Matplotlib, Pillow (PIL)  
+- *Image Formats:* BMP, JPEG  
+
+** Main Tasks
+1. **Basic JPEG Compression**
+   Compress BMP images into JPEG format with different quality levels (high, medium, low) using an image editor. Compare and analyze the results.
+
+2. **Encoder and Decoder Functions**
+   Create `encoder` and `decoder` functions to encapsulate all the developed sub-functions.
+
+3. **RGB Visualization**
+   Implement functions to:
+   - Read and visualize BMP images.
+   - Apply a user-defined colormap.
+   - Separate and reconstruct RGB channels.
+
+4. **Pre-processing (Padding)**
+   Implement image padding to ensure dimensions are multiples of 32×32, replicating the last row and column as needed.
+
+5. **Color Model Conversion**
+   Implement conversion between RGB and YCbCr color models and verify correctness by comparing pixel values and channels.
+
+6. **Sub-sampling**
+   Implement sub-sampling and up-sampling functions (e.g., 4:2:2 and 4:2:0 schemes).  
+   Analyze the compression ratio and visual quality differences between methods.
+
+7. **Discrete Cosine Transform (DCT)**
+   Apply the DCT to image channels:
+   - On the full channel.
+   - On 8×8 and 64×64 blocks.
+   Visualize and discuss compression potential and differences between block sizes.
+
+8. **Quantization**
+   Implement quantization and inverse quantization of DCT coefficients.  
+   Test different quality factors (10, 25, 50, 75, 100) and analyze compression versus distortion.
+
+9. **DPCM Coding**
+   Implement Differential Pulse Code Modulation (DPCM) for DC coefficients and analyze the compression effects.
+
+10. **End-to-End Encoding and Decoding**
+    Build a full JPEG-like pipeline integrating all components.  
+    Decode images for various quality factors and compute metrics such as:
+    - MSE (Mean Squared Error)
+    - RMSE (Root Mean Squared Error)
+    - SNR (Signal-to-Noise Ratio)
+    - PSNR (Peak Signal-to-Noise Ratio)  
+    Compare the decoded results with the original image and analyze trade-offs.
+
+
+
+* Footer
+#+INCLUDE: "./footer.org"

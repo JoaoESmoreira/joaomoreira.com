@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>JoaoESmoreira</title>
+<meta name="description" content="Header" />
+<meta name="generator" content="Org Mode" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.min.css">
+<style>body { max-width: 800px; margin: auto; }</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/github-dark.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+<style>
+pre code {
+display: block;
+background-color: #e6e6e6;
+color: #000000;
+padding: 1em;
+border-radius: 6px;
+overflow-x: auto;
+font-size: 0.95em;
+}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.min.css">
+<style>body { max-width: 800px; margin: auto; }</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/github-dark.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+<style>
+pre code {
+display: block;
+background-color: #e6e6e6;
+color: #000000;
+padding: 1em;
+border-radius: 6px;
+overflow-x: auto;
+font-size: 0.95em;
+}
+</style>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">JoaoESmoreira</h1>
+<div class="org-header">
+
+    <!--
+  <div class="topbar-menu-container">
+    <span class="topbar-menu"><a class="current" href="http://localhost:8080/">Home</a></span>
+    <span class="topbar-menu"><a href="http://localhost:8080/projects.html">Projects</a></span>
+    <span class="topbar-menu"><a href="http://localhost:8080/blog.html">Blog</a></span>
+    <span class="topbar-menu"><a href="http://localhost:8080/emacsphere.html">Emacsphere</a></span>
+  </div>
+    -->
+
+  <div class="topbar-menu-container">
+    <span class="topbar-menu"><a href="index.html">Home</a></span>
+    <span class="topbar-menu"><a href="projects.html">Projects</a></span>
+    <span class="topbar-menu"><a href="blog.html">Blog</a></span>
+    <span class="topbar-menu"><a href="emacsphere.html">Emacsphere</a></span>
+  </div>
+
+</div>
+<div id="outline-container-org23bc9c7" class="outline-2">
+<h2 id="org23bc9c7">Content-Based Music Recommendation System</h2>
+<div class="outline-text-2" id="text-org23bc9c7">
+<p>
+This project aims to develop and analyze a <b>content-based music recommendation system</b> using Python.  
+It focuses on acquiring sensitivity and understanding of <b>Multimedia Information Retrieval (MIR)</b>, particularly for <b>music recommendation systems</b> that rely on extracted audio features rather than user behavior.
+</p>
+</div>
+<div id="outline-container-org72bf147" class="outline-3">
+<h3 id="org72bf147">Tools and Libraries</h3>
+<div class="outline-text-3" id="text-org72bf147">
+<p>
+The following technologies were used:
+</p>
+<ul class="org-ul">
+<li><b>Python 3</b></li>
+<li><b>Librosa</b> — for audio processing and feature extraction.</li>
+<li><b>NumPy</b> — for numerical computation and array manipulation.</li>
+<li><b>SciPy</b> — for statistical analysis (skewness, kurtosis, etc.).</li>
+<li><b>FFmpeg</b> — for reading <code>.mp3</code> files.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org63a0c5d" class="outline-3">
+<h3 id="org63a0c5d">Objectives</h3>
+<div class="outline-text-3" id="text-org63a0c5d">
+<p>
+The main goal is to implement a system capable of recommending similar songs based on their audio content.  
+The project involves:
+</p>
+<ul class="org-ul">
+<li>Feature extraction using the <b>Librosa</b> framework.</li>
+<li>Implementation of multiple similarity metrics.</li>
+<li>Evaluation of recommendation quality through both objective and subjective methods.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org321bbe4" class="outline-3">
+<h3 id="org321bbe4">Dataset</h3>
+<div class="outline-text-3" id="text-org321bbe4">
+<p>
+The system uses the <b><b>4Q Audio Emotion Dataset</b></b>, which contains:
+</p>
+<ul class="org-ul">
+<li>Audio excerpts in <code>.mp3</code> format (including 4 query tracks).</li>
+<li>Metadata file <code>panda_dataset_taffc_metadata.csv</code>, containing columns:
+<ul class="org-ul">
+<li><b>Song</b>, <b>Artist</b>, <b>Quadrant</b>, <b>MoodsStrSplit</b>, and <b>GenresStr</b>.</li>
+</ul></li>
+<li>Pre-extracted features:
+<ul class="org-ul">
+<li><code>top100_features.csv</code> (audio feature vectors)</li>
+<li><code>features.csv</code> (feature descriptions)</li>
+</ul></li>
+</ul>
+
+<p>
+Dataset available at:  
+<a href="http://mir.dei.uc.pt/downloads.html">http://mir.dei.uc.pt/downloads.html</a>
+</p>
+</div>
+</div>
+<div id="outline-container-orgbc71808" class="outline-3">
+<h3 id="orgbc71808">Project Structure</h3>
+<div class="outline-text-3" id="text-orgbc71808">
+<ol class="org-ol">
+<li><b><b>Preparation</b></b>
+<ul class="org-ul">
+<li>Familiarization with real-world recommendation systems (Spotify, Jango, Last.fm, etc.).</li>
+<li>Downloading and analyzing the dataset.</li>
+<li>Studying the <b>Librosa</b> framework and the base code (<code>mrs.py</code>).</li>
+</ul></li>
+
+<li><b><b>Feature Extraction</b></b>
+<ul class="org-ul">
+<li>Processing existing features from <code>top100_features.csv</code>.</li>
+<li>Extracting new features from the dataset using <b>Librosa</b>:
+<ul class="org-ul">
+<li><b>Spectral features:</b> MFCC, spectral centroid, bandwidth, contrast, flatness, rolloff.</li>
+<li><b>Temporal features:</b> RMS energy, Zero Crossing Rate, F0.</li>
+<li><b>Other features:</b> Tempo.</li>
+</ul></li>
+<li>Computing seven statistical measures for each feature:
+<ul class="org-ul">
+<li>Mean, standard deviation, skewness, kurtosis, median, maximum, and minimum.</li>
+</ul></li>
+<li>Normalization of features to the [0, 1] range.</li>
+<li>(Optional bonus) Implementing feature extraction manually using only <b>NumPy</b> and <b>SciPy</b>.</li>
+</ul></li>
+
+<li><b><b>Similarity Metrics</b></b>
+<ul class="org-ul">
+<li>Implementation of three distance metrics:
+<ul class="org-ul">
+<li>Euclidean Distance</li>
+<li>Manhattan Distance</li>
+<li>Cosine Similarity</li>
+</ul></li>
+<li>Generating similarity matrices (900×900) and recommendation rankings for the four query tracks.</li>
+</ul></li>
+
+<li><b><b>Evaluation</b></b>
+<ul class="org-ul">
+<li><b>Objective Evaluation</b>: comparing recommendations against metadata (artist, genre, emotion, quadrant).</li>
+<li><b>Subjective Evaluation</b>: human evaluation using a Likert scale (1–5) to rate recommendation quality.</li>
+<li>Computing <b>Precision</b> scores to assess performance in both evaluation types.</li>
+</ul></li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-org9ee377b" class="outline-2">
+<h2 id="org9ee377b">Footer</h2>
+<div class="outline-text-2" id="text-org9ee377b">
+<p>
+Copyright © 2025 Joao ES Moreira
+</p>
+
+<p>
+The contents of this website are licensed under the <a href="https://creativecommons.org/licenses/by-nd/4.0/">Creative Commons
+Attribution-NoDerivatives 4.0 International License</a> (CC-BY-ND 4.0).
+</p>
+
+<p>
+The source code of this website is licensed under the MIT license,
+and available in <a href="https://github.com/JoaoESmoreira/joaomoreira.com/">GitHub</a> repositor.  User-submitted contributions to
+the site are welcome, as long as the contributor agrees to license
+their submission with the CC-BY-ND 4.0 license.
+</p>
+</div>
+</div>
+</div>
+</body>
+</html>

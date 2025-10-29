@@ -65,108 +65,97 @@ font-size: 0.95em;
   </div>
 
 </div>
-<div id="outline-container-org9b5b1c4" class="outline-2">
-<h2 id="org9b5b1c4">Binary Tree Iterator Project</h2>
-<div class="outline-text-2" id="text-org9b5b1c4">
+<div id="outline-container-org3e83cdd" class="outline-2">
+<h2 id="org3e83cdd">Image Compression Project</h2>
+<div class="outline-text-2" id="text-org3e83cdd">
 <p>
-This project aims to <b><b>implement an iterator for a binary tree</b></b> in C++.  
-The goal is to provide a simple and efficient way to traverse a binary search tree using iterator semantics,  
-similar to the behavior of standard C++ containers.
+The purpose of this project is to explore and understand the fundamental concepts of <b>Image Compression</b>, with a particular focus on the <b>JPEG codec</b>.  
+The work consists of implementing and analyzing the main mechanisms used in image compression using <b>Python</b>.
 </p>
 
 <p>
-<b><b>Repository:</b></b> <a href="https://github.com/JoaoESmoreira/Binary-Tree">Binary-Tree Repository</a>
-</p>
-
-<p>
-<b><b>License:</b></b> MIT
-</p>
-
-<p>
-<b><b>Languages Used:</b></b> C++
+The full repository and documentation can be found here:  
+<a href="https://github.com/JoaoESmoreira/Mult/tree/main/src/TP1">Image Compression Project Repository</a>.
 </p>
 </div>
-<div id="outline-container-org8640d9e" class="outline-3">
-<h3 id="org8640d9e">Requirements</h3>
-<div class="outline-text-3" id="text-org8640d9e">
+<div id="outline-container-org50b8c16" class="outline-3">
+<h3 id="org50b8c16">Tools and Technologies</h3>
+<div class="outline-text-3" id="text-org50b8c16">
 <ul class="org-ul">
-<li>g++ ≥ 9.0 or clang++ ≥ 10.0</li>
-<li>C++17 or newer standard</li>
+<li><b>Programming Language:</b> Python</li>
+<li><b>Libraries:</b> NumPy, SciPy, Matplotlib, Pillow (PIL)</li>
+<li><b>Image Formats:</b> BMP, JPEG</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orge6da71d" class="outline-3">
-<h3 id="orge6da71d">Description</h3>
-<div class="outline-text-3" id="text-orge6da71d">
-<p>
-The project defines a <code>BinaryTree</code> data structure and an <b><b>iterator class</b></b> that allows traversal of the tree in an <b>in-order</b> sequence.  
-This iterator supports standard C++ operations such as incrementing and dereferencing, enabling usage in range-based loops and STL-like algorithms.
-</p>
-</div>
-</div>
-<div id="outline-container-orgcab8c61" class="outline-3">
-<h3 id="orgcab8c61">Features</h3>
-<div class="outline-text-3" id="text-orgcab8c61">
+<div id="outline-container-orga78e554" class="outline-3">
+<h3 id="orga78e554">Main Tasks</h3>
+<div class="outline-text-3" id="text-orga78e554">
+<ol class="org-ol">
+<li><b><b>Basic JPEG Compression</b></b>
+Compress BMP images into JPEG format with different quality levels (high, medium, low) using an image editor. Compare and analyze the results.</li>
+
+<li><b><b>Encoder and Decoder Functions</b></b>
+Create `encoder` and `decoder` functions to encapsulate all the developed sub-functions.</li>
+
+<li><b><b>RGB Visualization</b></b>
+Implement functions to:
 <ul class="org-ul">
-<li>Implementation of a templated <code>BinaryTree</code> class.</li>
-<li>Support for inserting, searching, and removing elements.</li>
-<li>Custom iterator for in-order traversal.</li>
-<li>Example usage provided in <code>main.cpp</code>.</li>
-<li>Auxiliary string functions defined in <code>str.cpp</code>.</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-org8aca66a" class="outline-3">
-<h3 id="org8aca66a">How to Compile</h3>
-<div class="outline-text-3" id="text-org8aca66a">
-<p>
-Use any modern C++ compiler (C++17 or higher).
+<li>Read and visualize BMP images.</li>
+<li>Apply a user-defined colormap.</li>
+<li>Separate and reconstruct RGB channels.</li>
+</ul></li>
+
+<li><b><b>Pre-processing (Padding)</b></b>
+Implement image padding to ensure dimensions are multiples of 32×32, replicating the last row and column as needed.</li>
+
+<li><b><b>Color Model Conversion</b></b>
+Implement conversion between RGB and YCbCr color models and verify correctness by comparing pixel values and channels.</li>
+
+<li><b><b>Sub-sampling</b></b>
+Implement sub-sampling and up-sampling functions (e.g., 4:2:2 and 4:2:0 schemes).  
+Analyze the compression ratio and visual quality differences between methods.</li>
+
+<li><p>
+<b><b>Discrete Cosine Transform (DCT)</b></b>
+Apply the DCT to image channels:
 </p>
+<ul class="org-ul">
+<li>On the full channel.</li>
+<li>On 8×8 and 64×64 blocks.</li>
+</ul>
+<p>
+Visualize and discuss compression potential and differences between block sizes.
+</p></li>
 
-<pre><code class="language-lisp">g++ -std=c++17 -O2 -Wall -Wextra -pedantic main.cpp -o binary-tree
-</code></pre>
-</div>
-</div>
-<div id="outline-container-orge368478" class="outline-3">
-<h3 id="orge368478">Example Usage</h3>
-<div class="outline-text-3" id="text-orge368478">
-<pre><code class="language-cpp">#include "binarytree.hpp"
-#include <iostream>
+<li><b><b>Quantization</b></b>
+Implement quantization and inverse quantization of DCT coefficients.  
+Test different quality factors (10, 25, 50, 75, 100) and analyze compression versus distortion.</li>
 
-int main() {
-    BinaryTree<int> bt;
+<li><b><b>DPCM Coding</b></b>
+Implement Differential Pulse Code Modulation (DPCM) for DC coefficients and analyze the compression effects.</li>
 
-    bt.insert(8);
-    bt.insert(3);
-    bt.insert(10);
-    bt.insert(1);
-    bt.insert(6);
-
-    std::cout << "In-order traversal using iterator: ";
-    for (auto it = bt.begin(); it != bt.end(); ++it)
-        std::cout << *it << " ";
-    std::cout << std::endl;
-
-    return 0;
-}
-</code></pre>
+<li><p>
+<b><b>End-to-End Encoding and Decoding</b></b>
+Build a full JPEG-like pipeline integrating all components.  
+Decode images for various quality factors and compute metrics such as:
+</p>
+<ul class="org-ul">
+<li>MSE (Mean Squared Error)</li>
+<li>RMSE (Root Mean Squared Error)</li>
+<li>SNR (Signal-to-Noise Ratio)</li>
+<li>PSNR (Peak Signal-to-Noise Ratio)</li>
+</ul>
+<p>
+Compare the decoded results with the original image and analyze trade-offs.
+</p></li>
+</ol>
 </div>
 </div>
 </div>
-<div id="outline-container-org8d01e63" class="outline-2">
-<h2 id="org8d01e63">Repository Structure</h2>
-<div class="outline-text-2" id="text-org8d01e63">
-<dl class="org-dl">
-<dt><b>binarytree.hpp</b></dt><dd>Binary tree and iterator implementation.</dd>
-<dt><b>main.cpp</b></dt><dd>Example demonstrating tree operations and iteration.</dd>
-<dt><b>str.cpp</b></dt><dd>Auxiliary string handling utilities.</dd>
-<dt><b>LICENSE</b></dt><dd>MIT license file.</dd>
-</dl>
-</div>
-</div>
-<div id="outline-container-org8fe7a53" class="outline-2">
-<h2 id="org8fe7a53">Footer</h2>
-<div class="outline-text-2" id="text-org8fe7a53">
+<div id="outline-container-org3472ae6" class="outline-2">
+<h2 id="org3472ae6">Footer</h2>
+<div class="outline-text-2" id="text-org3472ae6">
 <p>
 Copyright © 2025 Joao ES Moreira
 </p>
